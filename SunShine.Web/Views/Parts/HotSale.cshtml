@@ -1,0 +1,38 @@
+﻿@using SunShine.Model;
+@model List<ProductViewModel>
+@{
+    Layout = null;
+}
+@if (Model != null && Model.Count > 0) {
+    <div class="hot_sale_product">
+        <div class="hot_sale_product_head">
+            <div class="hot_sale_product_title bgcolor_title_head">
+                热卖产品推荐
+            </div>
+            <div class="hot_sale_product_more"><a href="@Url.Action("List","Product")">更多+</a></div>
+            <div style="clear:both;"></div>
+        </div>
+        <div class="hot_sale_product_list">
+            @{
+                int i = 0;
+                foreach (var item in Model) {
+                    <div class="hot_sale_product_item" style=@((i == 0) ? "margin-left:0px;" : "")>
+                        <div class="hot_sale_product_img">
+                            @if (!string.IsNullOrEmpty(item.img)) {
+                                <a href="@Url.Action("List","Product",new { idproduct=item.idproduct})"><img src="@Url.Content(item.img)" /></a>
+                            }
+                        </div>
+                        <div class="prodesc">
+                            <div class="pro_title"><a href="@Url.Action("List","Product",new { idproduct=item.idproduct})">@item.name</a></div>
+                            <div class="pro_level">推荐指数：<img src="~/Images/home/star_5.jpg" /></div>
+                            <div style="clear:both;"></div>
+                        </div>
+                    </div>
+                    i++;
+                }
+            }
+           
+            <div style="clear:both;"></div>
+        </div>
+    </div>
+                }

@@ -1,0 +1,23 @@
+﻿@using SunShine.Model;
+@model List<SiteCategoryViewModel>
+@{
+    Layout = null;
+
+    //string currentCategoryCode = Request["currentCategoryCode"];
+    string currentCategoryCode = ViewData["currentCategoryCode"].ToString();
+    if (Model!=null&&Model.Count>0&&string.IsNullOrEmpty(currentCategoryCode)) {
+        currentCategoryCode = Model[0].categorycode;
+    }
+}
+@{
+    if (Model != null && Model.Count > 0)
+    {
+        <div class="mobile_success_case_box">
+            @for (int i = 0; i < Model.Count; i++)
+            {
+              <div class="mobile_success_case_item @Html.Raw(Model[i].categorycode==currentCategoryCode?"mobile_success_case_item_current":"")" @Html.Raw((i+1)%2==1?"style='margin-left:0;'":"") ><a href="@Url.Action("Index","Case",new { categoryCode=Model.First().ParentCategory.categorycode,currentCategoryCode= Model[i].categorycode })">@Model[i].categoryname</a></div>
+            }
+        </div>
+        <div style="clear:both;"></div>
+    }
+}

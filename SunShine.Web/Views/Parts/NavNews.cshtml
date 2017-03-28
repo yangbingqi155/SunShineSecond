@@ -1,0 +1,40 @@
+﻿@using SunShine.Utils;
+@using SunShine.Model;
+@model List<ArticleViewModel>
+@{
+    Layout = null;
+}
+
+<div class="xw">
+    <div class="news_t">
+        <ul>
+            <!--  <li class="xuanz"><a href="JavaScript:;">媒体报道</a></li> -->
+            <li class="no1"><a href="@Url.Action("Index","Case",new {categoryCode="sunshinebrand",currentCategoryCode="mediareport" })">媒体报道</a></li>
+        </ul>
+        <div class="more"><a href="@Url.Action("Index","Case",new {categoryCode="sunshinebrand",currentCategoryCode="mediareport" })" id="news_links"><img src="~/Images/home/more_2.jpg"></a></div>
+    </div>
+    @if (Model.Count > 0) {
+        <div class="content4">
+            <div class="shang">
+                <div class="tutu">
+                    @if (!string.IsNullOrEmpty(Model.First().img)) {
+                        <a href="@Url.Action("Index","Case",new {idarticle=Model.First().idarticle })" title="">
+                            <img src="@Url.Content(Model.First().img)" alt=""  style="width:230px; height:141px;">
+                        </a>
+                    }
+                </div>
+                <div class="right_news">
+                    <p><a href="@Url.Action("Index","Case",new {idarticle=Model.First().idarticle })">@Model.First().title</a></p>
+                    <span><a href="@Url.Action("Index","Case",new {idarticle=Model.First().idarticle })">@Model.First().content.RemoveHTMLAndGetByNum(60)<br /><div style="color:red">了解更多</div></a></span>
+                </div>
+            </div>
+            <div class="xia">
+                <ul>
+                    @foreach (var item in Model) {
+                        <li><img src="~/Images/home/jiantou_3.jpg"><a href="@Url.Action("Index","Case",new {idarticle=item.idarticle })"><span>@(item.cretime.Value.ToString("yyyy-MM-dd"))</span>@item.title</a></li>
+                    }
+                </ul>
+            </div>
+        </div>
+    }
+</div>

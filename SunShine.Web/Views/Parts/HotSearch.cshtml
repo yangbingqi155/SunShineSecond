@@ -1,0 +1,15 @@
+﻿@using SunShine.Model;
+@model List<ProductCategoryViewModel>
+@{
+    Layout = null;
+}
+@if (Model != null && Model.Count > 0) {
+    <div class="keyword">
+        <b>站内热闹搜索：</b>
+        @foreach (var item in Model) {
+            <a href="@Url.Action("List","Product",new {keyword=item.categoryname })">@item.categoryname</a><span>&nbsp; &nbsp;</span>
+        }
+        
+    </div>
+}
+

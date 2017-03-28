@@ -1,0 +1,273 @@
+﻿@using SunShine.BLL;
+@using SunShine.Model;
+@model SunShine.Model.ProductViewModel
+@{
+    Layout = "~/Views/Shared/_ManageLayout.cshtml";
+    ViewBag.Title = "编辑产品";
+    if (string.IsNullOrEmpty(Model.idproduct))
+    {
+        ViewBag.Title = "新增产品";
+    }
+}
+<script type="text/javascript" charset="utf-8" src="@Url.Content("~/ueditor/ueditor.config.js")"></script>
+<script type="text/javascript" charset="utf-8" src="@Url.Content("~/ueditor/ueditor.all.min.js")"> </script>
+<!--建议手动加在语言，避免在ie下有时因为加载语言失败导致编辑器加载失败-->
+<!--这里加载的语言文件会覆盖你在配置项目里添加的语言类型，比如你在配置项目里配置的是英文，这里加载的中文，那最后就是中文-->
+<script type="text/javascript" charset="utf-8" src="@Url.Content("~/ueditor/lang/zh-cn/zh-cn.js")"></script>
+
+<link rel="stylesheet" href="@Url.Content("~/Css/bootstrap-fileinput/fileinput.min.css")" />
+<script type="text/javascript" src="@Url.Content("~/Scripts/bootstrap-fileinput/plugins/sortable.min.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Scripts/bootstrap-fileinput/fileinput.min.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Scripts/bootstrap-fileinput/locales/zh.js")"></script>
+
+
+<div class="ManageRightTitle">
+    <ol class="breadcrumb">
+        <li><a href="#">产品管理</a></li>
+        <li><a href="@Url.Action("ProductList","Manage")">产品</a></li>
+        <li><a href="#" class="active">@(string.IsNullOrEmpty(Model.idproduct) ? "新增产品" : "编辑产品")</a></li>
+    </ol>
+</div>
+<div class="ManageRightContent">
+    <form id="form1" action="@Url.Action("ProductEdit","Manage")" method="post" class="form-horizontal">
+        <div class="merc-edit-box ">
+            <fieldset>
+                <input type="hidden" name="returnurl" value="@Request["returnurl"]" />
+                @Html.HiddenFor(model => model.idproduct)
+                @Html.HiddenFor(model => model.description)
+                @Html.HiddenFor(model => model.basicinfo)
+                <input type="hidden" name="productImages" id="productImages" value="" />
+                <div class="form-group">
+                    @Html.LabelFor(model => model.name, new { @class = "col-sm-2 control-label" })
+                    <div class="col-sm-3">
+                        @Html.TextBoxFor(model => model.name, new { @class = "form-control" })
+                    </div>
+                    @Html.ValidationMessageFor(model => model.name)
+                </div>
+                <div class="form-group" style="margin:0px">
+                    @Html.LabelFor(model => model.basicinfo, new { @class = "col-sm-2 control-label" })
+
+                </div>
+                <div class="form-group" style="margin:0px">
+                    <div class="col-sm-2"></div>
+                    <div class="col-sm-10" style="display:block;padding:0px;">
+                        <script id="basic_editor" type="text/plain" style="display:block;width:100%;height:200px;">
+                        </script>
+                    </div>
+                    @Html.ValidationMessageFor(model => model.basicinfo)
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.idcategory, new { @class = "col-sm-2 control-label" })
+                    <div class="col-sm-3">
+                        @Html.DropDownListFor(model => model.idcategory, new SelectList(ProductCategoryService.SelectItems(GroupMethodType.ALL), "DisplayValue", "DisplayText"), new { @class = "form-control" })
+                    </div>
+                    @Html.ValidationMessageFor(model => model.idcategory)
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.seotitle, new { @class = "col-sm-2 control-label" })
+                    <div class="col-sm-7">
+                        @Html.TextAreaFor(model => model.seotitle, new { @class = "form-control", @rows = 4 })
+                    </div>
+                    @Html.ValidationMessageFor(model => model.seotitle)
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.seokeyword, new { @class = "col-sm-2 control-label" })
+                    <div class="col-sm-7">
+                        @Html.TextAreaFor(model => model.seokeyword, new { @class = "form-control", @rows = 4 })
+                    </div>
+                    @Html.ValidationMessageFor(model => model.seokeyword)
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.seodescription, new { @class = "col-sm-2 control-label" })
+                    <div class="col-sm-7">
+                        @Html.TextAreaFor(model => model.seodescription, new { @class = "form-control", @rows = 5 })
+                    </div>
+                    @Html.ValidationMessageFor(model => model.seodescription)
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.sortno, new { @class = "col-sm-2 control-label" })
+                    <div class="col-sm-3">
+                        @Html.TextBoxFor(model => model.sortno, new { @class = "form-control" })
+                    </div>
+                    @Html.ValidationMessageFor(model => model.sortno)
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.inuse, new { @class = "col-sm-2 control-label" })
+                    <div class="col-sm-3">
+                        @Html.CheckBoxFor(model => model.inuse, new { @class = "form-control" })
+                    </div>
+                    @Html.ValidationMessageFor(model => model.inuse)
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.ishot, new { @class = "col-sm-2 control-label" })
+                    <div class="col-sm-3">
+                        @Html.CheckBoxFor(model => model.ishot, new { @class = "form-control" })
+                    </div>
+                    @Html.ValidationMessageFor(model => model.ishot)
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.isnew, new { @class = "col-sm-2 control-label" })
+                    <div class="col-sm-3">
+                        @Html.CheckBoxFor(model => model.isnew, new { @class = "form-control" })
+                    </div>
+                    @Html.ValidationMessageFor(model => model.isnew)
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.img, new { @class = "col-sm-2 control-label" })
+                    <div class="col-sm-10">
+                        <input type="file" name="image" id="mymercimage" multiple class="file-loading" />
+                    </div>
+                </div>
+                <div class="form-group" style="margin:0px">
+                    @Html.LabelFor(model => model.description, new { @class = "col-sm-2 control-label" })
+
+                </div>
+                <div class="form-group" style="margin:0px">
+                    <div class="col-sm-2"></div>
+                    <div class="col-sm-10" style="display:block;padding:0px;">
+                        <script id="editor" type="text/plain" style="display:block;width:100%;height:500px;">
+                        </script>
+                    </div>
+                    @Html.ValidationMessageFor(model => model.description)
+                </div>
+                @Html.ValidationSummary(true)
+                <div class="form-group">
+                    <div class="col-sm-2">
+                    </div>
+                    <div class="col-sm-10" style="padding-top:10px;">
+                        <input type="button" value="保存" id="btnSave" class="btn btn-primary" />
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+    </form>
+</div>
+<script type="text/javascript">
+    $(function () {
+        $("#@Html.IdFor(model => model.inuse)").bootstrapSwitch({onText:"启用",offText:"禁用"});
+        $("#@Html.IdFor(model => model.ishot)").bootstrapSwitch({onText:"是",offText:"否"});
+        $("#@Html.IdFor(model => model.isnew)").bootstrapSwitch({onText:"是",offText:"否"});
+    });
+
+    function initFileInput(ctrlName, uploadUrl, initialPreview, initialPreviewConfig) {
+        var $control = $('#' + ctrlName);
+        $control.fileinput({
+            initialPreview: initialPreview,
+            initialPreviewConfig: initialPreviewConfig,
+            initialPreviewAsData: true,
+            language: 'zh', //设置语言
+            uploadUrl: uploadUrl, //上传的地址
+            uploadAsync: false,
+            maxFileCount: 1,
+            validateInitialCount: true,
+            overwriteInitial: false,
+            allowedPreviewTypes: ['image'],
+            allowedFileExtensions: ['jpg', 'png', 'gif'],//接收的文件后缀
+            showUpload: false, //是否显示上传按钮
+            showRemove: false, // hide remove button
+            showCaption: false,//是否显示标题
+            browseClass: "btn btn-primary", //按钮样式
+            previewFileIcon: "<i class='glyphicon glyphicon-king'></i>",
+            showBrowse: false,
+            showClose: false,
+            showCancel: false,
+            browseOnZoneClick: true
+
+        }).on("filebatchselected", function (event, files) {
+            $control.fileinput("upload");
+        }).on('fileuploaded', function (event, data, id, index) {
+            bindDrag();
+            var responseData = data.response;
+            if (responseData.Code == "1") {
+                alert(responseData.Message);
+            }
+            else if (responseData.Code == "2") {
+                alert(responseData.Message);
+            }
+
+        });
+    }
+
+    function initImages() {
+        var uploadUrl = "@Url.Action("UploadImage","Manage",new { moduleType= (int)ModuleType.Product,  idmodule = Model.idproduct })";
+        var getImageUrl = "@Url.Action("AjaxImageList", "Manage")";
+        var deleteImageUrl = "@Url.Action("DeleteImages", "Manage",new { isAjax =true})";
+        $.post(getImageUrl, { idmodule: "@(Model.idproduct)", moduleType:@((int)ModuleType.Product), isAjax: true }, function (returndata) {
+            returndata = eval("(" + returndata + ")");
+            var initPreviewImage = [];
+            var initialPreviewConfig = [];
+            if (returndata.Code == 1) {
+                if (returndata.Content.length > 0) {
+                    for (var i = 0; i < returndata.Content.length; i++) {
+                        initPreviewImage.push(returndata.Content[i].path);
+                        var initialPreviewConfigItem = {
+                            url: deleteImageUrl,
+                            key: returndata.Content[i].idimage,
+                            extra: { idmodule: returndata.Content[i].idmodule, moduleType: "@((int)ModuleType.Product)" }
+                        };
+                        initialPreviewConfig.push(initialPreviewConfigItem);
+                    }
+                }
+            }
+            else if (returndata.Code == 2) {
+                alert("无法获取产品图片。");
+            }
+            initFileInput("mymercimage", uploadUrl, initPreviewImage, initialPreviewConfig);
+            bindDrag();
+        });
+    }
+
+    function bindDrag() {
+        $(".file-initial-thumbs").attr("id", "simpleList");
+        $(".file-preview-initial").addClass("list-group-item");
+        //$(".file-preview-initial").addClass("glyphicon-move");
+        if (document.getElementById('simpleList') != null) {
+            KvSortable.create(document.getElementById('simpleList'), {
+                handle: '.glyphicon-move',
+                animation: 150,
+                onEnd: function (evt) {
+
+                }
+            });
+        }
+    }
+
+    $(function () {
+        initImages();
+        var timeout = window.setInterval(bindDrag, 1000);
+
+        var ue = UE.getEditor('editor');
+        //对编辑器的操作最好在编辑器ready之后再做
+        ue.ready(function () {
+            //设置编辑器的内容
+            UE.getEditor('editor').setContent('@Html.Raw(!string.IsNullOrEmpty(Model.description) ? Model.description.Replace("\r", "").Replace("\n", "") : "")');
+        });
+
+        var basic_ue = UE.getEditor('basic_editor');
+        //对编辑器的操作最好在编辑器ready之后再做
+        basic_ue.ready(function () {
+            //设置编辑器的内容
+            UE.getEditor('basic_editor').setContent('@Html.Raw(!string.IsNullOrEmpty(Model.basicinfo) ? Model.basicinfo.Replace("\r", "").Replace("\n", ""):"")');
+        });
+
+        $("#btnSave").click(function () {
+            var productImages = "";
+            $(".kv-file-content").find("img").each(function (i, d) {
+                if (i == 0) {
+                    productImages += $(d).attr("src");
+                }
+                else {
+                    productImages += "," + $(d).attr("src");
+                }
+            });
+            $("#productImages").val(productImages);
+            var html = UE.getEditor('editor').getContent();
+            $("#@Html.IdFor(model=>model.description)").val(html);
+            var basic_info = UE.getEditor('basic_editor').getContent();
+            $("#@Html.IdFor(model=>model.basicinfo)").val(basic_info);
+
+            $("#form1").submit();
+        });
+    });
+
+</script>

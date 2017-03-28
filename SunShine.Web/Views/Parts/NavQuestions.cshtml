@@ -1,0 +1,50 @@
+﻿@using SunShine.Utils;
+@using SunShine.Model;
+@model List<ArticleViewModel>
+@{
+    Layout = null;
+}
+<div class="wt">
+    <div class="news_tt">
+        <div class="news_t2"><a href="@Url.Action("Index","Case",new {categoryCode="sunshinebrand",currentCategoryCode="commonquestion" })">常见问题</a></div>
+        <div class="more"><a href="@Url.Action("Index","Case",new {categoryCode="sunshinebrand",currentCategoryCode="commonquestion" })"><img src="~/Images/home/more_2.jpg"></a></div>
+    </div>
+    <div style="clear:both"></div>
+    @if (Model.Count > 0)
+    {
+        <div class="youshang">
+            <div class="tutu">
+                @if (!string.IsNullOrEmpty(Model.First().img))
+                {
+                    <a href="@Url.Action("Index","Case",new {idarticle=Model.First().idarticle })" title=""><img src="@Url.Content(Model.First().img)" alt=""  style="width:230px; height:141px; "></a>
+                }
+
+            </div>
+            <div class="right_news">
+                <p><a href="@Url.Action("Index","Case",new {idarticle=Model.First().idarticle })">@Model.First().title</a></p>
+                <span><a href="@Url.Action("Index","Case",new {idarticle=Model.First().idarticle })">@Model.First().content.RemoveHTMLAndGetByNum(60)<br><div style="color:red">了解更多</div></a></span>
+            </div>
+        </div>
+
+        <div class="wenti_box">
+            <ul>
+                @foreach (var item in Model)
+                {
+                    <li>
+                        <div class="datetime">@(item.cretime.Value.ToString("yyyy-MM-dd"))</div>
+                        <div class="wenben">
+                            <div class="case_question_item">
+                                <div class="itemdesc" style="margin-left:0;">
+                                    <div class="itemtitle"><img src="@Url.Content("~/Images/case/question.jpg")" />&nbsp;<a href="@Url.Action("Index","Case",new { idarticle=item.idarticle})">@item.title</a></div>
+                                    <div class="itemdetail"><img src="@Url.Content("~/Images/case/anwer.jpg")" />&nbsp;@(string.IsNullOrEmpty(item.content) ? "" : item.content.RemoveHTMLAndGetByNum(80))</div>
+                                </div>
+                            </div>
+                        @*@item.content.RemoveHTMLAndGetByNum(90)*@
+                        
+                        </div>
+                    </li>
+                }
+            </ul>
+        </div>
+    }
+</div>

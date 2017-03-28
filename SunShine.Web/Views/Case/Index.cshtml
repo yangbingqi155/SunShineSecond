@@ -1,0 +1,221 @@
+﻿@using SunShine.EF;
+@using SunShine.Model;
+@using SunShine.Utils;
+@using SunShine.Web.Utils;
+@model List<ArticleViewModel>
+@{
+    if (BrowerDetectorHelper.IsMobile())
+    {
+        Layout = "~/Views/Shared/_Mobile_Layout.cshtml";
+    }
+    else
+    {
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+    string currentCategoryCode = ViewData["currentCategoryCode"].ToString();
+    string categoryCode = ViewData["categoryCode"].ToString();
+    string idarticle = ViewData["idarticle"].ToString();
+    List<SiteCategory> navPath = (List<SiteCategory>)ViewData["navPath"];
+    var pageCount = Convert.ToInt32(ViewData["pageCount"]);
+    var pageIndex = Convert.ToInt32(ViewData["pageIndex"]);
+
+}
+<div class="case_box">
+
+    @if (!BrowerDetectorHelper.IsMobile())
+    {
+        <div class="case_left">
+            @{
+                Html.RenderAction("NavSuccessCases", "Parts", new { categoryCode = categoryCode, currentCategoryCode = currentCategoryCode });
+            }
+            @if (currentCategoryCode != "honor")
+            {
+                Html.RenderAction("NavHonors", "Parts");
+            }   
+            @{
+                Html.RenderAction("NavContactUs", "Parts");
+            }
+        </div>
+     }
+
+    <div class="case_right">
+        <div class="case_nav">
+            <div class="case_nav_icon"></div>
+            <div class="case_nav_title">
+                您现在的位置:
+                @for (int i = 0; i < navPath.Count; i++)
+                {
+                    if (i == 0)
+                    {
+                        <span><a href="@Url.Action("Index","Home")">@navPath[i].categoryname&nbsp;</a></span>
+                    }
+                    else
+                    {
+                        if (currentCategoryCode == @navPath[i].categorycode && Model.Count == 1 && pageIndex == 0 && !string.IsNullOrEmpty(idarticle))
+                        {
+                            <span>>&nbsp;<a href="@Url.Action("Index","Case",new {categoryCode=categoryCode,currentCategoryCode=currentCategoryCode })">@navPath[i].categoryname&nbsp;</a></span>
+                        }
+                        else
+                        {
+                            <span>
+                                >&nbsp;<a href="@Url.Action("Index","Case",new {categoryCode=categoryCode })">@navPath[i].categoryname</a>
+                            </span>
+                        }
+                    }
+                }
+                @if (Model.Count == 1 && pageIndex == 0 && !string.IsNullOrEmpty(idarticle) && Model.First().Category.categorycode != "commonquestion")
+                {
+                    <span>
+                        >&nbsp;
+                        @if (!BrowerDetectorHelper.IsMobile()) {
+                            @Model.First().title
+                        }
+                        else {
+                            @(string.IsNullOrEmpty(Model.First().title) ? "" : Model.First().title.RemoveHTMLAndGetByNum(6))
+                        }
+                    </span>
+                }
+            </div>
+        </div>
+        <div style="clear:both;"></div>
+        @if(BrowerDetectorHelper.IsMobile()) {
+            Html.RenderAction("Mobile_NavSuccessCases", "Parts",new { categoryCode= categoryCode, currentCategoryCode =currentCategoryCode});
+        }
+        <div class="case_list">
+            @if (Model.Count == 1 && pageIndex == 0)
+            {
+                Html.RenderPartial("_CaseItemPartial", Model.First());
+                if (currentCategoryCode == "contactus")
+                {
+                    <div class="baidu_map" id="map"></div>
+                }
+            }
+            else
+            {
+                if (BrowerDetectorHelper.IsMobile())
+                {
+                    Html.RenderPartial("_CaseListItemsPartial", Model);
+                }
+                else
+                {
+                    if (currentCategoryCode == "partner" || currentCategoryCode == "honor")
+                    {
+                        Html.RenderPartial("_CaseFloatListItemsPartial", Model);
+                    }
+                    else if (currentCategoryCode == "commonquestion")
+                    {
+                        Html.RenderPartial("_CaseQuestionItemsPartial", Model);
+                    }
+                    else
+                    {
+                        Html.RenderPartial("_CaseListItemsPartial", Model);
+                    }
+                }
+            }
+
+        </div>
+        <div class="sunshine_pager">
+            @Html.Raw(Url.PagerHTML(pageCount, pageIndex, "Index", "Case", ViewContext.RouteData.Values))
+        </div>
+    </div>
+    <div style="clear:both;"></div>
+</div>
+@{
+    if (BrowerDetectorHelper.IsMobile())
+    {
+        <div class="mobile_content_box">
+            <img class="make_step_img" src="~/Images/home/make_step.jpg" />
+        </div>
+        Html.RenderAction("CaseListItemsScroll", "Parts");
+    }
+    if (!BrowerDetectorHelper.IsMobile())
+    {
+        Html.RenderAction("HotSale", "Parts");
+        Html.RenderPartial("_PartnerHeader");
+        Html.RenderAction("Partner", "Parts");
+        Html.RenderPartial("_HistoryBannerPartial", null);
+    }
+    if (BrowerDetectorHelper.IsMobile())
+    {
+        Html.RenderAction("CoreAdvance", "Parts");
+        Html.RenderPartial("_CustomerSupportTitlePartial", null);
+        Html.RenderAction("Mobile_Partner", "Parts");
+    }
+
+
+    if (BrowerDetectorHelper.IsMobile())
+    {
+        Html.RenderAction("Mobile_Bottom_Honor", "Parts");
+    }
+    if (!BrowerDetectorHelper.IsMobile())
+    {
+        Html.RenderAction("InstroductionCompany", "Parts");
+    }
+    Html.RenderPartial("_CustomizeFlowPartial", null);
+
+}
+@if (currentCategoryCode == "contactus")
+{
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=111fwUsHnc0M5mQ84FLGHdRb"></script>
+    <script type="text/javascript">
+        //创建和初始化地图函数：
+        function initMap() {
+            createMap();//创建地图
+            setMapEvent();//设置地图事件
+            addMapControl();//向地图添加控件
+            addMapOverlay();//向地图添加覆盖物
+        }
+        function createMap() {
+            map = new BMap.Map("map");
+            map.centerAndZoom(new BMap.Point(114.289854, 30.583954), 18);
+        }
+        function setMapEvent() {
+            map.enableScrollWheelZoom();
+            map.enableKeyboard();
+            map.enableDragging();
+            map.enableDoubleClickZoom()
+        }
+        function addClickHandler(target, window) {
+            target.addEventListener("click", function () {
+                target.openInfoWindow(window);
+            });
+        }
+        function addMapOverlay() {
+            var markers = [
+              { content: "热线电话：4008-778-652<br/>手机：15671566365     18602760677<br/>地址：武汉市江汉区前进一路景江华庭110号御美广场三楼3802/3803/3804", title: "武汉市创意阳光广告有限公司", imageOffset: { width: -46, height: -21 }, position: { lat: 30.583752, lng: 114.289863 } }
+            ];
+            for (var index = 0; index < markers.length; index++) {
+                var point = new BMap.Point(markers[index].position.lng, markers[index].position.lat);
+                var marker = new BMap.Marker(point, {
+                    icon: new BMap.Icon("http://api.map.baidu.com/lbsapi/createmap/images/icon.png", new BMap.Size(20, 25), {
+                        imageOffset: new BMap.Size(markers[index].imageOffset.width, markers[index].imageOffset.height)
+                    })
+                });
+                var label = new BMap.Label(markers[index].title, { offset: new BMap.Size(25, 5) });
+                var opts = {
+                    width: 200,
+                    title: markers[index].title,
+                    enableMessage: false
+                };
+                var infoWindow = new BMap.InfoWindow(markers[index].content, opts);
+                marker.setLabel(label);
+                addClickHandler(marker, infoWindow);
+                map.addOverlay(marker);
+            };
+        }
+        //向地图添加控件
+        function addMapControl() {
+            var scaleControl = new BMap.ScaleControl({ anchor: BMAP_ANCHOR_BOTTOM_LEFT });
+            scaleControl.setUnit(BMAP_UNIT_IMPERIAL);
+            map.addControl(scaleControl);
+            var navControl = new BMap.NavigationControl({ anchor: BMAP_ANCHOR_TOP_LEFT, type: BMAP_NAVIGATION_CONTROL_LARGE });
+            map.addControl(navControl);
+            var overviewControl = new BMap.OverviewMapControl({ anchor: BMAP_ANCHOR_BOTTOM_RIGHT, isOpen: true });
+            map.addControl(overviewControl);
+        }
+        var map;
+        $(function () {
+            initMap();
+        });
+    </script>
+}

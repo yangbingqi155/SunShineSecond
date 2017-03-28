@@ -1,0 +1,46 @@
+﻿@using SunShine.Model;
+@model WebsiteInfoViewModel
+@{
+    Layout = null;
+}
+<div class="case_contactus_top">
+    <div class="case_contactus_title">联系我们</div>
+    <div class="case_contactus_more"><a href="@Url.Action("Index","Case",new { categoryCode="contactsunshine",currentCategoryCode= "contactus" })">更多+</a></div>
+    <div style="clear:both;"></div>
+</div>
+<div class="case_contactus_bottom">
+    <div class="contactusimg">
+        <img src="@Url.Content("~/Resource/Images/Article/contactusimg.jpg")" />
+    </div>
+    <div class="contactusphone">
+        <div class="contactus_phone_icon">
+            <img src="@Url.Content("~/Images/case/phone_icon.jpg")" />
+        </div>
+        <div class="contactus_phone_info">
+            <div class="contactus_phone_title">
+                全国免费咨询热线
+            </div>
+            <div class="contactus_phone_no">
+                @Model.hotphoneallcountry
+            </div>
+        </div>
+        <div style="clear:both;"></div>
+    </div>
+    <div class="contactuslist">
+        <ul>
+            <li style="margin-top:0;">咨询热线：@Model.hotphone</li>
+            @if (!string.IsNullOrEmpty(Model.hotphone2)) {
+                <li><span>&nbsp;@Model.hotphone2</span></li>
+            }
+
+            <li>咨询手机：@Model.phone</li>
+
+            <li>客服QQ：@Model.qq</li>
+            @if (!string.IsNullOrEmpty(Model.qq2)) {
+                <li><span>@Model.qq2</span></li>
+            }
+            <li>地址：@Model.address</li>
+        </ul>
+    </div>
+
+</div>

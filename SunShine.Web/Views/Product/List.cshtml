@@ -1,0 +1,129 @@
+﻿@using SunShine.Model;
+@using SunShine.Utils;
+@using SunShine.Web.Utils;
+@using SunShine.EF;
+@model List<ProductViewModel>
+@{
+    if (BrowerDetectorHelper.IsMobile())
+    {
+        Layout = "~/Views/Shared/_Mobile_Layout.cshtml";
+    }
+    else
+    {
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+    var pageCount = Convert.ToInt32(ViewData["pageCount"]);
+    var pageIndex = Convert.ToInt32(ViewData["pageIndex"]);
+}
+
+<div class="wrap">
+    @if (!BrowerDetectorHelper.IsMobile())
+    {
+        <div class="cp_left">
+            @{
+                Html.RenderAction("LeftProductCategory", "Parts");
+            }
+            @if (!string.IsNullOrEmpty(Request["idproduct"]))
+                {
+                    Html.RenderAction("NavHonors", "Parts");
+                    Html.RenderAction("NavContactUs", "Parts");
+                }
+        </div>
+                }
+    <div class="cp_right">
+        <div class="case_nav">
+            <div class="case_nav_icon"></div>
+            <div class="case_nav_title">
+                您现在的位置:<span>
+                    <a href="@Url.Action("Index","Home")">首页</a> >&nbsp;
+                    @if (string.IsNullOrEmpty(Request["keyword"]))
+                    {
+                        <a href="@Url.Action("List", "Product")">产品中心</a>
+                    }
+                    else
+                    {
+                        <span> &nbsp;产品搜索:@Request["keyword"]</span>
+                    }
+
+                    @if (ViewData["category"] != null)
+                    {
+                        ProductCategory category = (ProductCategory)ViewData["category"];
+                        if (string.IsNullOrEmpty(Request["idproduct"]))
+                        {
+                            <span> > &nbsp;@category.categoryname</span>
+                        }
+                        else
+                        {
+                            <span> > &nbsp;</span><a href="@Url.Action("List","Product",new { idcategory=category.idcategory})">@category.categoryname</a>
+                        }
+                    }
+                </span>
+            </div>
+        </div>
+        <div style="clear:both;"></div>
+        <div class="tab_box">
+            <ul id="tab_conbox">
+                <li>
+                    @*<div class="more1"><a href="@Url.Action("List","Product")"><img src="~/images/home/more1.jpg"></a></div>*@
+                    @{
+                        if (Model.Count == 1 && pageIndex == 0)
+                        {
+                            Html.RenderPartial("_ProductItemDetailPartial", Model.First());
+                        }
+                        else
+                        {
+                            Html.RenderPartial("_ProductItemPartial", Model);
+                        }
+                    }
+                    <div class="sunshine_pager">
+                        @Html.Raw(Url.PagerHTML(pageCount, pageIndex, "List", "Product", ViewContext.RouteData.Values))
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+</div>
+@if (BrowerDetectorHelper.IsMobile())
+{
+    <div class="mobile_content_box">
+        <img class="make_step_img" src="~/Images/home/make_step.jpg" />
+    </div>
+}
+
+@{
+    Html.RenderAction("CaseListItemsScroll", "Parts");
+    if (!BrowerDetectorHelper.IsMobile())
+    {
+        Html.RenderAction("HotSale", "Parts");
+        Html.RenderPartial("_PartnerHeader");
+        Html.RenderAction("Partner", "Parts");
+    }
+    if (BrowerDetectorHelper.IsMobile()) {
+        Html.RenderAction("CoreAdvance", "Parts");
+    }
+    if (BrowerDetectorHelper.IsMobile())
+    {
+        Html.RenderPartial("_CustomerSupportTitlePartial", null);
+        Html.RenderAction("Mobile_Partner", "Parts");
+    }
+    if (!BrowerDetectorHelper.IsMobile())
+    {
+        Html.RenderPartial("_HistoryBannerPartial", null);
+    }
+
+
+    if (BrowerDetectorHelper.IsMobile())
+    {
+        Html.RenderAction("Mobile_Bottom_Honor", "Parts");
+    }
+    if (!BrowerDetectorHelper.IsMobile())
+    {
+        Html.RenderAction("InstroductionCompany", "Parts");
+    }
+
+    Html.RenderPartial("_CustomizeFlowPartial", null);
+
+}
+
+

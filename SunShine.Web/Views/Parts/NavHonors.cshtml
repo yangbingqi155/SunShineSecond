@@ -1,0 +1,33 @@
+﻿@using SunShine.Model;
+@model List<ArticleViewModel>
+@{
+    Layout = null;
+}
+@{
+    if (Model != null && Model.Count > 0) {
+        <div class="case_honor_top">
+            <div class="case_honor_title">@Model.First().Category.categoryname</div>
+            <div class="case_honor_more"><a href="@Url.Action("Index","Case",new { categoryCode="successcase",currentCategoryCode="honor"})">更多+</a></div>
+            <div style="clear:both;"></div>
+        </div>
+        <div class="case_honor_bottom">
+            <ul>
+                @for (int i = 0; i < Model.Count; i++)
+                {<li>
+                    <div class="honoritem">
+                        <div class="honor_img">
+                            @if (!string.IsNullOrEmpty(Model[i].img)) {
+                        <a href="@Url.RouteUrl("case_detail",new {idarticle=Model[i].idarticle })"><img src="@Url.Content(Model[i].img)" /></a>
+                        }
+                        </div>
+                        <div class="honor_img_title">
+                            <a href="@Url.RouteUrl("case_detail",new {idarticle=Model[i].idarticle })">@Model[i].title</a>
+                        </div>
+                    </div>
+                </li>
+                }
+            </ul>
+        </div>
+    }
+}
+

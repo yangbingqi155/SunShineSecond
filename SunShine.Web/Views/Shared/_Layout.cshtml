@@ -1,0 +1,147 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewBag.Title</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="description" content="@ViewBag.Description" />
+    <meta name="keywords" content="@ViewBag.Keywords" />
+    <link rel="stylesheet" href="@Url.Content("~/Css/Bootstrap/bootstrap.min.css?v=20161114")" />
+    <link href="~/Css/Bootstrap/style.css" rel="stylesheet" />
+    <link href="~/Css/Bootstrap/home.css" rel="stylesheet" />
+    <link href="@Url.Content("~/Css/public.css")" rel="stylesheet" />
+    <script type="text/javascript" src="@Url.Content("~/Scripts/jQuery/jquery-1.10.2.min.js?v=20161114")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Bootstrap/bootstrap.min.js?v=20161114")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Bootstrap/ScrollPic.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Bootstrap/home.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/posfixed.js")"></script>
+    <script type="text/javascript">
+        $(document).ready(function () { $(".gundongxiaoguo").imgscroll({ speed: 40, amount: 0, width: 2, dir: "left" }); });
+        $(document).ready(function () { $(".case_honor_bottom").imgscroll({ speed: 40, amount: 0, width: 2, dir: "up" }); });
+        $(document).ready(function () { $(".wenti_box").imgscroll({ speed: 40, amount: 0, width: 2, dir: "up" }); });
+
+        $(document).ready(function () {
+            $(".tablist").posfixed({
+                distance: 0,
+                pos: "top",
+                type: "while",
+                hide: false
+            });
+        });
+
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?a0c5bb60978d1e0cf6a285266591a228";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+
+    </script>
+
+
+</head>
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1261169669'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1261169669' type='text/javascript'%3E%3C/script%3E"));</script>
+<body>
+
+    <script src="http://stat.xiaonaodai.com/stat.php?id=11192140" language="JavaScript" type="text/javascript"></script>
+
+        <div class="header hidden-xs">
+            <div class="top">
+                <div class="welcome">您好，欢迎来到创意阳光广告有限公司官方网站</div>
+                <span> <a href="javascript:AddFavorite('创意阳光',location.href)">收藏本站</a>&nbsp;&nbsp;|<a href="@Url.Action("SiteMap","Home")">网站地图</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="@Url.Action("Index", "Case", new { categoryCode = "sunshinebrand", currentCategoryCode = "commonquestion" })">常见问题</a>&nbsp; &nbsp;|&nbsp;&nbsp;<a href="@Url.Action("Index", "Case", new { categoryCode = "contactsunshine", currentCategoryCode = "contactus" })">联系我们</a>&nbsp; &nbsp;</span>
+            </div>
+            <div style="clear:both"></div>
+        </div>
+        <div style="width:1400px;height:1px;margin:0px auto"><hr /></div>
+
+
+        <div class="center">
+            <div class="logo">
+                <a href="@Url.Action("Index", "Home")">  <img src="~/Images/home/fgz_05.jpg" width="690" height="116" />    </a>
+            </div>
+            <div class="telephonenumber">
+
+            </div>
+            <div style="clear:both"></div>
+        </div>
+
+     
+
+
+        <div class="tablist1" id="pro_list1">
+            <div class="tablist">
+                <ul>
+                    <li><a href="@Url.Action("Index", "Home")">创意阳光首页</a></li>
+                    <li><a href="@Url.Action("List", "Product", new { categoryCode = "bgwall" })">背景墙发光字</a></li>
+                    <li><a title="武汉门头发光字制作|招牌制作安装|发光字制作|定做门头招牌|户外招牌制作|武汉创意广告" href="@Url.Action("List", "Product", new { categoryCode = "door" })">门头发光字</a></li>
+                    <li><a href="@Url.Action("List", "Product", new { categoryCode = "topfloor" })">楼顶发光字</a></li>
+                    <li><a href="@Url.RouteUrl("product_list")")">产品中心</a></li>
+                    <li><a href="@Url.Action("Index", "Case", new { categoryCode = "successcase" })">成功案例</a></li>
+                    <li><a href="@Url.Action("Index", "Case", new { categoryCode = "sunshinebrand" })">品牌创意阳光</a></li>
+                    <li><a href="@Url.Action("Index", "Case", new { categoryCode = "contactsunshine" })">关于创意阳光</a></li>
+                </ul>
+            </div>
+        </div>
+      <div style="clear:both"></div>
+        @{
+            Html.RenderAction("HomeAdvertise", "Parts");
+        }
+
+        <div class="search">
+            @{
+                Html.RenderAction("HotSearch", "Parts");
+            }
+            
+            <div class="ss">
+                <form id="form1" action="@Url.Action("List","Product")">
+                    <input name="keyword" type="text" id="txtSearch" class="input" value="@Request["keyword"]" />
+                    <span>
+                        <input type="image" name="btnSeach" id="btnSeach" src="~/Images/home/fgz_11.gif" style="border-width:0px;width:34px; height:33px; padding:0" />
+                    </span>
+                </form>
+            </div>
+        </div>
+        @RenderBody()
+        @{ Html.RenderAction("BottomProductCategory", "Parts");}
+
+        
+        <div class="honor_box">
+            <div class="honor_top">
+                <img src="~/Images/home/honor.jpg" />
+            </div>
+            @{
+                Html.RenderAction("FriendURL", "Parts");
+            }
+        </div>
+        <div class="site_bottom_bg">
+            <div class="site_bottom">
+                <div class="site_bottom_left">
+                    <img src="~/Images/home/bottom_logo.jpg" style="width:277px" />
+                </div>
+                @{
+                    Html.RenderAction("BottomWebsiteInfo", "Parts");
+                }
+            </div>
+
+        </div>
+
+    <div style="width:100%;height:50px;background:#383D41"></div>
+
+    <div class="fud">
+        <div class="fudong">
+            <a href="">
+                <img src="~/Images/home/ab_62.gif" border="0" usemap="#Map">
+                <map name="Map" id="Map">
+                    <area shape="rect" coords="712,9,841,41" target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=3317300173&amp;site=qq&amp;menu=yes">
+                    <area shape="rect" coords="851,11,978,43" href="/">
+                </map>
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>

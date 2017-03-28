@@ -1,0 +1,31 @@
+﻿@using SunShine.Model;
+@model List<SiteCategoryViewModel>
+@{
+    Layout = null;
+}
+@{
+    if (Model != null && Model.Count > 0) {
+        <div class="success_case_top">
+            <div class="success_case_title">@Model.First().ParentCategory.categoryname</div>
+            <div class="success_case_subtitle">
+                <div class="subtitle_left"></div>
+                <div class="subtitle_center">@Model.First().ParentCategory.englishname</div>
+                <div class="subtitle_right"></div>
+                <div style="clear:both;"></div>
+            </div>
+        </div>
+        <div class="success_case_bottom">
+            @for (int i = 0; i < Model.Count; i++) {
+                if (i == 0) {
+                    <div class="case_category_title" style="margin-top:0px;"><a href="@Url.Action("Index","Case",new { categoryCode=Model.First().ParentCategory.categorycode,currentCategoryCode= Model[i].categorycode })">@Model[i].categoryname</a></div>
+                }
+                else {
+                    <div class="case_category_title"><a href="@Url.Action("Index","Case",new { categoryCode=Model.First().ParentCategory.categorycode,currentCategoryCode= Model[i].categorycode})">@Model[i].categoryname</a></div>
+                }
+            }
+        </div>
+    }
+}
+
+
+

@@ -1,0 +1,1696 @@
+﻿
+@charset "utf-8";
+
+html {
+    font-size: 12px;
+    text-align: left;
+    word-break: break-all;
+    text-overflow: ellipsis;
+    font-family: "Microsoft YaHei";
+}
+
+body {
+    font-size: 12px;
+    color: #666;
+}
+
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, button, textarea, p, blockquote, th, td, b, img {
+    padding: 0;
+    margin: 0;
+    border: 0 none;
+}
+
+img, input {
+    border: 0;
+    vertical-align: middle;
+}
+
+ul, li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+form {
+    padding: 0;
+    margin: 0;
+}
+
+td {
+    FONT-SIZE: 12px;
+}
+
+img {
+    border: 0;
+}
+
+a {
+    COLOR: #222;
+    blr: expression(this.onFocus=this.blur());
+    text-decoration: none;
+}
+
+    a:focus {
+        outline: 0;
+    }
+
+    a:hover {
+        color: #ff7c02;
+        text-decoration: none;
+    }
+
+html {
+    overflow-x: hidden;
+}
+
+hr {
+    margin: 0px;
+    padding: 0px;
+}
+
+.header {
+    width: 100%;
+    background: url(../images/fgz_01.jpg) no-repeat center 0px;
+}
+
+.top {
+    width: 1000px;
+    height: 35px;
+    margin: 0 auto;
+}
+
+    .top span {
+        height: 35px;
+        line-height: 35px;
+        float: right;
+    }
+
+    .top a {
+        margin: 0 5px;
+    }
+
+.welcome {
+    float: left;
+    height: 35px;
+    line-height: 35px;
+}
+
+.center {
+    width: 1000px;
+    margin: 0 auto;
+    height: 116px;
+}
+
+.logo {
+    float: left;
+}
+
+.phone {
+    float: right;
+}
+
+.tablist1 {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.tablist {
+    width: 100%;
+    height: 53px;
+    background: #383431;
+    max-width: 1440px;
+    z-index: 9999;
+}
+
+    .tablist ul {
+        width: 1000px;
+        height: 53px;
+        line-height: 53px;
+        margin: 0 auto;
+        overflow: hidden;
+    }
+
+        .tablist ul li {
+            float: left;
+            font-size: 16px;
+            text-align: center;
+            height: 53px;
+            line-height: 53px;
+            width: 111px;
+            margin: 0 7px;
+        }
+
+    .tablist .no {
+        background: none;
+    }
+
+    .tablist ul li a {
+        color: #fff;
+    }
+
+    .tablist ul li:hover {
+        background: #E15517;
+    }
+
+    .tablist ul li.hovers {
+        background: #E15517;
+    }
+
+.nav_scroll {
+    margin: 0 auto;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    max-width: 1920px;
+    z-index: 999;
+}
+
+.banner {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0px auto;
+    overflow: hidden;
+    margin-top: 2px;
+}
+
+.n_banner {
+    width: 1000px;
+    margin: 0px auto;
+    height: 250px;
+    overflow: hidden;
+}
+
+.fullSlide {
+    width: 100%;
+    position: relative;
+    background: #EEE;
+    margin: 0 auto;
+}
+
+    .fullSlide .md {
+        margin: 0 auto;
+        position: relative;
+        z-index: 0;
+        overflow: hidden;
+    }
+
+        .fullSlide .md ul {
+            width: 100% !important;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .fullSlide .md li {
+            width: 100% !important;
+            height: 446px;
+            overflow: hidden;
+            text-align: center;
+        }
+
+            .fullSlide .md li a {
+                display: block;
+                height: 446px;
+            }
+
+    .fullSlide .hd {
+        bottom: 31px;
+        height: 30px;
+        left: 0;
+        line-height: 30px;
+        margin: 0 auto;
+        position: relative;
+        width: 1000px;
+        z-index: 1;
+    }
+
+        .fullSlide .hd ul {
+            float: right;
+            list-style: outside none none;
+            margin: 0 auto;
+            padding: 0;
+            text-align: center;
+            width: 100px;
+        }
+
+            .fullSlide .hd ul li {
+                cursor: pointer;
+                display: inline-block;
+                *display: inline;
+                zoom: 1;
+                width: 18px;
+                margin: 5px 2px;
+                overflow: hidden;
+                color: #fff;
+                height: 18px;
+                line-height: 18px;
+                background: #cc0000;
+                border: 1px #cc0000 solid;
+                font-size: 12px;
+            }
+
+            .fullSlide .hd ul .on {
+                background: #fff;
+                color: #000;
+                border: 1px #cc0000 solid;
+            }
+
+
+
+
+.search {
+    width: 1000px;
+    max-width: 1440px;
+    margin: 20px auto;
+    height: 33px;
+    line-height: 33px;
+}
+
+.ss {
+    width: 295px;
+    float: right;
+    position: relative;
+}
+
+    .ss input {
+        width: 245px;
+        height: 31px;
+        border: 1px solid #c9c9c9;
+        padding-left: 5px;
+    }
+
+    .ss span {
+        width: 34px;
+        height: 33px;
+        position: absolute;
+        right: 10px;
+    }
+
+.keyword {
+    width: 682px;
+    height: 33px;
+    float: left;
+    overflow: hidden;
+    font-size: 13px;
+}
+
+.wrap {
+    width: 1010px;
+    margin: 10px auto;
+    overflow: hidden;
+}
+
+.zhankai {
+    width: 226px;
+    overflow: hidden;
+    background: #000;
+    height: 36px;
+    line-height: 36px;
+    color: #fff;
+    text-align: center;
+}
+
+.cp_list2 {
+    height: 778px;
+    overflow: hidden;
+}
+
+.cp_left {
+    width: 245px;
+    float: left;
+    background-color: #f5f5f5;
+}
+
+    .cp_left .cp_list2 ul {
+        width: 200px;
+        overflow: hidden;
+    }
+
+        .cp_left .cp_list2 ul li {
+            width: 200px;
+            height: 36px;
+            line-height: 30px;
+            text-indent: 35px;
+            margin: 12px auto;
+            background: url(../images/fgz_15.jpg) no-repeat;
+            font-size: 14px;
+            font-weight: 400;
+        }
+
+            .cp_left .cp_list2 ul li a {
+                color: #666;
+                display: block;
+            }
+
+            .cp_left .cp_list2 ul li ul {
+                width: 212px;
+                position: absolute;
+                margin-left: 200px;
+                z-index: 99;
+                margin-top: -33px;
+                display: none;
+                background-color: #fff;
+            }
+
+                .cp_left .cp_list2 ul li ul li {
+                    width: 193px;
+                    height: 32px;
+                    border-bottom: 1px #ccc dotted;
+                    line-height: 32px;
+                    margin: 0px auto;
+                }
+
+            .cp_left .cp_list2 ul li a:hover {
+                color: #fff;
+                background: url(../images/fgz_15x.jpg) no-repeat;
+            }
+
+            .cp_left .cp_list2 ul li.xz a {
+                color: #fff;
+                background: url(../images/fgz_15x.jpg) no-repeat;
+            }
+
+            .cp_left .cp_list2 ul li:hover ul {
+                display: block;
+            }
+
+
+    .cp_left .cp_list3 ul {
+        idth: 200px;
+        overflow: hidden;
+    }
+
+        .cp_left .cp_list3 ul li {
+            width: 200px;
+            height: 36px;
+            line-height: 30px;
+            text-indent: 35px;
+            margin: 12px auto;
+            background: url(../images/fgz_15.jpg) no-repeat;
+            font-size: 14px;
+            font-weight: 400;
+        }
+
+            .cp_left .cp_list3 ul li a {
+                color: #666;
+                display: block;
+            }
+
+            .cp_left .cp_list3 ul li ul {
+                width: 212px;
+                position: absolute;
+                margin-left: -210px;
+                z-index: 99;
+                margin-top: -33px;
+                display: none;
+                background-color: #fff;
+            }
+
+                .cp_left .cp_list3 ul li ul li {
+                    width: 193px;
+                    height: 32px;
+                    border-bottom: 1px #ccc dotted;
+                    line-height: 32px;
+                    margin: 0px auto;
+                }
+
+            .cp_left .cp_list3 ul li a:hover {
+                color: #fff;
+                background: url(../images/fgz_15x.jpg) no-repeat;
+            }
+
+            .cp_left .cp_list3 ul li.xz a {
+                color: #fff;
+                background: url(../images/fgz_15x.jpg) no-repeat;
+            }
+
+            .cp_left .cp_list3 ul li:hover ul {
+                display: block;
+            }
+
+
+
+
+.cp_right {
+    width: 744px;
+    float: right;
+    overflow: hidden;
+}
+
+    .cp_right .title {
+        width: 744px;
+        height: 46px;
+        line-height: 46px;
+        color: #FFF;
+        font-size: 20px;
+        font-weight: 500;
+        border-bottom: 2px solid #da251c;
+        position: relative;
+    }
+
+        .cp_right .title ul {
+            width: 300px;
+            height: 46px;
+            overflow: hidden;
+        }
+
+            .cp_right .title ul li {
+                width: 129px;
+                height: 44px;
+                float: left;
+                text-align: center;
+                margin-right: 8px;
+            }
+
+.more1 {
+    position: relative;
+    margin: -35px 10px 0 0px;
+    float: right;
+}
+
+.cp_right .title ul li a {
+    height: 44px;
+    color: #fff;
+    display: block;
+}
+
+.thistab a.tab {
+    background-color: #ff7c02;
+}
+
+.cp_list {
+    width: 744px;
+    float: right;
+}
+
+    .cp_list ul {
+        width: 744px;
+    }
+
+        .cp_list ul li {
+            width: 346px;
+            height: 319px;
+            margin: 30px 0 0 40px;
+            float: left;
+        }
+
+            .cp_list ul li:nth-child(odd) {
+                margin-left: 0;
+            }
+
+            .cp_list ul li .cp_img {
+                width: 357px;
+                height: 247px;
+                border: #c9c9c9 solid 1px;
+                overflow: hidden;
+            }
+
+.cp_list1 {
+    width: 744px;
+    float: right;
+}
+
+    .cp_list1 ul {
+        width: 744px;
+    }
+
+        .cp_list1 ul li {
+            width: 346px;
+            height: 319px;
+            margin: 45px 0 0 40px;
+            float: left;
+        }
+
+            .cp_list1 ul li:nth-child(odd) {
+                margin-left: 0;
+            }
+
+            .cp_list1 ul li .cp_img {
+                width: 357px;
+                height: 247px;
+                border: #c9c9c9 solid 1px;
+                overflow: hidden;
+            }
+
+.cp_name {
+    width: 357px;
+    height: 28px;
+    line-height: 28px;
+    background-color: #fff;
+    font-size: 14px;
+    overflow: hidden;
+    text-align: center;
+}
+
+    .cp_name a {
+        color: #333;
+        text-align: center;
+        display: block;
+        font-weight: bold;
+    }
+
+.zhanshi {
+    width: 1000px;
+    margin: 0px auto;
+    height: 275px;
+    border: #c9c9c9 solid 1px;
+}
+
+    .zhanshi .title {
+        width: 1000px;
+        height: 40px;
+        line-height: 40px;
+        background: #dededc;
+        font-size: 16px;
+        font-weight: 700;
+        border-bottom: 0px solid #fff;
+        position: relative;
+    }
+
+        .zhanshi .title ul {
+            width: 750px;
+            height: 40px;
+            overflow: hidden;
+        }
+
+            .zhanshi .title ul li {
+                width: 250px;
+                height: 40px;
+                float: left;
+                text-align: center;
+                color: #fff;
+            }
+
+.more1 {
+    position: relative;
+    margin: -35px 10px 0 0px;
+    float: right;
+}
+
+.zhanshi .title ul li a {
+    height: 46px;
+    color: #fff;
+    display: block;
+}
+
+.zhanshitupian {
+    width: 1000px;
+    float: right;
+    overflow: hidden;
+}
+
+    .zhanshitupian ul {
+        width: 1000px;
+        overflow: hidden;
+    }
+
+        .zhanshitupian ul li {
+            width: 230px;
+            height: 200px;
+            margin: 22px 0 0 20px;
+            float: left;
+        }
+
+            .zhanshitupian ul li:first-child {
+                margin: 22px 0 0 10px;
+            }
+
+            .zhanshitupian ul li .cp_img {
+                width: 230px;
+                height: 160px;
+                overflow: hidden;
+            }
+
+                .zhanshitupian ul li .cp_img a img {
+                    width: 230px;
+                    height: 160px;
+                }
+
+            .zhanshitupian ul li .cp_name {
+                width: 234px;
+                height: 28px;
+                line-height: 28px;
+                background-color: #fff;
+                font-size: 14px;
+                overflow: hidden;
+                text-align: center;
+                margin-top: 5px;
+                margin-left: 2px;
+            }
+
+                .zhanshitupian ul li .cp_name a {
+                    color: #666;
+                    text-align: center;
+                    display: block;
+                }
+
+.ckxq {
+    width: 300px;
+    margin: 0 30px;
+}
+
+.ckxq_left {
+    height: 30px;
+    line-height: 28px;
+    background-color: #F4F1EA;
+    border: 1px solid #da251c;
+    font-size: 15px;
+    /*font-weight: bold;*/
+    width: 124px;
+    text-align: center;
+    float: left;
+    margin-top: 13px;
+}
+
+.gengduo {
+    width: 100px;
+    height: 30px;
+    line-height: 28px;
+    border: #c9c9c9 1px solid;
+    margin: 10px auto;
+    background: #da251c;
+    border-radius: 20px;
+}
+
+    .gengduo a {
+        font-size: 14px;
+        text-align: center;
+        display: block;
+        color: #fff;
+    }
+
+.hezuo {
+    width: 190px;
+    height: 340px;
+    margin: 10px auto;
+    text-align: center;
+}
+
+    .hezuo h2 {
+        color: black;
+        margin-top: 10px;
+        font-weight: bold;
+        font-size: 15px;
+    }
+
+    .hezuo p {
+        line-height: 1.8;
+        font-size: 14px;
+        text-align: left;
+    }
+
+    .hezuo .caseimg {
+        width: 190px;
+        height: 126px;
+    }
+
+.ckxq_ljzx {
+    height: 30px;
+    line-height: 28px;
+    background-color: #F4F1EA;
+    border: 1px solid #da251c;
+    font-size: 15px;
+    width: 124px;
+    text-align: center;
+    float: right;
+    margin-top: 13px;
+    background: #da251c;
+}
+
+    .ckxq_ljzx a {
+        color: #fff;
+    }
+
+
+.cp_list .no_mar {
+    margin-right: 0px;
+}
+
+.zhanshitupian .no_mar {
+    margin-right: 0px;
+}
+
+.wrap1 {
+    width: 100%;
+    max-width: 1440px;
+    margin: 30px auto 0;
+    overflow: hidden;
+}
+
+.case {
+    max-width: 1440px;
+    margin: 0 auto;
+    height: 355px;
+    background: url(../images/fgz_14.jpg) no-repeat top center;
+    overflow: hidden;
+}
+
+.case_t h2 {
+    width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+    color: #3b3533;
+    font-size: 32px;
+    padding-top: 24px;
+}
+
+    .case_t h2 span {
+        color: #f37603;
+    }
+
+.case_t p {
+    width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+    color: #b3b3b3;
+    font-size: 24px;
+    text-transform: uppercase;
+    margin-top: 10px;
+}
+
+.content {
+    width: 1000px;
+    height: 355px;
+    margin: 80px auto 0;
+    text-align: center;
+}
+
+    .content ul {
+        width: 1000px;
+        margin: 0 auto;
+        position: relative;
+    }
+
+        .content ul li {
+            float: left;
+            width: 125px;
+            height: 130px;
+            text-align: center;
+            font-size: 20px;
+            position: absolute;
+        }
+
+        .content ul .No1 {
+            background: url(../images/fgz_16.png) no-repeat center;
+            left: 0px;
+            top: 0px;
+            transition: all ease .3s;
+            -ms-transition: all ease .3s;
+            -webkit-transition: all ease .3s;
+        }
+
+        .content ul .No2 {
+            background: url(../images/fgz_39.png) no-repeat center;
+            left: 125px;
+            top: 0px;
+            transition: all ease .3s;
+            -ms-transition: all ease .3s;
+            -webkit-transition: all ease .3s;
+        }
+
+        .content ul .No3 {
+            background: url(../images/fgz_40.png) no-repeat center;
+            left: 250px;
+            top: 0px;
+            transition: all ease .3s;
+            -ms-transition: all ease .3s;
+            -webkit-transition: all ease .3s;
+        }
+
+        .content ul .No4 {
+            background: url(../images/fgz_41.png) no-repeat center;
+            left: 375px;
+            top: 0px;
+            transition: all ease .3s;
+            -ms-transition: all ease .3s;
+            -webkit-transition: all ease .3s;
+        }
+
+        .content ul .No5 {
+            background: url(../images/fgz_42.png) no-repeat center;
+            left: 500px;
+            top: 0px;
+            transition: all ease .3s;
+            -ms-transition: all ease .3s;
+            -webkit-transition: all ease .3s;
+        }
+
+        .content ul .No6 {
+            background: url(../images/fgz_43.png) no-repeat center;
+            left: 625px;
+            top: 0px;
+            transition: all ease .3s;
+            -ms-transition: all ease .3s;
+            -webkit-transition: all ease .3s;
+        }
+
+        .content ul .No7 {
+            background: url(../images/fgz_44.png) no-repeat center;
+            left: 750px;
+            top: 0px;
+            transition: all ease .3s;
+            -ms-transition: all ease .3s;
+            -webkit-transition: all ease .3s;
+        }
+
+        .content ul .No8 {
+            background: url(../images/fgz_45.png) no-repeat center;
+            left: 875px;
+            top: 0px;
+            transition: all ease .3s;
+            -ms-transition: all ease .3s;
+            -webkit-transition: all ease .3s;
+        }
+
+        .content ul .No1:hover {
+            background: url(../images/fgz_17.png) no-repeat center;
+            width: 155px;
+            height: 155px;
+            position: absolute;
+            left: -15px;
+            top: -12.5px;
+            z-index: 999;
+            transition: all ease .3s;
+            -ms-transition: all ease .3s;
+            -webkit-transition: all ease .3s;
+        }
+
+        .content ul .No2:hover {
+            background: url(../images/fgz_46.png) no-repeat center;
+            width: 155px;
+            height: 155px;
+            position: absolute;
+            left: 110px;
+            top: -12.5px;
+            z-index: 999;
+            transition: all ease .3s;
+            -ms-transition: all ease .3s;
+            -webkit-transition: all ease .3s;
+        }
+
+        .content ul .No3:hover {
+            background: url(../images/fgz_47.png) no-repeat center;
+            width: 155px;
+            height: 155px;
+            position: absolute;
+            left: 235px;
+            top: -12.5px;
+            z-index: 999;
+            transition: all ease .3s;
+            -ms-transition: all ease .3s;
+            -webkit-transition: all ease .3s;
+        }
+
+        .content ul .No4:hover {
+            background: url(../images/fgz_48.png) no-repeat center;
+            width: 155px;
+            height: 155px;
+            position: absolute;
+            left: 360px;
+            top: -12.5px;
+            z-index: 999;
+            transition: all ease .3s;
+            -ms-transition: all ease .3s;
+            -webkit-transition: all ease .3s;
+        }
+
+        .content ul .No5:hover {
+            background: url(../images/fgz_49.png) no-repeat center;
+            width: 155px;
+            height: 155px;
+            position: absolute;
+            left: 485px;
+            top: -12.5px;
+            z-index: 999;
+            transition: all ease .3s;
+            -ms-transition: all ease .3s;
+            -webkit-transition: all ease .3s;
+        }
+
+        .content ul .No6:hover {
+            background: url(../images/fgz_50.png) no-repeat center;
+            width: 155px;
+            height: 155px;
+            position: absolute;
+            left: 610px;
+            top: -12.5px;
+            z-index: 999;
+            transition: all ease .3s;
+            -ms-transition: all ease .3s;
+            -webkit-transition: all ease .3s;
+        }
+
+        .content ul .No7:hover {
+            background: url(../images/fgz_51.png) no-repeat center;
+            width: 155px;
+            height: 155px;
+            position: absolute;
+            left: 735px;
+            top: -12.5px;
+            z-index: 999;
+            transition: all ease .3s;
+            -ms-transition: all ease .3s;
+            -webkit-transition: all ease .3s;
+        }
+
+        .content ul .No8:hover {
+            background: url(../images/fgz_52.png) no-repeat center;
+            width: 155px;
+            height: 155px;
+            position: absolute;
+            left: 860px;
+            top: -12.5px;
+            z-index: 999;
+            transition: all ease .3s;
+            -ms-transition: all ease .3s;
+            -webkit-transition: all ease .3s;
+        }
+
+.partner {
+    margin: 0 auto;
+    height: 378px;
+    overflow: hidden;
+}
+
+.content1 {
+    width: 1090px;
+    height: 378px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.content1_left {
+    float: left;
+    width: 25px;
+    height: 58px;
+    overflow: hidden;
+    margin-top: 160px;
+}
+
+.kehu {
+    width: 1030px;
+    margin: 0 auto;
+    float: left;
+    overflow: hidden;
+}
+
+    .kehu ul {
+        width: 1030px;
+        margin: 20px 0 0 5px;
+        overflow: hidden;
+    }
+
+        .kehu ul li {
+            width: 230px;
+            height: 335px;
+            border: #dcdcdc 2px solid;
+            float: left;
+            margin: 0 10px 0 14px;
+            overflow: hidden;
+        }
+
+.content1_right {
+    float: left;
+    width: 25px;
+    height: 58px;
+    overflow: hidden;
+    margin-top: 160px;
+}
+
+.advantage {
+    width: 100%;
+    max-width: 1440px;
+    background: url(../images/fgz_25.jpg) no-repeat center;
+    height: 778px;
+    overflow: hidden;
+    margin: 30px auto;
+    font-size: 16px;
+}
+
+.adv_box {
+    width: 1000px;
+    margin: 0px auto 0;
+    position: relative;
+    height: 778px;
+}
+
+.advantage .ys1 {
+    width: 160px;
+    height: 85px;
+    margin: 0 auto;
+    position: absolute;
+    overflow: hidden;
+    bottom: 59px;
+    left: 89px;
+}
+
+.advantage .ys2 {
+    width: 160px;
+    height: 85px;
+    margin: 0 auto;
+    position: absolute;
+    overflow: hidden;
+    bottom: 165px;
+    left: 54px;
+}
+
+.advantage .ys3 {
+    width: 160px;
+    height: 85px;
+    margin: 0 auto;
+    position: absolute;
+    overflow: hidden;
+    bottom: 309px;
+    left: 191px;
+}
+
+.advantage .ys4 {
+    width: 160px;
+    height: 85px;
+    margin: 0 auto;
+    position: absolute;
+    overflow: hidden;
+    top: 270px;
+    left: 322px;
+}
+
+.advantage .ys5 {
+    width: 160px;
+    height: 85px;
+    margin: 0 auto;
+    position: absolute;
+    overflow: hidden;
+    top: 270px;
+    left: 520px;
+}
+
+.advantage .ys6 {
+    width: 160px;
+    height: 85px;
+    margin: 0 auto;
+    position: absolute;
+    overflow: hidden;
+    bottom: 326px;
+    right: 145px;
+}
+
+.advantage .ys7 {
+    width: 160px;
+    height: 85px;
+    margin: 0 auto;
+    position: absolute;
+    overflow: hidden;
+    bottom: 165px;
+    right: 46px;
+}
+
+.advantage .ys8 {
+    width: 160px;
+    height: 85px;
+    margin: 0 auto;
+    position: absolute;
+    overflow: hidden;
+    bottom: 49px;
+    right: 80px;
+}
+
+.xiao_bb {
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+    background: url(../images/xgg.jpg) no-repeat center;
+    height: 153px;
+}
+
+.zx {
+    width: 353px;
+    height: 26px;
+    margin: 91px auto 0;
+    padding-left: 104px;
+}
+
+    .zx b {
+        font-weight: bold;
+        font-size: 30px;
+        color: #000;
+        line-height: 53px;
+    }
+
+    .zx a {
+        width: 106px;
+        height: 30px;
+        float: right;
+        margin-top: 5px;
+        text-indent: -9999px;
+    }
+
+.wrap3 {
+    width: 100%;
+    max-width: 1440px;
+    margin: 30px auto 0;
+    overflow: hidden;
+}
+
+.zhuanye {
+    width: 1000px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.zhuanzhu {
+    width: 238px;
+    height: 359px;
+    overflow: hidden;
+    margin-right: 15px;
+    float: left;
+}
+
+.none {
+    float: right;
+    margin-right: 0px;
+}
+
+.tupian {
+    height: 231px;
+    width: 238px;
+    overflow: hidden;
+}
+
+.wenzi {
+    height: 128px;
+    background: url(../images/fgz_30.png);
+}
+
+.wenzi1 {
+    height: 128px;
+    background: url(../images/fgz_31.png);
+}
+
+.wenzi2 {
+    height: 128px;
+    background: url(../images/fgz_32.png);
+}
+
+.wenzi3 {
+    height: 128px;
+    background: url(../images/fgz_33.png);
+}
+
+.zhuanye_t h2 {
+    width: 238px;
+    height: 30px;
+    color: #fff;
+    margin: 0 auto;
+    font-size: 30px;
+    line-height: 30px;
+    padding-top: 10px;
+    text-align: center;
+    overflow: hidden;
+}
+
+    .zhuanye_t h2 span {
+        font-size: 14px;
+        text-transform: uppercase;
+        font-weight: normal;
+    }
+
+.zhuanye_t h3 {
+    color: #FFF;
+    height: 54px;
+    font-size: 18px;
+    width: 179px;
+    text-align: center;
+    line-height: 30px;
+    margin: 15px auto 0;
+    overflow: hidden;
+}
+
+.ganyan {
+    max-width: 1440px;
+    height: 576px;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.content2 {
+    max-width: 1440px;
+    height: 468px;
+    overflow: hidden;
+    margin: 0 auto;
+    margin-top: 20px;
+    background-color: #f5f5f5;
+}
+
+.khgy {
+    width: 1000px;
+    margin: 0 auto;
+    background: url(../images/fgz_34.jpg) no-repeat -20px 0px;
+    overflow: hidden;
+}
+
+    .khgy ul {
+        width: 1000px;
+        overflow: hidden;
+    }
+
+        .khgy ul li {
+            width: 480px;
+            float: left;
+            margin-top: 30px;
+            margin-right: 20px;
+        }
+
+            .khgy ul li div {
+                width: 200px;
+                height: 168px;
+                border: 3px solid #fff;
+                overflow: hidden;
+                float: left;
+            }
+
+            .khgy ul li h2 {
+                float: left;
+                margin-left: 15px;
+                width: 250px;
+                height: 28px;
+                line-height: 28px;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                font-size: 16px;
+            }
+
+                .khgy ul li h2 a {
+                    color: #333;
+                }
+
+                    .khgy ul li h2 a:hover {
+                        color: #ff7c02;
+                    }
+
+            .khgy ul li p {
+                width: 250px;
+                height: 90px;
+                line-height: 18px;
+                margin-left: 15px;
+                margin-top: 15px;
+                float: left;
+                overflow: hidden;
+                font-size: 13px;
+                color: #666;
+            }
+
+            .khgy ul li span {
+                display: block;
+                float: left;
+                margin-left: 20px;
+                font-size: 13px;
+                line-height: 54px;
+            }
+
+                .khgy ul li span a {
+                    color: #ff6800;
+                }
+
+                    .khgy ul li span a:hover {
+                        text-decoration: underline;
+                    }
+
+.liucheng {
+    width: 100%;
+    margin: 20px auto;
+    height: 137px;
+    overflow: hidden;
+    position: relative;
+}
+
+.tu {
+    max-width: 1920px;
+    height: 137px;
+    position: absolute;
+    left: 50%;
+    margin-left: -960px;
+}
+
+.xiao_bb1 {
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+    background: url(../images/xgg2.jpg) no-repeat center;
+    height: 153px;
+}
+
+.zx1 {
+    width: 353px;
+    height: 26px;
+    margin: 46px auto 0;
+    padding-left: 929px;
+}
+
+    .zx1 b {
+        font-weight: bold;
+        font-size: 30px;
+        color: #fff;
+    }
+
+    .zx1 a {
+        width: 106px;
+        height: 30px;
+        float: right;
+        margin: 5px 239px 20px 10px;
+        text-indent: -9999px;
+    }
+
+.news {
+    width: 100%;
+    max-width: 1440px;
+    height: 441px;
+    margin: 30px auto;
+    overflow: hidden;
+}
+
+.news_center {
+    width: 1022px;
+    margin: 0 auto;
+    overflow: hidden;
+    height: 440px;
+    border: 1px solid #C0C0C0;
+    padding: 10px;
+    overflow: hidden;
+}
+
+.xw {
+    width: 500px;
+    float: left;
+    overflow: hidden;
+}
+
+.news_t {
+    width: 480px;
+    height: 35px;
+    line-height: 35px;
+    color: #333;
+    font-size: 25px;
+    font-weight: 700;
+    overflow: hidden;
+}
+
+    .news_t ul {
+        overflow: hidden;
+        width: 200px;
+        float: left;
+    }
+
+        .news_t ul li {
+            float: left;
+            text-align: left;
+        }
+
+
+
+            .news_t ul li a {
+            }
+            /*.news_t ul li.xuanz { background:url(../images/fgz_53.png) no-repeat bottom center;}*/
+            .news_t ul li.xuanz a {
+                color: #ff7c02;
+            }
+
+            .news_t ul li.no1 a {
+                border-left: none;
+                background: none;
+            }
+
+            .news_t ul li:hover {
+                color: #ff7c02;
+                background: url(../images/fgz_53.png) no-repeat bottom center;
+            }
+
+    .news_t .more {
+        float: right;
+        margin-top: 0px;
+    }
+
+.content4 {
+    width: 480px;
+    overflow: hidden;
+    margin-top: 15px;
+}
+
+.shang {
+    width: 480px;
+    height: 141px;
+    overflow: hidden;
+}
+
+.youshang {
+    width: 509px;
+    height: 141px;
+    overflow: hidden;
+    margin-top: 15px;
+}
+
+.tutu {
+    width: 230px;
+    height: 141px;
+    overflow: hidden;
+    float: left;
+}
+
+.right_news {
+    float: left;
+    width: 230px;
+    margin: 0px 0 0 15px;
+    overflow: hidden;
+}
+
+    .right_news p {
+        font-size: 13px;
+        color: #333;
+        width: 360px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+        display: block;
+        font-weight: bold;
+    }
+
+        .right_news p a {
+            color: #333;
+            font-size: 14px;
+        }
+
+            .right_news p a:hover {
+                color: #ff7c02;
+            }
+
+    .right_news span {
+        display: block;
+        height: 120px;
+        overflow: hidden;
+        line-height: 22px;
+        font-size: 12px;
+        color: #666;
+        margin-top: 10px;
+    }
+
+.xia {
+    overflow: hidden;
+    margin-top: 20px;
+}
+
+    .xia ul {
+        width: 480px;
+        height: 274px;
+        overflow: hidden;
+    }
+
+        .xia ul li {
+            width: 480px;
+            height: 35px;
+            overflow: hidden;
+            background: url(../images/fgz_56.png) no-repeat left center;
+            float: left;
+        }
+
+            .xia ul li a {
+                font-size: 12px;
+                font-weight: 500;
+                height: 35px;
+                line-height: 35px;
+                text-indent: 10px;
+                display: block;
+            }
+
+                .xia ul li a span {
+                    float: right;
+                }
+
+            .xia ul li img {
+                float: left;
+            }
+
+
+.yiny {
+    float: left;
+}
+
+.wt {
+    width: 480px;
+    overflow: hidden;
+    margin-left: 10px;
+    float: left;
+}
+
+.news_t2 {
+    width: 320px;
+    height: 35px;
+    line-height: 35px;
+    color: #333;
+    font-size: 25px;
+    font-weight: 700;
+    overflow: hidden;
+    float: left;
+}
+
+    .news_t2 a {
+    }
+
+.news_tt .more {
+    width: 59px;
+    float: right;
+    margin-top: 8px;
+}
+
+.wenti_box {
+    width: 480px;
+    overflow: hidden;
+    margin-top: 10px;
+}
+
+    .wenti_box ul li {
+        overflow: hidden;
+        border-bottom: 1px dashed #CCC;
+        height: 85px;
+        margin: 15px 0 0;
+        padding-bottom: 5px;
+    }
+
+        .wenti_box ul li p {
+            font-size: 14px;
+            height: 18px;
+            width: 450px;
+            line-height: 18px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            float: left;
+            font-weight: bold;
+        }
+
+        .wenti_box ul li dd {
+            width: 450px;
+            height: 35px;
+            line-height: 17px;
+            overflow: hidden;
+            color: #666;
+            float: left;
+            font-size: 13px;
+            margin-top: 12px;
+        }
+
+        .wenti_box ul li .datetime {
+            width: 80px;
+            float: left;
+            height: 60px;
+            color: red;
+        }
+
+        .wenti_box ul li .wenben {
+            width: 390px;
+            float: right;
+            line-height: 22px;
+        }
+
+.footer {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    min-height: 337px;
+    background: url(../images/fgz_60.jpg) no-repeat;
+    overflow: hidden;
+}
+
+.nav {
+    width: 860px;
+    margin: 130px auto 0;
+    overflow: hidden;
+}
+
+    .nav ul {
+        width: 860px;
+        margin: 0 auto;
+        height: 37px;
+        line-height: 37px;
+        overflow: hidden;
+    }
+
+        .nav ul li {
+            float: left;
+            font-size: 14px;
+            text-align: center;
+            height: 37px;
+            line-height: 37px;
+            margin: 0 auto;
+        }
+
+            .nav ul li a {
+                padding: 0 5px;
+            }
+
+                .nav ul li a:hover {
+                    cursor: pointer;
+                    color: #000;
+                }
+
+.foot_w {
+    width: 1000px;
+    margin: 30px auto 0;
+    overflow: hidden;
+}
+
+.ewm {
+    width: 103px;
+    height: 100px;
+    float: left;
+    margin: 0 25px;
+}
+
+.copyright {
+    float: left;
+    color: #000;
+    font-size: 14px;
+    line-height: 24px;
+}
+
+.phone2 {
+    float: right;
+    margin-top: 30px;
+}
+
+.view_detail_btn {
+        text-align: center;
+    float: left;
+    width: 110px;
+    padding: 2px 0;
+    font-size: 18px;
+    color: #FFFFFF;
+    background-color: #da251c;
+    margin-top: 34px;
+}
+
+    .view_detail_btn a {
+        color: #FFFFFF;
+    }

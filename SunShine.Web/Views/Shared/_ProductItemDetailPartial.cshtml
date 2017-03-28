@@ -1,0 +1,154 @@
+﻿@using SunShine.Model;
+@using SunShine.Utils;
+@using SunShine.Web.Utils;
+@model ProductViewModel
+@{
+    Layout = null;
+    string contactus = ViewData["contactus"].ToString();
+}
+
+@if (BrowerDetectorHelper.IsMobile())
+{
+    <script type="text/javascript">
+        $(function () {
+            $(".p_description_body > p").find("span").css("font-size", "30px");
+            $(".p_description_body > p").find("strong").css("font-size", "30px");
+            $(".p_basic > p").find("span").css("font-size", "30px");
+            $(".contact_us").find("img").css("width", "100%");
+            $(".contact_us").find("img").css("height", "auto");
+        });
+    </script>
+}
+<script type="text/javascript">
+    $(function () {
+        $("[name='desc_tab']").click(function () {
+            if ($(this).hasClass("not_current")) {
+                if ($(this).attr("id") == "detail_show") {
+                    $("#detail_show").removeClass("not_current");
+                    $("#contact_us").addClass("not_current");
+                    $("#product_desc_zone").show();
+                    $("#contact_us_zone").hide();
+                } else if ($(this).attr("id") == "contact_us") {
+                    $("#detail_show").addClass("not_current");
+                    $("#contact_us").removeClass("not_current");
+                    $("#product_desc_zone").hide();
+                    $("#contact_us_zone").show();
+                    var map;
+                    $(function () {
+                        initMap();
+                    });
+                }
+            }
+        });
+    });
+
+    </script>
+<div class="product_detail_box">
+    <div class="product_detail_top">
+        <div class="pimg">
+            @if (!string.IsNullOrEmpty(Model.img))
+            {
+                <img src="@Url.Content(Model.img)" />
+            }
+        </div>
+        <div class="p_basic_info">
+            <div class="p_title">
+                @Model.name
+            </div>
+            <div class="p_basic">
+                @Html.Raw( Model.basicinfo)
+            </div>
+            <div class="p_ask">
+                <div class="btn_ask">
+                    <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=3317300173&site=qq&menu=yes">立即咨询</a>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <div style="clear:both;"></div>
+    <div class="product_detail_bottom">
+        <div class="p_description_header">
+            <div name="desc_tab" id="detail_show" class="bgcolor_title_head desc_tab">
+                详情展示
+            </div>
+            <div name="desc_tab" id="contact_us" class="bgcolor_title_head desc_tab not_current">
+                联系我们
+            </div>
+            <div style="clear:both;"></div>
+        </div>
+        <div class="product_desc" id="product_desc_zone">
+            <div class="p_product_show_title">
+                产品展示
+            </div>
+            <div class="p_product_show_title_line">
+            </div>
+            <div class="p_description_body">
+                @Html.Raw(Model.description)
+            </div>
+        </div>
+        <div class="contact_us"  id="contact_us_zone" style="display:none;">
+            @Html.Raw(contactus)
+            <div  class="baidu_map" id="map"></div>
+            <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=111fwUsHnc0M5mQ84FLGHdRb"></script>
+            <script type="text/javascript">
+            //创建和初始化地图函数：
+            function initMap() {
+                createMap();//创建地图
+                setMapEvent();//设置地图事件
+                addMapControl();//向地图添加控件
+                addMapOverlay();//向地图添加覆盖物
+            }
+            function createMap() {
+                map = new BMap.Map("map");
+                map.centerAndZoom(new BMap.Point(114.289854, 30.583954), 18);
+            }
+            function setMapEvent() {
+                map.enableScrollWheelZoom();
+                map.enableKeyboard();
+                map.enableDragging();
+                map.enableDoubleClickZoom()
+            }
+            function addClickHandler(target, window) {
+                target.addEventListener("click", function () {
+                    target.openInfoWindow(window);
+                });
+            }
+            function addMapOverlay() {
+                var markers = [
+                  { content: "热线电话：4008-778-652<br/>手机：15671566365     18602760677<br/>地址：武汉市江汉区前进一路景江华庭110号御美广场三楼3802/3803/3804", title: "武汉市创意阳光广告有限公司", imageOffset: { width: -46, height: -21 }, position: { lat: 30.583752, lng: 114.289863 } }
+                ];
+                for (var index = 0; index < markers.length; index++) {
+                    var point = new BMap.Point(markers[index].position.lng, markers[index].position.lat);
+                    var marker = new BMap.Marker(point, {
+                        icon: new BMap.Icon("http://api.map.baidu.com/lbsapi/createmap/images/icon.png", new BMap.Size(20, 25), {
+                            imageOffset: new BMap.Size(markers[index].imageOffset.width, markers[index].imageOffset.height)
+                        })
+                    });
+                    var label = new BMap.Label(markers[index].title, { offset: new BMap.Size(25, 5) });
+                    var opts = {
+                        width: 200,
+                        title: markers[index].title,
+                        enableMessage: false
+                    };
+                    var infoWindow = new BMap.InfoWindow(markers[index].content, opts);
+                    marker.setLabel(label);
+                    addClickHandler(marker, infoWindow);
+                    map.addOverlay(marker);
+                };
+            }
+            //向地图添加控件
+            function addMapControl() {
+                var scaleControl = new BMap.ScaleControl({ anchor: BMAP_ANCHOR_BOTTOM_LEFT });
+                scaleControl.setUnit(BMAP_UNIT_IMPERIAL);
+                map.addControl(scaleControl);
+                var navControl = new BMap.NavigationControl({ anchor: BMAP_ANCHOR_TOP_LEFT, type: BMAP_NAVIGATION_CONTROL_LARGE });
+                map.addControl(navControl);
+                var overviewControl = new BMap.OverviewMapControl({ anchor: BMAP_ANCHOR_BOTTOM_RIGHT, isOpen: true });
+                map.addControl(overviewControl);
+            }
+         
+            </script>
+    </div>
+</div>
+</div>

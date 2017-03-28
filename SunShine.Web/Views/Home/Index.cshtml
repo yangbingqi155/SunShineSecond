@@ -1,0 +1,150 @@
+﻿@using SunShine.Model;
+@using SunShine.Web.Utils;
+@{
+    if (BrowerDetectorHelper.IsMobile())
+    {
+        Layout = "~/Views/Shared/_Mobile_Layout.cshtml";
+    }
+    else
+    {
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+
+    List<ProductViewModel> hotProducts = (List<ProductViewModel>)ViewData["hotProducts"];
+    List<ProductViewModel> newProducts = (List<ProductViewModel>)ViewData["newProducts"];
+}
+<script type="text/javascript">
+    $(function () {
+        $(".title_PopularProduct").mouseover(function () {
+            $(this).find("a").css("color", "#FFFFFF");
+            $(this).css("background", "#da251c");
+            $(".title_NewestProduct").css("background", "#DEDEDC");
+            $(".title_NewestProduct").find("a").css("color", "#333");
+            $(".PopularProduct").show();
+            $(".NewestProduct").hide();
+        })
+
+        $(".title_NewestProduct").mouseover(function () {
+            $(this).find("a").css("color", "#FFFFFF");
+            $(this).css("background", "#da251c");
+            $(".title_PopularProduct").css("background", "#DEDEDC");
+            $(".title_PopularProduct").find("a").css("color", "#333");
+            $(".PopularProduct").hide();
+            $(".NewestProduct").show();
+        })
+    });
+</script>
+<div class="wrap">
+    @if (!BrowerDetectorHelper.IsMobile())
+    {
+        <div class="cp_left">
+            @{
+                Html.RenderAction("LeftProductCategory", "Parts");
+            }
+        </div>
+                }
+
+    <div class="cp_right">
+        <div class="title">
+            <ul id="tabs">
+                <li class="title_PopularProduct" style="background:#da251c"><a href="" class="tab">热销产品</a></li>
+                <li class="title_NewestProduct" style="background:#DEDEDC"><a href="" class="tab">最新产品</a></li>
+            </ul>
+        </div>
+        <div class="tab_box">
+            <ul id="tab_conbox">
+                <li class="PopularProduct">
+
+                    @if (!BrowerDetectorHelper.IsMobile())
+                    {
+                        <div class="more1">
+                            <a href="@Url.Action("List", "Product")">
+                                <span style="font-size:17px;font-weight:500;font-family:'Microsoft YaHei'">More +</span>&nbsp; &nbsp;<img src="~/images/home/more1.jpg">
+                            </a>
+                        </div>
+                    }
+
+                    @{
+                        Html.RenderPartial("_ProductItemPartial1", hotProducts);
+                    }
+                </li>
+                <li class="NewestProduct" style="display:none;">
+                    @if (!BrowerDetectorHelper.IsMobile())
+                    {
+                        <div class="more1">
+                            <a href="@Url.Action("List", "Product")">
+                                <span style="font-size:17px;font-weight:500;font-family:'Microsoft YaHei'">More +</span>&nbsp;&nbsp;<img src="~/images/home/more1.jpg">
+                            </a>
+                        </div>
+                    }
+                    @{
+                        Html.RenderPartial("_ProductItemPartial1", newProducts);
+                    }
+                </li>
+            </ul>
+        </div>
+
+    </div>
+</div>
+
+<br />
+@if (BrowerDetectorHelper.IsMobile())
+{
+    <div class="mobile_content_box">
+        <img class="make_step_img" src="~/Images/home/make_step.jpg" />
+    </div>
+}
+else
+{
+}
+
+@{
+    Html.RenderAction("CaseListItemsScroll", "Parts");
+}
+
+@{
+    Html.RenderAction("CoreAdvance", "Parts");
+    if (!BrowerDetectorHelper.IsMobile())
+    {
+        Html.RenderPartial("_HistoryBannerPartial", null);
+    }
+    Html.RenderPartial("_CustomerSupportTitlePartial", null);
+    if (!BrowerDetectorHelper.IsMobile())
+    {
+        Html.RenderAction("Partner", "Parts");
+    }
+    else
+    {
+        Html.RenderAction("Mobile_Partner", "Parts");
+    }
+    if (!BrowerDetectorHelper.IsMobile())
+    {
+        Html.RenderAction("InstroductionCompany", "Parts");
+    }
+
+    Html.RenderPartial("_CustomizeFlowPartial", null);
+    if (BrowerDetectorHelper.IsMobile())
+    {
+        Html.RenderAction("Mobile_Bottom_Honor", "Parts");
+    }
+
+
+}
+
+@if (!BrowerDetectorHelper.IsMobile())
+{
+    <div class="news">
+        <div class="news_center">
+            @{
+                Html.RenderAction("NavNews", "Parts");
+            }
+            <div class="yiny"><img src="~/Images/home/fgz_59.jpg"></div>
+            @{
+                Html.RenderAction("NavQuestions", "Parts");
+            }
+            <div style="clear:both;"></div>
+        </div>
+    </div>
+                }
+
+

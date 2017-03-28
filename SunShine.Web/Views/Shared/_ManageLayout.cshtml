@@ -1,0 +1,69 @@
+﻿@{
+    ViewBag.Title = "Sun Shine-管理";
+    SunShine.EF.ManageUser mu = Session["ManageUser"] as SunShine.EF.ManageUser;
+    ViewBag.MUName = mu != null ? mu.username : "(>0.0<)!!!";
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Sun Shine管理</title>
+    <link rel="stylesheet" href="@Url.Content("~/Css/Bootstrap/bootstrap.min.css?v=20161114")" />
+    <link rel="stylesheet" href="@Url.Content("~/Css/bootstrap-datetimepicker/bootstrap-datetimepicker.min.css?v=20161114")" media="screen" />
+    <link rel="stylesheet" href="@Url.Content("~/Css/bootstrap-switch/bootstrap3/bootstrap-switch.min.css")" media="screen" />
+    <link rel="stylesheet" href="@Url.Content("~/Css/Validate/jQuery.Validate.css?v=20161114")" />
+    <link rel="stylesheet" href="@Url.Content("~/Css/Manage/Base.css?v=20161114")" />
+    <script type="text/javascript" src="@Url.Content("~/Scripts/jQuery/jquery-1.10.2.min.js?v=20161114")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Bootstrap/bootstrap.min.js?v=20161114")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/bootstrap-datetimepicker/bootstrap-datetimepicker.js?v=20161114")" charset="UTF-8"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.zh-CN.js?v=20161114")" charset="UTF-8"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/bootstrap-switch/bootstrap-switch.min.js")" charset="UTF-8"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/jQuery-validate/jquery.validate.min.js?v=20161114")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/jQuery-validate/jquery.validate.unobtrusive.min.js?v=20161114")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Pub.js?v=20161114")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Manage/Base.js?v=20161114")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Manage/checkbox_tool.js")"></script>
+</head>
+<body root="@Url.Content("~/")">
+    <div class="T">
+        <div class="TL">您好: @ViewBag.MUName-@SunShine.Utils.Pub.ID()</div>
+        <div class="TR"><a href="@Url.Action("SignOut","Manage")">注销</a></div>
+    </div>
+    <div class="C">
+        <div class="manageLeft">
+            <div class="panel panel-default">
+                <div class="panel-heading parentMenu">产品管理</div>
+                <div class="list-group">
+                    <a class="list-group-item" id="MercList" href="@Url.Action("ProductList","Manage")">产品列表</a>
+                    <a class="list-group-item" id="MercTypeList" href="@Url.Action("ProductCategoryList","Manage")">类别管理</a>
+                </div>
+                <div class="panel-heading parentMenu">文章管理</div>
+                <div class="list-group">
+                    <a class="list-group-item" id="articleList" href="@Url.Action("ArticleList","Manage")">文章列表</a>
+                    <a class="list-group-item" id="siteCategory" href="@Url.Action("SiteCategoryList","Manage")">网站类别</a>
+                </div>
+                <div class="panel-heading parentMenu">网站管理</div>
+                <div class="list-group">
+                    <a class="list-group-item" id="EditWebsite" href="@Url.Action("AdvertiseEdit","Manage",new { code="home"})">首页广告</a>
+                    <a class="list-group-item" id="EditWebsite" href="@Url.Action("AdvertiseEdit","Manage",new { code="mobile_home"})">手机版首页广告</a>
+                    <a class="list-group-item" id="EditWebsite" href="@Url.Action("WebsiteInfoEdit","Manage")">网站信息</a>
+                    <a class="list-group-item" id="FriendURLList" href="@Url.Action("FriendURLList","Manage")">友情链接</a>
+                    <a class="list-group-item" id="FriendURLList" href="@Url.Action("ManageUserPasswordEdit","Manage",new { iduser="636132731939680"})">修改登录密码</a>
+                </div>
+                <div class="panel-heading parentMenu">SEO</div>
+                <div class="list-group">
+                    <a class="list-group-item" id="EditWebsite" href="@Url.Action("SEOEdit","Manage",new {code="Home" })">首页SEO</a>
+                    <a class="list-group-item" id="EditWebsite" href="@Url.Action("SEOEdit","Manage",new {code="ProductList" })">产品中心页面SEO</a>
+                    <a class="list-group-item" id="EditWebsite" href="@Url.Action("SEOEdit","Manage",new {code="SiteMap" })">网站地图页面SEO</a>
+                </div>
+            </div>
+        </div>
+        <div class="manageRight">
+            @RenderBody()
+        </div>
+
+    </div>
+</body>
+</html>
+

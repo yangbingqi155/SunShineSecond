@@ -1,0 +1,39 @@
+﻿@using SunShine.Model;
+@using SunShine.Web.Utils;
+@model List<ArticleViewModel>
+@{
+    Layout = null;
+}
+@if (Model != null && Model.Count > 0)
+{
+    <div class="scroll_case_list_box">
+        <div class="picture_center">
+             @if (BrowerDetectorHelper.IsMobile()) {
+                <img class="scroll_case_list_header_img" src="~/Images/home/mobile_fuwubiaoyu_1.jpg" />
+             }
+             else {
+                <img src="~/Images/home/fuwubiaoyu_1.jpg" />
+             }
+            
+        </div>
+        <br />
+        <div class="gundongbejing">
+            <div class="gundongxiaoguo">
+                <ul>
+                    @foreach (var item in Model)
+                    {
+                        if (!string.IsNullOrEmpty(item.img))
+                        {
+                            <li><a href="@Url.Action("Index","Case",new{categoryCode="successcase",currentCategoryCode="partner" })"><img src="@Url.Content(item.img)" onload="DrawImage(this,256,176)"/></a></li>
+
+                        }
+                    }
+                </ul>
+                <div style="clear:both"></div>
+            </div>
+        </div>
+    </div>
+    <br />
+}
+
+

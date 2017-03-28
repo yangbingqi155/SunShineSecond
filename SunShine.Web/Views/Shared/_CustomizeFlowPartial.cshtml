@@ -1,0 +1,19 @@
+﻿@using SunShine.Web.Utils;
+@{
+    Layout = null;
+}
+
+<div class="customize_flow_header">
+    <div class="picture_center">
+        @if (BrowerDetectorHelper.IsMobile())
+        {
+            <img class="customize_flow_header_img" src="/Images/home/mobile_dingzhiliucheng_1_1.jpg" />
+            <img class="customize_flow_header_img_2" src="/Images/home/mobile_dingzhiliucheng_1_2.jpg" />
+        }
+        else
+        {
+            <img class="customize_flow_header_img" src="/Images/home/dingzhiliucheng_1.jpg" />
+        }
+
+    </div>
+</div>

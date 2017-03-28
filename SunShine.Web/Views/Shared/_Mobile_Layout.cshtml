@@ -1,0 +1,138 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewBag.Title</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="description" content="@ViewBag.Description" />
+    <meta name="keywords" content="@ViewBag.Keywords" />
+    <link rel="stylesheet" href="@Url.Content("~/Css/Bootstrap/bootstrap.min.css?v=20161114")" />
+    <link href="~/Css/mobile_style.css" rel="stylesheet" />
+    <link href="~/Css/mobile_home.css" rel="stylesheet" />
+    <link href="@Url.Content("~/Css/mobile_public.css")" rel="stylesheet" />
+    <script type="text/javascript" src="@Url.Content("~/Scripts/jQuery/jquery-1.10.2.min.js?v=20161114")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Bootstrap/bootstrap.min.js?v=20161114")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Bootstrap/ScrollPic.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Bootstrap/home.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/posfixed.js")"></script>
+    <script type="text/javascript">
+        $(document).ready(function () { $(".gundongxiaoguo").imgscroll({ speed: 40, amount: 0, width: 2, dir: "left" }); });
+        $(document).ready(function () { $(".case_honor_bottom").imgscroll({ speed: 40, amount: 0, width: 2, dir: "up" }); });
+        $(document).ready(function () { $(".wenti_box").imgscroll({ speed: 40, amount: 0, width: 2, dir: "up" }); });
+        $(document).ready(function () { $(".honor_content").imgscroll({ speed: 40, amount: 0, width: 2, dir: "left" }); });
+
+        $(document).ready(function () {
+            $(".mobile_bottom_menu").posfixed({
+                distance: 0,
+                pos: "bottom",
+                type: "while",
+                hide: false
+            });
+        });
+        //function getQueryByName(name) {
+        //    var result = location.search.match(
+        //    new RegExp("[\?\&]" + name + "=([^\&]+)", "i"));
+        //    if (result == null || result.length < 1) {
+        //        return "";
+        //    }
+        //    return result[1];
+        //}
+
+        //function ChangBackgroundColor(obj) {
+
+        //    alert("aaa");
+        //}
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?a0c5bb60978d1e0cf6a285266591a228";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+
+</head>
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://"); document.write(unescape("%3Cspan id='cnzz_stat_icon_1261169669'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1261169669' type='text/javascript'%3E%3C/script%3E"));</script>
+<body>
+    <div class="center">
+        <div class="logo">
+            <a href="@Url.Action("Index", "Home")">  <img src="~/Images/home/mobile_fgz_05.jpg" />    </a>
+        </div>
+        <div class="telephonenumber">
+            <div class="telleft">
+                <a href="tel:4008778652">
+                    <img src="@Url.Content("~/Images/home/hot_tel_icon.jpg")" />
+                </a>
+            </div>
+            <div class="telright">
+                <div class="rtop"><a href="tel:4008778652">免费咨询热线</a></div>
+                <div class="rbottom"><a href="tel:4008778652">4008-778-652</a></div>
+            </div>
+            @*<a href="tel:4008778652">
+                    <img src="/Images/home/fgz_06.jpg" />
+                </a>*@
+        </div>
+    </div>
+    <div style="clear:both"></div>
+
+
+
+    <div class="tablist1" id="pro_list1">
+        <div class="tablist">
+            <ul>
+                <li><a href="@Url.Action("Index", "Home")">创意阳光首页</a></li>
+                <li><a href="@Url.Action("List", "Product", new { categoryCode = "bgwall" })">背景墙发光字</a></li>
+                <li><a href="@Url.Action("List", "Product", new { categoryCode = "door" })">门头发光字</a></li>
+                <li><a href="@Url.Action("List", "Product", new { categoryCode = "topfloor" })">楼顶发光字</a></li>
+
+            </ul>
+            <ul>
+                <li><a href="@Url.RouteUrl("product_list")">产品中心</a></li>
+                <li><a href="@Url.Action("Index", "Case", new { categoryCode = "successcase" })">成功案例</a></li>
+                <li><a href="@Url.Action("Index", "Case", new { categoryCode = "sunshinebrand" })">品牌创意阳光</a></li>
+                <li><a href="@Url.Action("Index", "Case", new { categoryCode = "contactsunshine" })">关于创意阳光</a></li>
+            </ul>
+        </div>
+    </div>
+    <div style="clear:both"></div>
+    @{
+        Html.RenderAction("HomeAdvertise", "Parts");
+    }
+    @RenderBody()
+    @{ Html.RenderAction("Mobile_BottomProductCategory", "Parts");}
+
+    <div class="back_to_top"><a href="#">返回顶部</a></div>
+    @{
+        Html.RenderAction("Mobile_BottomWebsiteInfo", "Parts");
+    }
+    <div class="mobile_bottom_menu">
+        @*<div class="home_menu">
+               <a href="@Url.Action("Index","Home")"> <img src="~/Images/layout/home_menu.png" /></a>
+            </div>*@
+        <div class="menu_item">
+            <a href="http://wpa.qq.com/msgrd?v=3&uin=3317300173&site=qq&menu=yes"><img src="~/Images/layout/site_bottom1.jpg" /><br /></a>
+            <a href="http://wpa.qq.com/msgrd?v=3&uin=3317300173&site=qq&menu=yes">在线咨询</a>
+        </div>
+        <div class="menu_item">
+            <a href="tel:4008778652"><img src="~/Images/layout/site_bottom2.jpg" /><br /></a>
+            <a href="tel:4008778652">电话咨询</a>
+        </div>
+        <div class="menu_item" style="margin-top:-20px;z-index:100000;">
+            <a href="@Url.Action("Index","Home")"> <img style="width:110px" src="~/Images/layout/home_menu.png" /></a>
+        </div>
+        <div class="menu_item">
+            <a href="@Url.Action("List", "Product")"><img src="~/Images/layout/site_bottom3.jpg" /><br /></a>
+            <a href="@Url.Action("List", "Product")">商品分类</a>
+        </div>
+        <div class="menu_item">
+            <a href="@Url.Action("Index", "Case", new { categoryCode = "contactsunshine",currentCategoryCode="contactus" })"><img src="~/Images/layout/site_bottom4.jpg" /><br /></a>
+            <a href="@Url.Action("Index", "Case", new { categoryCode = "contactsunshine",currentCategoryCode="contactus" })">联系我们</a>
+        </div>
+    </div>
+    <div style="clear:both;"></div>
+</body>
+</html>

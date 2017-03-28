@@ -1,0 +1,16 @@
+﻿@using SunShine.Model;
+@using SunShine.Utils;
+@using SunShine.EF;
+@model List<FriendURL>
+@{
+    Layout = null;
+}
+@if (Model != null && Model.Count > 0) {
+    <div class="honor_bottom">
+        <div class="friend_link_title">友情链接：</div>
+        @foreach (var item in Model) {
+            <div class="friend_link"><a href="@item.url" target="_blank">@item.title</a></div>
+        }
+        <div style="clear:both;"></div>
+    </div>
+}

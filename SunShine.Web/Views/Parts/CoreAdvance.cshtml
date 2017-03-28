@@ -1,0 +1,183 @@
+﻿@using SunShine.Model;
+@using SunShine.Web.Utils;
+@{
+    Layout = null;
+    List<ArticleViewModel> ablity = (List<ArticleViewModel>)ViewData["ablity"];
+    List<ArticleViewModel> quality = (List<ArticleViewModel>)ViewData["quality"];
+    List<ArticleViewModel> goodprice = (List<ArticleViewModel>)ViewData["goodprice"];
+    List<ArticleViewModel> saleservice = (List<ArticleViewModel>)ViewData["saleservice"];
+
+}
+<div class="sidahexinyoushi">
+    @if (BrowerDetectorHelper.IsMobile()) {
+        <img src="~/Images/home/mobile_hexinyoushi.jpg" class="sidahexinyoushi_img" />
+    }
+    else {
+        <img src="~/Images/home/hexinyoushi.jpg" class="sidahexinyoushi_img" />
+    }
+   
+</div>
+
+<div class="advance_box">
+    <div class="advance_item  advance_item1">
+        <div class="left">
+            <img src="@Url.Content("~/Images/layout/advance_bg_1_1.jpg")" />
+            <ul class="advance_item_content_box">
+                @{ 
+                    int i = 0;
+                    foreach (var item in ablity) {
+                        i++;
+                        <li><div class="circle_index">@i</div> @Html.Raw(!string.IsNullOrEmpty(item.introduction) ? item.introduction : item.title)</li>
+                    }
+                }
+            </ul>
+            <div style="clear:both;"></div>
+        </div>
+        <div class="right">
+            <img src="@Url.Content("~/Images/layout/advance_bg_1_2.jpg")" />
+        </div>
+        <div style="clear:both;"></div>
+    </div>
+  
+    <div class="advance_item  advance_item2 bg_advance_gray">
+        <div class="left">
+            <img src="@Url.Content("~/Images/layout/advance_bg_2_1.jpg")" />
+        </div>
+        <div class="right">
+            <img src="@Url.Content("~/Images/layout/advance_bg_2_2.jpg")" />
+            <ul class="advance_item_content_box">
+                @{
+                    i = 0;
+                    foreach (var item in quality) {
+                        i++;
+                        <li><div class="circle_index">@i</div>@Html.Raw(!string.IsNullOrEmpty(item.introduction) ? item.introduction : item.title)</li>
+                    }
+                }
+                
+            </ul>
+            <div style="clear:both;"></div>
+        </div>
+        <div style="clear:both;"></div>
+    </div>
+    <div class="advance_item advance_item3">
+        <div class="left">
+            <img src="@Url.Content("~/Images/layout/advance_bg_3_1.jpg")" />
+            <ul class="advance_item_content_box">
+                @{
+                    i = 0;
+                    foreach (var item in goodprice) {
+                        i++;
+                        <li><div class="circle_index">@i</div>@Html.Raw(!string.IsNullOrEmpty(item.introduction) ? item.introduction : item.title)</li>
+                    }
+                }
+                
+            </ul>
+            <div style="clear:both;"></div>
+        </div>
+        <div class="right">
+            <img src="@Url.Content("~/Images/layout/advance_bg_3_2.jpg")" />
+        </div>
+        <div style="clear:both;"></div>
+    </div>
+    <div class="advance_item  advance_item4 bg_advance_gray">
+        <div class="left">
+            <img src="@Url.Content("~/Images/layout/advance_bg_4_1.jpg")" />
+        </div>
+        @*<div class="_advance_center">
+            <img src="@Url.Content("~/Images/layout/advance_bg_4_2.jpg")" />
+        </div>*@
+        <div class="right">
+            <img src="@Url.Content("~/Images/layout/advance_bg_4_3.jpg")" />
+            <ul class="advance_item_content_box">
+                @{
+                    i = 0;
+                    foreach (var item in saleservice) {
+                        i++;
+                        <li><div class="circle_index">@i</div>@Html.Raw(!string.IsNullOrEmpty(item.introduction) ? item.introduction : item.title)</li>
+                    }
+                }
+            </ul>
+            <div style="clear:both;"></div>
+        </div>
+        <div style="clear:both;"></div>
+    </div>
+</div>
+
+<div style="clear:both"></div>
+
+<div class="yongxinzuofuwu">
+    @if (BrowerDetectorHelper.IsMobile()) {
+        <img class="yongxinzuofuwu_img" src="~/Images/home/mobile_yongxinzuofuwu.jpg" />
+    }
+    else {
+        <img class="yongxinzuofuwu_img" src="~/Images/home/yongxinzuofuwu.jpg" />
+    }
+</div>
+
+<div class="chanpinduibi">
+   <div class="womenVSputomg">
+       <div class="womendechanpin">
+           <div class="wenzishuoming"><p>我们选取的超高亮LED模组灯，亮度、发光均匀，使用寿命长</p></div>
+           <img class="wenzishuoming_img" src="~/Images/home/vs_1.jpg" />
+       </div>
+
+       <div class="VS">
+           <img src="~/Images/home/VS.JPG" />
+       </div>
+       
+       <div class="putongdechanpin">
+           <img class="wenzishuoming_img" src="~/Images/home/vs_2.jpg" />
+           <div class="wenzishuoming"><p>普通发光字造价低、亮度低、发光不均匀、光衰严重</p></div>
+       </div>
+   </div>
+    <div style="clear:both;"></div>
+    <div class="womenVSputomg">
+        <div class="womendechanpin">
+            <div class="wenzishuoming"><p>进口亚克历颜色亮丽，不易褪色，发光均匀、亮度高，光线穿透和均匀扩散。</p></div>
+            <img class="wenzishuoming_img" src="~/Images/home/vs_3.jpg" />
+        </div>
+
+        <div class="VS">
+            <img src="~/Images/home/VS.JPG" />
+        </div>
+
+        <div class="putongdechanpin">
+            <img class="wenzishuoming_img" src="~/Images/home/vs_4.jpg" />
+            <div class="wenzishuoming"><p>普通发光字普通亚历克材料，易破裂、易褪色，不锈钢部分，容易生锈。</p></div>
+        </div>
+    </div>
+    <div style="clear:both;"></div>
+    <div class="womenVSputomg">
+        <div class="womendechanpin">
+            <div class="wenzishuoming"><p>我们可根据客户的需求，随意调配颜色，满足客户个性化需求。</p></div>
+            <img class="wenzishuoming_img" src="~/Images/home/vs_5.jpg" />
+        </div>
+
+        <div class="VS">
+            <img src="~/Images/home/VS.JPG" />
+        </div>
+
+        <div class="putongdechanpin">
+            <img class="wenzishuoming_img" src="~/Images/home/vs_6.jpg" />
+            <div class="wenzishuoming"><p>普通发光字颜色不鲜艳，易破裂、容易褪色</p></div>
+        </div>
+    </div>
+    <div style="clear:both;"></div>
+    <div class="womenVSputomg">
+        <div class="womendechanpin">
+            <div class="wenzishuoming"><p>优质亚克力面板，坚固耐用，色泽亮丽，发光均匀</p></div>
+            <img class="wenzishuoming_img" src="~/Images/home/vs_7.jpg" />
+        </div>
+
+        <div class="VS">
+            <img src="~/Images/home/VS.JPG" />
+        </div>
+
+        <div class="putongdechanpin">
+            <img class="wenzishuoming_img" src="~/Images/home/vs_8.jpg" />
+            <div class="wenzishuoming"><p>普通发光字发光不均匀，亮度不够</p></div>
+        </div>
+    </div> 
+    <div style="clear:both;"></div>
+</div>
+<div style="clear:both;"></div>

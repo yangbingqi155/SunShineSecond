@@ -1,0 +1,78 @@
+﻿@using SunShine.Utils;
+@using SunShine.Web.Utils;
+@using SunShine.Model;
+@using SunShine.EF;
+@model List<SiteCategoryViewModel>
+
+@{
+    Layout = "~/Views/Shared/_ManageLayout.cshtml";
+    var pageCount = Convert.ToInt32(ViewData["pageCount"]);
+    var pageIndex = Convert.ToInt32(ViewData["pageIndex"]);
+}
+<div class="ManageRightTitle">
+    <ol class="breadcrumb">
+        <li><a href="#">文章管理</a></li>
+        <li><a href="#" class="active">网站类别管理</a></li>
+    </ol>
+</div>
+<div class="ManageRightContent">
+    @*<div>
+        <a class="btn btn-primary" href="@Url.Action("SiteCategoryEdit","Manage")">新增</a>
+    </div>*@
+    <div>
+        @Html.Raw(Url.BootstrapPagerHTML(pageCount, pageIndex, "SiteCategoryList", "Manage", ViewContext.RouteData.Values))
+    </div>
+    <div class="list-box">
+        @if (Model.Count > 0)
+        {
+            <table class="table table-bordered table-hover table-striped">
+                <thead>
+                    <tr>
+                        <th>@(AttributeHelper.DisplayAttributeFor<SiteCategoryViewModel, SiteCategory>(en => en.ParentCategory))</th>
+                        <th>@(AttributeHelper.DisplayAttributeFor<SiteCategoryViewModel, String>(en => en.categoryname))</th>
+                        <th>@(AttributeHelper.DisplayAttributeFor<SiteCategoryViewModel, String>(en => en.englishname))</th>
+                        <th>@(AttributeHelper.DisplayAttributeFor<SiteCategoryViewModel, String>(en => en.categorycode))</th>
+                        @*<th>@(AttributeHelper.DisplayAttributeFor<SiteCategoryViewModel, bool>(en => en.inuse))</th>*@
+                        <th>@(AttributeHelper.DisplayAttributeFor<SiteCategoryViewModel, int>(en => en.pagesize))</th>
+                        <th>@(AttributeHelper.DisplayAttributeFor<SiteCategoryViewModel, DateTime?>(en => en.cretime))</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@(item.ParentCategory != null ? item.ParentCategory.categoryname : "")</td>
+                            <td>@item.categoryname</td>
+                            <td>@item.englishname</td>
+                            <td>@item.categorycode</td>
+                            @*<td>
+                                <div class="switch">
+                                    <input type="checkbox" onchange="enableModel('@Url.Action("SiteCategoryEnable", "Manage", new { idcategory = item.idcategory, enable = !item.inuse, isAjax = true })','@Url.Action("Login", "Manage")')" name="enableSiteCategory" @(item.inuse ? "checked" : "") />
+                                </div>
+                            </td>*@
+                            <th>@item.pagesize</th>
+                            <td>@item.cretime</td>
+                            <td>
+                                <a href="@Url.Action("SiteCategoryEdit","Manage",new {idcategory=item.idcategory,returnurl= Request.RawUrl })" class="btn btn-primary">编辑</a>
+                                <a href="@Url.Action("ArticleEdit","Manage",new {idcategory=item.idcategory,returnurl= Request.RawUrl })" class="btn btn-primary">新增文章</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+        else
+        {
+            <h2>还没有任何网站类别.</h2>
+        }
+
+    </div>
+</div>
+<script type="text/javascript">
+    $(function () {
+        $.fn.bootstrapSwitch.defaults.onText = '启用';
+        $.fn.bootstrapSwitch.defaults.offText = '禁用';
+        $("[name='enableSiteCategory']").bootstrapSwitch();
+    });
+</script>

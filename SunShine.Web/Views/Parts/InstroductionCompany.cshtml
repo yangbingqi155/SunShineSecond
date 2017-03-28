@@ -1,0 +1,132 @@
+﻿@using SunShine.Model;
+
+@{
+    Layout = null;
+
+    List<ArticleViewModel> showProductionCategories =( List<ArticleViewModel>)ViewData["showProductionCategories"];
+    List<ArticleViewModel> showOfficeCategories =( List<ArticleViewModel>)ViewData["showOfficeCategories"];
+    List<ArticleViewModel> showTeamnCategories =( List<ArticleViewModel>)ViewData["showTeamnCategories"];
+    showProductionCategories = showProductionCategories == null ? new List<ArticleViewModel>() : showProductionCategories;
+    showOfficeCategories = showOfficeCategories == null ? new List<ArticleViewModel>() : showOfficeCategories;
+    showTeamnCategories = showTeamnCategories == null ? new List<ArticleViewModel>() : showTeamnCategories;
+
+
+}
+<div class="zhanshi">
+    <div class="title">
+        <ul id="tabs">
+            <li style="background:#da251c" class="tab_1">创意阳光生产实力展示</li>
+            <li style="background:#5f6870" class="tab_2">创意阳光办公展示</li>
+            <li style="background:#838280" class="tab_3">创意阳光员工风采</li>
+        </ul>
+    </div>
+    <div class="tab_box">
+        <ul id="tab_conbox">
+            <li class="shengchanshilizhan">
+                <div class="more1"><a href="@Url.Action("Index","Case",new { categoryCode="show"})"><img src="/images/home/more1.jpg"></a></div>
+                <div class="zhanshitupian">
+
+                    <ul>
+
+                        @foreach (var item in showProductionCategories)
+                        {
+                            <li>
+                                <div class="cp_img">
+                                    @if (!string.IsNullOrEmpty(item.img))
+                                    {
+                                        <a href="@Url.Action("Index","Case",new { categoryCode="show"})" title="@item.title">
+                                            <img src="@Url.Content(item.img)" alt="@item.title">
+                                        </a>
+                                    }
+
+                                </div>
+                                <div class="cp_name"><a href="@Url.Action("Index","Case",new { categoryCode="show"})">@item.title</a></div>
+                            </li>
+                        }
+                    </ul>
+                </div>
+            </li>
+
+            <li class="bangongzhanshi" style="display:none">
+                <div class="more1"><a href="@Url.Action("Index","Case",new { categoryCode="show",currentCategoryCode= "showoffice" })"><img src="/images/home/more1.jpg"></a></div>
+                <div class="zhanshitupian">
+                    <ul>
+
+                        @foreach (var item in showOfficeCategories)
+                        {
+                            <li>
+                                <div class="cp_img">
+                                    @if (!string.IsNullOrEmpty(item.img))
+                                    {
+                                        <a href="@Url.Action("Index","Case",new { categoryCode="show",currentCategoryCode= "showoffice" })" title="@item.title">
+                                            <img src="@Url.Content(item.img)" alt="@item.title">
+                                        </a>
+                                    }
+
+                                </div>
+                                <div class="cp_name"><a href="@Url.Action("Index","Case",new { categoryCode="show",currentCategoryCode= "showoffice" })">@item.title</a></div>
+                            </li>
+                        }
+                    </ul>
+                </div>
+            </li>
+
+            <li class="yuangongfengcai" style="display:none">
+                <div class="more1"><a href="@Url.Action("Index","Case",new { categoryCode="show",currentCategoryCode="showteam"})"><img src="/images/home/more1.jpg"></a></div>
+                <div class="zhanshitupian">
+
+                    <ul>
+                        @foreach (var item in showTeamnCategories)
+                        {
+                            <li>
+                                <div class="cp_img">
+                                    @if (!string.IsNullOrEmpty(item.img))
+                                    {
+                                        <a href="@Url.Action("Index","Case",new { categoryCode="show",currentCategoryCode="showteam"})" title="@item.title">
+                                            <img src="@Url.Content(item.img)" alt="@item.title">
+                                        </a>
+                                    }
+                                </div>
+                                <div class="cp_name"><a href="@Url.Action("Index","Case",new { categoryCode="show",currentCategoryCode="showteam"})">@item.title</a></div>
+                            </li>
+                        }
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+</div>
+
+
+<script type="text/javascript">
+    $(function () {
+        $(".tab_2").mouseover(function () {
+            $(".shengchanshilizhan").hide();
+            $(".yuangongfengcai").hide();
+            $(".bangongzhanshi").show();
+            $(this).css("background", "#da251c");
+            $(".tab_1").css("background", "#5f6870");
+            $(".tab_3").css("background", "#838280");
+        })
+
+        $(".tab_1").mouseover(function () {
+            $(".shengchanshilizhan").show();
+            $(".yuangongfengcai").hide();
+            $(".bangongzhanshi").hide();
+            $(this).css("background", "#da251c");
+            $(".tab_2").css("background", "#5f6870");
+            $(".tab_3").css("background", "#838280");
+        })
+
+        $(".tab_3").mouseover(function () {
+            $(".shengchanshilizhan").hide();
+            $(".yuangongfengcai").show();
+            $(".bangongzhanshi").hide();
+            $(this).css("background", "#da251c");
+            $(".tab_1").css("background", "#5f6870");
+            $(".tab_2").css("background", "#838280");
+        })
+
+    })
+</script>

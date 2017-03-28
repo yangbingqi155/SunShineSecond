@@ -1,0 +1,66 @@
+﻿@using SunShine.Model;
+@using SunShine.Utils;
+@model List<ArticleViewModel>
+@{
+    Layout = null;
+}
+@if (Model != null && Model.Count > 0) {
+    <div class="partner">
+        <div class="content1">
+            <div class="case_t"></div>
+            <div class="content1_left" id="left"><img src="~/Images/home/fgz_19.jpg" /></div>
+            <div class="kehu">
+                <ul id="center">
+                    @foreach (var item in Model) {
+                        <li>
+                            <div class="hezuo">
+                                @if (!string.IsNullOrEmpty(item.img)) {
+                                    
+                                    <a href="@Url.Action("Index","Case",new { categoryCode="successcase",currentCategoryCode="lastestcase",idarticle=item.idarticle})"><img class="caseimg" src="@Url.Content(item.img)" alt="" /></a>
+                                }
+                                <a href="@Url.Action("Index","Case",new { categoryCode="successcase",currentCategoryCode="lastestcase",idarticle=item.idarticle})"><h2>@item.title</h2></a>
+                                <img src="~/Images/home/xian_1.jpg" />
+                                <p>@(string.IsNullOrEmpty(item.content)?"": item.content.RemoveHTMLAndGetByNum(48))</p>
+                                <div class="gengduo"><a href="@Url.Action("Index","Case",new { categoryCode="successcase",currentCategoryCode="lastestcase"})">更多</a></div>
+                            </div>
+                        </li>
+                    }
+                </ul>
+            </div>
+            <div class="content1_right" id="right"><img src="~/Images/home/fgz_20.jpg" /></div>
+        </div>
+    </div>
+
+
+    <script type="text/javascript">
+    window.onload = function () {
+        var aebiz = new ScrollPic();
+        aebiz.scrollContId = "center"; //内容容器ID
+        aebiz.arrLeftId = "left"; //左箭头ID
+        aebiz.arrRightId = "right"; //右箭头ID
+        aebiz.listEvent = "onmouseover"; //切换事件
+        aebiz.frameWidth = 1030; //显示框宽度
+        aebiz.pageWidth = 254; //翻页宽度
+        aebiz.upright = false; //垂直滚动
+        aebiz.speed = 30; //移动速度(单位毫秒，越小越快)
+        aebiz.space = 10; //每次移动像素(单位px，越大越快)
+        aebiz.autoPlay = true; //自动播放
+        aebiz.upright = false; //垂直滚动
+        aebiz.autoPlayTime = 3; //自动播放间隔时间(秒)
+        aebiz.initialize(); //初始化
+    }
+    $(function () {
+        $(".content1_right img").hover(function () {
+            $(this).attr("src", "../../Images/home/fgz_19_right.jpg");
+        }, function () {
+            $(this).attr("src", "../../Images/home/fgz_20.jpg");
+        })
+
+        $(".content1_left img").hover(function () {
+            $(this).attr("src", "../../Images/home/fgz_19.jpg");
+        }, function () {
+            $(this).attr("src", "../../Images/home/fgz_20_left.jpg");
+        })
+    });
+    </script>
+}

@@ -1,0 +1,59 @@
+﻿@using SunShine.Model;
+@using SunShine.Utils;
+@using SunShine.Web.Utils;
+@model List<ArticleViewModel>
+@{
+    Layout = null;
+}
+@if (BrowerDetectorHelper.IsMobile())
+{
+    <script type="text/javascript">
+       $(function () {
+           $(".partner_item_content > p > span").css("font-size", "32px");
+           $(".partner_item_content > p").find("span").css("font-size", "32px");
+           $(".partner_item_content").find("p").css("font-size", "32px");
+       });
+    </script>
+}
+@if (Model != null && Model.Count > 0)
+{
+    <div class="partner">
+        <div class="content1">
+            <div id="partner_slide" class="carousel slide" data-ride="carousel">
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                    @for (int i = 0; i < Model.Count; i++)
+                    {
+                        string aactive = (i == 0 ? "class=\"active\"" : "");
+                        <li data-target="#partner_slide" data-slide-to="@i" @Html.Raw(aactive)></li>
+                    }
+                </ol>
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner" role="listbox">
+                    @for (int i = 0; i < Model.Count; i++)
+                    {
+                        string active = (i == 0 ? "class=\"item active\"" : "class=\"item\"");
+                        <div @Html.Raw(active)>
+                            <div class="partner_item_img">
+                                <img src="@Url.Content(Model[i].img)" alt="">
+                            </div>
+                            <div class="partner_item_content">
+                                <span class="partner_item_title">
+                                    @Model[i].title
+                                </span>
+                                <p class="partner_item_introduction">
+                                    @Html.Raw(!string.IsNullOrEmpty(Model[i].introduction) ? Model[i].introduction : (string.IsNullOrEmpty(Model[i].content) ? "" : Model[i].content.RemoveHTMLAndGetByNum(100)))
+                                </p>
+                                <div class="view_detail_btn"><a href="@Url.RouteUrl("case_detail",new {idarticle= Model[i].idarticle })">查看详情</a></div>
+                            </div>
+                            <div style="clear:both;"></div>
+                            @*<div class="carousel-caption">
+                            </div>*@
+                        </div>
+                        
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+}

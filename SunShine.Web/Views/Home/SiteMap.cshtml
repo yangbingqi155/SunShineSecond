@@ -1,0 +1,70 @@
+﻿@using SunShine.Model;
+@{
+    ViewBag.Title = "创意阳光-网站地图";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    List<ProductCategoryViewModel> categories = (List<ProductCategoryViewModel>)ViewData["categories"];
+    List<SiteCategoryViewModel> successcase = (List<SiteCategoryViewModel>)ViewData["successcase"];
+    List<SiteCategoryViewModel> sunshinebrand = (List<SiteCategoryViewModel>)ViewData["sunshinebrand"];
+    List<SiteCategoryViewModel> contactsunshine = (List<SiteCategoryViewModel>)ViewData["contactsunshine"];
+    List<SiteCategoryViewModel> show = (List<SiteCategoryViewModel>)ViewData["show"];
+    List<ProductCategoryViewModel> usageCategories = new List<ProductCategoryViewModel>();
+    List<ProductCategoryViewModel> industryCategories = new List<ProductCategoryViewModel>();
+    List<ProductCategoryViewModel> productCategories = new List<ProductCategoryViewModel>();
+    if (categories != null && categories.Count > 0) {
+        usageCategories = categories.Where(en => en.groupmethod == (int)GroupMethodType.Usage).ToList();
+        industryCategories = categories.Where(en => en.groupmethod == (int)GroupMethodType.Industry).ToList();
+        productCategories = categories.Where(en => en.groupmethod == (int)GroupMethodType.Product).ToList();
+    }
+}
+<div class="site_map_box">
+    <div class="map_header">网站地图</div>
+    <div class="map_item_header">
+        <a href="@Url.Action("Index","Home")">创意阳光广告首页</a>
+    </div>
+    <div class="map_item_header"><a href="@Url.Action("List","Product")">创意阳光广告产品</a></div>
+    <div class="map_item_content">
+        <div class="second_header">按用途分类</div>
+        <div class="map_items">
+            @foreach (var item in usageCategories) {
+                <a href="@Url.Action("List","Product",new { idcategory=item.idcategory})">@item.categoryname</a>
+            }
+        </div>
+        <div class="second_header">按行业分类</div>
+        <div class="map_items">
+            @foreach (var item in industryCategories) {
+                <a href="@Url.Action("List","Product",new { idcategory=item.idcategory})">@item.categoryname</a>
+            }
+        </div>
+        <div class="second_header">按产品分类</div>
+        <div class="map_items">
+            @foreach (var item in productCategories) {
+                <a href="@Url.Action("List","Product",new { idcategory=item.idcategory})">@item.categoryname</a>
+            }
+        </div>
+    </div>
+    <div class="map_item_header"><a href="@Url.Action("Index","Case",new { categoryCode="successcase"})">成功案例</a></div>
+    <div class="map_items">
+        @foreach (var item in successcase) {
+            <a href="@Url.Action("Index","Case",new { categoryCode=item.ParentCategory.categorycode,currentCategoryCode= item.categorycode})">@item.categoryname</a>
+        }
+    </div>
+
+    <div class="map_item_header"><a href="@Url.Action("Index","Case",new { categoryCode="sunshinebrand"})">品牌创意阳光</a></div>
+    <div class="map_items">
+        @foreach (var item in sunshinebrand) {
+            <a href="@Url.Action("Index","Case",new { categoryCode=item.ParentCategory.categorycode,currentCategoryCode= item.categorycode})">@item.categoryname</a>
+        }
+    </div>
+    <div class="map_item_header"><a href="@Url.Action("Index","Case",new { categoryCode="contactsunshine"})">关于创意阳光</a></div>
+    <div class="map_items">
+        @foreach (var item in contactsunshine) {
+            <a href="@Url.Action("Index","Case",new { categoryCode=item.ParentCategory.categorycode,currentCategoryCode= item.categorycode})">@item.categoryname</a>
+        }
+    </div>
+    <div class="map_item_header"><a href="@Url.Action("Index","Case",new { categoryCode="show"})">创意阳光展示</a></div>
+    <div class="map_items">
+        @foreach (var item in show) {
+            <a href="@Url.Action("Index","Case",new { categoryCode=item.ParentCategory.categorycode,currentCategoryCode= item.categorycode})">@item.categoryname</a>
+        }
+    </div>
+</div>

@@ -1,0 +1,147 @@
+﻿@using SunShine.Utils;
+@using SunShine.Web.Utils;
+@using SunShine.Model;
+@using SunShine.BLL;
+@model List<ProductViewModel>
+
+@{
+    Layout = "~/Views/Shared/_ManageLayout.cshtml";
+    var pageCount = Convert.ToInt32(ViewData["pageCount"]);
+    var pageIndex = Convert.ToInt32(ViewData["pageIndex"]);
+
+    string name = ViewData["name"].ToString();
+    string idusagecategory = ViewData["idusagecategory"].ToString();
+    string idindustrycategory = ViewData["idindustrycategory"].ToString();
+    string idproductcategory = ViewData["idproductcategory"].ToString();
+}
+<div class="ManageRightTitle">
+    <ol class="breadcrumb">
+        <li><a href="#">产品管理</a></li>
+        <li><a href="#" class="active">产品</a></li>
+    </ol>
+</div>
+<div class="ManageRightContent">
+    <div>
+        <form action="@Url.Action("ProductList","Manage")" method="get">
+            <div class="row searchbox">
+                <div class="col-xs-2">
+                    <input type="text" class="form-control" placeholder="产品名称" name="name" value="@name">
+                </div>
+                <div class="filter_label">
+                    @(AttributeHelper.DisplayAttributeFor<ProductViewModel, string>(en => en.idusagecategory))：
+                </div>
+                <div class="col-xs-1">
+                    @Html.DropDownList("idusagecategory", new SelectList( ProductCategoryService.SelectItems(GroupMethodType.Usage), "DisplayValue", "DisplayText"), new { @class = "form-control", Value = idusagecategory })
+                </div>
+                <div class="filter_label">
+                    @(AttributeHelper.DisplayAttributeFor<ProductViewModel, string>(en => en.idindustrycategory))：
+                </div>
+                <div class="col-xs-1">
+                    @Html.DropDownList("idindustrycategory", new SelectList(ProductCategoryService.SelectItems(GroupMethodType.Industry), "DisplayValue", "DisplayText"), new { @class = "form-control", Value = idindustrycategory })
+                </div>
+                <div class="filter_label">
+                    @(AttributeHelper.DisplayAttributeFor<ProductViewModel, string>(en => en.idproductcategory))：
+                </div>
+                <div class="col-xs-1">
+                    @Html.DropDownList("idproductcategory", new SelectList(ProductCategoryService.SelectItems(GroupMethodType.Product), "DisplayValue", "DisplayText"), new { @class = "form-control", Value = idproductcategory })
+                </div>
+                <div class="col-xs-2">
+                    <input type="submit" value="搜索" class="btn btn-primary" placeholder=".col-xs-1" />&nbsp;<a class="btn btn-primary" href="@Url.Action("ProductEdit","Manage")">新增</a>&nbsp;<a class="btn btn-danger" href="javascript:void(0);" id="btn_del_selected">删除</a>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div>
+        @Html.Raw(Url.BootstrapPagerHTML(pageCount, pageIndex, "ProductList", "Manage", ViewContext.RouteData.Values))
+    </div>
+    <div class="list-box">
+        @if (Model.Count > 0)
+        {
+            <table class="table table-bordered table-hover table-striped">
+                <thead>
+                    <tr>
+                        <th>
+                            <input type="checkbox" id="chk_all" />
+                        </th>
+                        <th>@(AttributeHelper.DisplayAttributeFor<ProductViewModel, string>(en => en.name))</th>
+                        <th>@(AttributeHelper.DisplayAttributeFor<ProductViewModel, String>(en => en.img))</th>
+                        <th>@(AttributeHelper.DisplayAttributeFor<ProductViewModel, string>(en => en.categoryName))</th>
+                        <th>@(AttributeHelper.DisplayAttributeFor<ProductViewModel, DateTime?>(en => en.cretime))</th>
+                        <th>@(AttributeHelper.DisplayAttributeFor<ProductViewModel, int?>(en => en.sortno))</th>
+                        <th>@(AttributeHelper.DisplayAttributeFor<ProductViewModel, bool>(en => en.inuse))</th>
+                        <th>@(AttributeHelper.DisplayAttributeFor<ProductViewModel, bool>(en => en.ishot))</th>
+                        <th>@(AttributeHelper.DisplayAttributeFor<ProductViewModel, bool>(en => en.isnew))</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                <input type="checkbox" name="chk_list_item" value="@item.idproduct" />
+                            </td>
+                            <td>@item.name</td>
+                            <td>
+                                @if (!string.IsNullOrEmpty(item.img)) {
+                                    <img src="@Url.Content(item.img)" style="width:150px;" />
+                                }
+                            </td>
+                            <td>@item.categoryName</td>
+                            <td>@(item.cretime.Value!=null?item.cretime.Value.ToString("yyyy-MM-dd"):"")</td>
+                            <td>@item.sortno</td>
+                            <td>
+                                <div class="switch">
+                                    <input type="checkbox" onchange="enableModel('@Url.Action("ProductEnable", "Manage", new { idproduct = item.idproduct, enable = !item.inuse, isAjax = true })','@Url.Action("Login", "Manage")')" name="enableProduct" @(item.inuse ? "checked" : "") />
+                                </div>
+                            </td>
+                            <td>
+                                <div class="switch">
+                                    <input type="checkbox" onchange="enableModel('@Url.Action("ProductHot", "Manage", new { idproduct = item.idproduct, ishot = !item.ishot, isAjax = true })','@Url.Action("Login", "Manage")')" name="hotProduct" @(item.ishot ? "checked" : "") />
+                                </div>
+                            </td>
+                            <td>
+                                <div class="switch">
+                                    <input type="checkbox" onchange="enableModel('@Url.Action("ProductNew", "Manage", new { idproduct = item.idproduct, isnew = !item.isnew, isAjax = true })','@Url.Action("Login", "Manage")')" name="newProduct" @(item.isnew ? "checked" : "") />
+                                </div>
+                            </td>
+                            <td>
+                                <a href="@Url.Action("ProductEdit","Manage",new {idproduct=item.idproduct,returnurl= Request.RawUrl})" class="btn btn-primary">编辑</a>
+                                <a href="javascript:void(0);" class="btn btn-danger" name="btn_del" value="@item.idproduct">删除</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+        else
+        {
+            <h2>还没有任何产品.</h2>
+        }
+
+    </div>
+</div>
+<script type="text/javascript">
+    $(function () {
+        $("[name='enableProduct']").bootstrapSwitch({onText:"启用",offText:"禁用"});
+        $("[name='hotProduct']").bootstrapSwitch({onText:"是",offText:"否"});
+        $("[name='newProduct']").bootstrapSwitch({ onText: "是", offText: "否" });
+        checkbox_select_all('chk_all', 'chk_list_item');
+        var delUrl = "@Url.Action("ProductDelete", "Manage")";
+        $("#btn_del_selected").click(function () {
+            checkbox_selected_del("chk_list_item", function (data) {
+                var postData = { idproducts: data };
+                ajax_del(delUrl, postData);
+            });
+        });
+        $("[name='btn_del']").click(function () {
+            if (!confirm("确认要删除该记录吗？")) {
+                return;
+            }
+            var data = new Array();
+            data.push($(this).attr("value"));
+            var postData = { idproducts: data };
+            ajax_del(delUrl, postData);
+        });
+    });
+</script>

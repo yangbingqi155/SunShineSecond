@@ -1,0 +1,47 @@
+﻿@using SunShine.Model;
+@using SunShine.Utils;
+@using SunShine.Web.Utils;
+@model List<ArticleViewModel>
+@{
+    Layout = null;
+}
+@if (BrowerDetectorHelper.IsMobile())
+{
+   <script type="text/javascript">
+       $(function () {
+           $(".itemdesc > .itemdetail > p > span").css("font-size", "28px");
+           $(".itemdesc > .itemdetail > p").find("span").css("font-size", "28px");
+       });
+   </script>
+}
+@{
+    if (Model != null && Model.Count > 0) {
+        for (int i = 0; i < Model.Count; i++) {
+            <div class="case_list_item">
+                <div class="itemimg">
+                    @if (!string.IsNullOrEmpty(Model[i].img)) {
+                        <a href="@Url.RouteUrl("case_detail",new { idarticle=Model[i].idarticle})"><img src="@Url.Content(Model[i].img)" /></a>
+                    }
+                </div>
+                <div class="itemdesc">
+                    <div class="itemtitle"><a href="@Url.RouteUrl("case_detail",new { idarticle=Model[i].idarticle})">@Model[i].title</a></div>
+                    <div class="itemdetail">@Html.Raw(!string.IsNullOrEmpty(Model[i].introduction) ? Model[i].introduction : (string.IsNullOrEmpty(Model[i].content) ? "" : Model[i].content.RemoveHTMLAndGetByNum(100)))</div>
+                    @*@if (BrowerDetectorHelper.IsMobile())
+                    {*@
+                        <div class="view_detail_btn"><a href="@Url.RouteUrl("case_detail", new { idarticle = Model[i].idarticle })">查看详情</a></div>
+                    @*}*@
+                </div>
+            <div style="clear:both;"></div>
+                @if (!BrowerDetectorHelper.IsMobile())
+                {
+                    <div class="create_time">发布日期：@Model[i].cretime</div>
+                }
+                
+        </div>
+        }
+
+    }
+    else {
+        <div class="no_data_div">暂无数据！</div>
+    }
+}

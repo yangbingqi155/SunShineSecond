@@ -1,0 +1,80 @@
+﻿@using SunShine.Model;
+@model List<ProductCategoryViewModel>
+@{
+    Layout = null;
+    List<ProductCategoryViewModel> usageCategories = new List<ProductCategoryViewModel>();
+    List<ProductCategoryViewModel> industryCategories = new List<ProductCategoryViewModel>();
+    List<ProductCategoryViewModel> productCategories = new List<ProductCategoryViewModel>();
+    if (Model != null && Model.Count > 0)
+    {
+        usageCategories = Model.Where(en => en.groupmethod == (int)GroupMethodType.Usage).ToList();
+        industryCategories = Model.Where(en => en.groupmethod == (int)GroupMethodType.Industry).ToList();
+        productCategories = Model.Where(en => en.groupmethod == (int)GroupMethodType.Product).ToList();
+    }
+    WebsiteInfoViewModel siteModel = null;
+    if (ViewData["websiteinfo"] !=null) {
+        siteModel = (WebsiteInfoViewModel)ViewData["websiteinfo"];
+    }
+
+}
+@{
+    if (Model != null && Model.Count > 0)
+    {
+        <div class="category_box">
+            <div class="category_header">
+                <span class="left">产品中心</span>
+                <span class="right">
+                    @if (siteModel!=null) {
+                        <a href="tel:@siteModel.hotphoneallcountry">@siteModel.hotphoneallcountry</a>
+                    }
+                </span>
+                <div style="clear:both;"></div>
+            </div>
+            <div style="clear:both;"></div>
+            @if (usageCategories != null && usageCategories.Count > 0)
+            {
+                <div class="category_item">
+                        <div class="category_title">按用途分类</div>
+                
+                    <div class="category_items_box">
+                        @for (int i = 0; i < usageCategories.Count; i++)
+                        {
+                                <div class="category_item_name" @Html.Raw(i%3==0?"style='margin-left:2px;'":"") ><a href="@Url.Action("List","Product",new { categoryCode=usageCategories[i].categorycode})">@usageCategories[i].categoryname</a>&nbsp;</div>
+                        }
+                    </div>
+                </div>
+                <div style="clear:both;"></div>
+            }
+            @if (industryCategories != null && industryCategories.Count > 0)
+            {
+                <div class="category_item">
+                        <div class="category_title">按行业分类</div>
+                    <div class="category_items_box">
+                        @for (int i = 0; i < industryCategories.Count; i++)
+                        {
+                                <div class="category_item_name" @Html.Raw(i%3==0?"style='margin-left:2px;'":"") ><a href="@Url.Action("List","Product",new { categoryCode=industryCategories[i].categorycode})">@industryCategories[i].categoryname</a>&nbsp;</div>
+                        }
+                    </div>
+                </div>
+                <div style="clear:both;"></div>
+            }
+            @if (productCategories != null && productCategories.Count > 0)
+            {
+                <div class="category_item" style="margin-bottom:20px;">
+                        <div class="category_title">按产品分类</div>
+                    <div class="category_items_box">
+                        @for (int i = 0; i < productCategories.Count; i++)
+                        {
+                                <div class="category_item_name" @Html.Raw(i%3==0?"style='margin-left:2px;'":"")><a href="@Url.Action("List","Product",new { categoryCode=productCategories[i].categorycode})">@productCategories[i].categoryname</a>&nbsp;</div>
+                            
+                        }
+                    </div>
+                </div>
+                <div style="clear:both;"></div>
+            }
+        </div>
+        <div style="clear:both;"></div>
+    }
+
+}
+

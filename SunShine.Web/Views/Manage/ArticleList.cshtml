@@ -1,0 +1,114 @@
+﻿@using SunShine.Utils;
+@using SunShine.Web.Utils;
+@using SunShine.Model;
+@using SunShine.BLL;
+@using SunShine.EF;
+@model List<ArticleViewModel>
+
+@{
+    Layout = "~/Views/Shared/_ManageLayout.cshtml";
+    var pageCount = Convert.ToInt32(ViewData["pageCount"]);
+    var pageIndex = Convert.ToInt32(ViewData["pageIndex"]);
+
+    string title = ViewData["title"].ToString();
+    string idcategory = ViewData["idcategory"].ToString();
+    List<SelectItemViewModel<string>> categorySelectItems = (List<SelectItemViewModel<string>>)ViewData["categorySelectItems"];
+}
+<div class="ManageRightTitle">
+    <ol class="breadcrumb">
+        <li><a href="#">文章管理</a></li>
+        <li><a href="#" class="active">文章</a></li>
+    </ol>
+</div>
+<div class="ManageRightContent">
+    <div>
+        <form action="@Url.Action("ArticleList","Manage")" method="get">
+            <div class="row searchbox">
+                <div class="col-xs-2">
+                    <input type="text" class="form-control" placeholder="文章标题" name="title" value="@title">
+                </div>
+                <div class="filter_label">
+                    @(AttributeHelper.DisplayAttributeFor<ArticleViewModel, SiteCategory>(en => en.Category))：
+                </div>
+                <div class="col-xs-2">
+                    @Html.DropDownList("idcategory", new SelectList(categorySelectItems, "DisplayValue", "DisplayText"), new { @class = "form-control", Value = idcategory })
+                </div>
+                <div class="col-xs-2">
+                    <input type="submit" value="搜索" class="btn btn-primary" placeholder=".col-xs-1" />&nbsp;<a class="btn btn-primary" href="@Url.Action("ArticleEdit","Manage")">新增</a>&nbsp;<a class="btn btn-danger" href="javascript:void(0);" id="btn_del_selected">删除</a>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div>
+        @Html.Raw(Url.BootstrapPagerHTML(pageCount, pageIndex, "ArticleList", "Manage", ViewContext.RouteData.Values))
+    </div>
+    <div class="list-box">
+        @if (Model.Count > 0) {
+            <table class="table table-bordered table-hover table-striped">
+                <thead>
+                    <tr>
+                        <th>
+                            <input type="checkbox" id="chk_all" />
+                        </th>
+                        <th>@(AttributeHelper.DisplayAttributeFor<ArticleViewModel, string>(en => en.title))</th>
+                        <th>@(AttributeHelper.DisplayAttributeFor<ArticleViewModel, String>(en => en.img))</th>
+                        <th>@(AttributeHelper.DisplayAttributeFor<ArticleViewModel, SiteCategory>(en => en.Category))</th>
+                        <th>@(AttributeHelper.DisplayAttributeFor<ArticleViewModel, int?>(en => en.follow))</th>
+                        <th>@(AttributeHelper.DisplayAttributeFor<ArticleViewModel, int?>(en => en.sortno))</th>
+                        <th>@(AttributeHelper.DisplayAttributeFor<ArticleViewModel, DateTime?>(en => en.cretime))</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model) {
+                        <tr>
+                            <td>
+                                <input type="checkbox" name="chk_list_item" value="@item.idarticle" />
+                            </td>
+                            <td>@item.title</td>
+                            <td>
+                                @if (!string.IsNullOrEmpty(item.img)) {
+                                    <img src="@Url.Content(item.img)" style="width:150px;" />
+                                }
+                            </td>
+                            <td>@item.Category.categoryname</td>
+                            <td>@item.follow</td>
+                            <td>@item.sortno</td>
+                            <td>@(item.cretime.Value != null ? item.cretime.Value.ToString("yyyy-MM-dd") : "")</td>
+                            <td>
+                                <a href="@Url.Action("ArticleEdit","Manage",new {idarticle=item.idarticle,returnurl= Request.RawUrl })" class="btn btn-primary">编辑</a>
+                                <a href="javascript:void(0);" class="btn btn-danger" name="btn_del" value="@item.idarticle">删除</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+        else {
+            <h2>还没有任何文章.</h2>
+        }
+
+    </div>
+</div>
+<script type="text/javascript">
+    $(function () {
+        checkbox_select_all('chk_all', 'chk_list_item');
+        var delUrl = "@Url.Action("ArticleDelete", "Manage")";
+        $("#btn_del_selected").click(function () {
+            checkbox_selected_del("chk_list_item", function (data) {
+                var postData = { idarticles: data };
+                ajax_del(delUrl, postData);
+            });
+        });
+        $("[name='btn_del']").click(function () {
+            if (!confirm("确认要删除该记录吗？")) {
+                return;
+            }
+            var data = new Array();
+            data.push($(this).attr("value"));
+            var postData = { idarticles: data };
+            ajax_del(delUrl, postData);
+        });
+    });
+
+</script>

@@ -1,0 +1,20 @@
+﻿@using SunShine.Model;
+@using SunShine.Utils;
+@using SunShine.Web.Utils;
+@model ArticleViewModel
+@{
+    Layout = null;
+}
+@if (BrowerDetectorHelper.IsMobile())
+{
+    <script type="text/javascript">
+       $(function () {
+           $(".case_detail_content_box").find("span").css("font-size", "34px");
+           $(".case_detail_content_box").find("span").css("line-height", "38px");
+           $(".case_detail_content_box").find("p").css("line-height", "38px");
+       });
+    </script>
+}
+<div class="case_detail_content_box">
+    @Html.Raw(Model.content)
+</div>

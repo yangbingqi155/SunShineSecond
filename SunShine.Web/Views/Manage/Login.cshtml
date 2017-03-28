@@ -1,0 +1,61 @@
+﻿@model SunShine.Model.ManageUserViewModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>管理员登录</title>
+    <link rel="stylesheet" href="@Url.Content("~/Css/Bootstrap/bootstrap.min.css")" />
+    <link rel="stylesheet" href="@Url.Content("~/Css/Manage/Base.css")" />
+    <link rel="stylesheet" href="@Url.Content("~/Css/Manage/Login.css")" />
+    <link rel="stylesheet" href="@Url.Content("~/Css/Validate/jQuery.Validate.css")" />
+    <script type="text/javascript" src="@Url.Content("~/Scripts/jQuery/jquery-1.10.2.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Bootstrap/bootstrap.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/jQuery-validate/jquery.validate.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/jQuery-validate/jquery.validate.unobtrusive.min.js")"></script>
+
+    <script type="text/javascript">
+        $("#loginForm").validate({
+            submitHandler: function (form) {
+                $(form).submit();
+            }
+        });
+        $(function () {
+            $("#btnReset").click(function () {
+                window.location.href = window.location.href;
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="login-wrapper">
+        <form method="post" id="loginForm">
+
+            <div class="loginBox">
+                <div class="content-wrap">
+                    <fieldset>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.username)
+                            @Html.TextBoxFor(model => model.username, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.username)
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.ClearPassword)
+                            @Html.PasswordFor(model => model.ClearPassword, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.ClearPassword)
+                        </div>
+                        @Html.ValidationSummary(true)
+                        <input type="submit" value="登录" class="btn btn-default" />
+                        <input type="button" id="btnReset" value="重置" class="btn btn-default" />
+                    </fieldset>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</body>
+</html>

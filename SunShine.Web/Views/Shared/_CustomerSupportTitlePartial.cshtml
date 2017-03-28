@@ -1,0 +1,17 @@
+﻿@using SunShine.Web.Utils;
+@{
+    Layout = null;
+}
+
+<div class="customer_support">
+    <div class="picture_center">
+        @if (BrowerDetectorHelper.IsMobile()) {
+            <img class="customer_support_img" src="/Images/home/mobile_kehuzhichi_1.jpg">
+        }
+        else {
+            <img class="customer_support_img" src="/Images/home/kehuzhichi_1.jpg">
+        }
+    
+    </div>
+    <br>
+</div>

@@ -1,0 +1,28 @@
+﻿@using SunShine.Model;
+@model List<ArticleViewModel>
+@{
+    Layout = null;
+}
+@{
+    if (Model != null&&Model.Count>0) {
+        for (int i = 0; i < Model.Count; i++) {
+            <div class="case_float_list_item">
+                <div class="itemimg">
+                    @if (!string.IsNullOrEmpty(Model[i].img))
+                    {
+                        <a href="@Url.RouteUrl("case_detail",new { idarticle=Model[i].idarticle})"><img src="@Url.Content(Model[i].img)" /></a>
+                    }
+                </div>
+                <div class="itemdesc">
+                    <div class="itemtitle"><a href="@Url.RouteUrl("case_detail",new { idarticle=Model[i].idarticle})">@Model[i].title</a></div>
+                </div>
+            </div>
+        }
+        <div style="clear:both;"></div>
+
+    }
+    else {
+        <div class="no_data_div">暂无数据！</div>
+    }
+}
+

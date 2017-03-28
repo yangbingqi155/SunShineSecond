@@ -1,0 +1,91 @@
+﻿@using SunShine.Model;
+@model List<ProductCategoryViewModel>
+@{
+    Layout = null;
+    List<ProductCategoryViewModel> usageCategories = new List<ProductCategoryViewModel>();
+    List<ProductCategoryViewModel> industryCategories = new List<ProductCategoryViewModel>();
+    List<ProductCategoryViewModel> productCategories = new List<ProductCategoryViewModel>();
+    if (Model != null && Model.Count > 0) {
+        usageCategories = Model.Where(en => en.groupmethod == (int)GroupMethodType.Usage).ToList();
+        industryCategories = Model.Where(en => en.groupmethod == (int)GroupMethodType.Industry).ToList();
+        productCategories = Model.Where(en => en.groupmethod == (int)GroupMethodType.Product).ToList();
+    }
+}
+@{
+    if (Model != null && Model.Count > 0) {
+        @*<div ><img src="~/Images/home/feilei_1.jpg"></div>*@
+        <div class="success_case_top">
+            <div class="success_case_title">所有产品分类</div>
+            <div class="success_case_subtitle">
+                <div class="subtitle_left"></div>
+                <div class="subtitle_center">PRODUCT</div>
+                <div class="subtitle_right"></div>
+                <div style="clear:both;"></div>
+            </div>
+        </div>
+        <div id="images">
+            <ul name="menu5" id="menu5" class="menu">
+
+                @if (usageCategories != null && usageCategories.Count > 0) {
+                    <li style="background-color:#383431;">
+                            
+                            <img class="expandedImg" src="~/Images/home/baijiantou_1.jpg"  />
+                            <div class="hd" >
+                                按用途分类
+                                <div style="clear:both"></div>
+                            </div>
+                       
+                        <ul id="menu" style="display: block;">
+                            <div style="width:243px;height:5px;background:#fff"></div>
+                            @for (int i = 0; i < usageCategories.Count; i++) {
+                                <li class="level1-li sub"><a href="@Url.Action("List","Product",new { categoryCode=usageCategories[i].categorycode})" class="level1-a">@usageCategories[i].categoryname</a></li>
+                            }
+                            <div style="width:243px;height:10px;background:#fff"></div>
+                        </ul>
+                    </li>
+                }
+                @if (industryCategories != null && industryCategories.Count > 0) {
+                    <li style="background-color:#383431;">
+                        <img class="expandedImg" src="~/Images/home/baijiantou_1.jpg" />
+                        <div class="hd">
+                            按行业分类
+                            <div style="clear:both"></div>
+                        </div>
+                        <!--  <div style="background-color:#FFF"><img src="/images/spacer.gif" width="220" height="1"></div>  -->
+                        <ul id="menu" style="display: block;">
+                            <div style="width:243px;height:5px;background:#fff"></div>
+                            @for (int i = 0; i < industryCategories.Count; i++) {
+                                <li class="level1-li sub"><a  href="@Url.Action("List","Product",new { categoryCode=industryCategories[i].categorycode})"  class="level1-a">@industryCategories[i].categoryname</a></li>
+                            }
+                            <div style="width:243px;height:10px;background:#fff"></div>
+                        </ul>
+                    </li>
+                }
+                @if (productCategories != null && productCategories.Count > 0) {
+                    <li style="background-color:#383431; padding-bottom:0px">
+                        <img class="expandedImg" src="~/Images/home/baijiantou_1.jpg" />
+                        <div class="hd">
+                            按产品分类
+                            <div style="clear:both"></div>
+                        </div>
+                        <ul id="menu" style="display: block;">
+                            <div style="width:243px;height:5px;background:#fff"></div>
+                           @for (int i = 0; i < productCategories.Count; i++) {
+                            <li class="level1-li sub"><a  href="@Url.Action("List","Product",new { categoryCode=productCategories[i].categorycode})" class="level1-a">@productCategories[i].categoryname</a></li>
+                           }
+                            <div style="width:243px;height:10px;background:#fff"></div>
+
+                        </ul>
+                    </li>
+                }
+            </ul>
+            <div class="telephone_1">
+                <div class="telephone_2">
+                    <div class="img"><img src="~/Images/home/telephonestyle.jpg" /></div>
+                    <div class="tel">4008-778-652</div>
+                </div>
+                <div style="clear:both"></div>
+            </div>
+        </div>
+    }
+}
