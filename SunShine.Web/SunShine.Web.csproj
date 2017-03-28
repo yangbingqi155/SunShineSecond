@@ -372,9 +372,11 @@
     <Content Include="Images\case\question.jpg" />
     <Content Include="Images\home\advertise-1.jpg" />
     <Content Include="Images\home\advertise-2.jpg" />
+    <Content Include="Images\home\baijiantou_1.jpg" />
     <Content Include="Images\home\banner-1.jpg" />
     <Content Include="Images\home\bottom_logo.jpg" />
     <Content Include="Images\home\fgz_04.jpg" />
+    <Content Include="Images\home\fgz_05.jpg" />
     <Content Include="Images\home\fgz_06.jpg" />
     <Content Include="Images\home\home_1.jpg" />
     <Content Include="Images\home\home_banner-1.jpg" />
@@ -393,6 +395,7 @@
     <Content Include="Images\home\sinaLogo_1.jpg" />
     <Content Include="Images\home\weixinLogo.jpg" />
     <Content Include="Images\home\weixinLogo_1.jpg" />
+    <Content Include="Images\home\xuxian_3.jpg" />
     <Content Include="Images\layout\advance_bg_1_1.jpg" />
     <Content Include="Images\layout\advance_bg_1_2.jpg" />
     <Content Include="Images\layout\advance_bg_2_1.jpg" />
