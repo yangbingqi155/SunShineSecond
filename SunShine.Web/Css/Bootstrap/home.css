@@ -4,17 +4,15 @@
     padding: 0;
     margin: 0;
     list-style: none;
-    width: 220px;
 }
 
     #menu li.level1-li {
-        
         height: 35px;
-        width: 243px;
         z-index: 10001;
         padding-bottom: 0px;
-        border-bottom:1px solid #AEAEAE;
+        border-bottom: 1px solid #AEAEAE;
         background: #fff repeat-x;
+        text-align: center;
     }
 
         #menu li.level1-li:hover {
@@ -48,13 +46,13 @@
     font-size: 15px;
     /*color: #7e7f81;
             font-weight: bold;*/
-    text-align: left;
-    padding-left: 70px;
+    text-align: center;
     padding-top: 2px;
     font-family: "Microsoft YaHei";
     font-weight: 400;
     /*text-align:center;*/
     /* background: url("../images/linedot.gif") repeat-x left bottom;*/
+    margin: 0 auto;
 }
 
 #menu li.level2-li a.level2-a {
@@ -78,11 +76,11 @@
 }
 
 .expandedImg {
-    padding-left: 40px;
-    /*padding-top:2px; */
-    padding-bottom: 2px;
+    margin-left: 40px;
+    padding-top: 9px;
     padding-bottom: 2px;
     float: left;
+    width: 25px;
 }
 
 .level1-li sub {
@@ -256,10 +254,10 @@
     cursor: pointer;
     font-size: 100%;
     list-style: none;
-    margin: 0;
+    margin: 0 auto;
     padding: 0;
-    vertical-align: center;
-    width: 243px;
+    vertical-align: middle;
+    width: 210px;
 }
 
 
@@ -863,8 +861,8 @@ ul.thirdLevel {
 
 .honor_box {
     width: 100%;
-    max-width:1440px;
-    margin:0px auto;
+    max-width: 1440px;
+    margin: 0px auto;
     background-color: #E15517;
     padding-top: 30px;
     padding-bottom: 10px;
@@ -903,8 +901,8 @@ ul.thirdLevel {
 
 .site_bottom_bg {
     width: 100%;
-    max-width:1440px;
-    margin:0px auto;
+    max-width: 1440px;
+    margin: 0px auto;
     background-color: #383431;
 }
 
@@ -935,7 +933,7 @@ ul.thirdLevel {
     width: 1440px;
     margin: 0px auto;
     text-align: center;
-    background:url(../../Images/home/pinpaiyoushi_1.jpg) no-repeat;
+    background: url(../../Images/home/pinpaiyoushi_1.jpg) no-repeat;
 }
 
 .kanshi_waiceng_img {
@@ -975,7 +973,7 @@ ul.thirdLevel {
     font-family: 微软雅黑;
     color: #707070;
     letter-spacing: 1px;
-    text-align:left;
+    text-align: left;
 }
 
     .miaoshu ul li img {
@@ -1204,29 +1202,30 @@ ul.thirdLevel {
     width: 1444px;
     height: 155px;
     margin: 0px auto;
-    text-align:center;
+    text-align: center;
 }
+
 .sidahexinyoushi_img {
-    margin:0 auto;
+    margin: 0 auto;
 }
 
-    .sidahexinyoushi .lijizixun {
-        width: 121px;
-        height: 25px;
-        background: #ef9f0b;
-        text-align: center;
-        line-height: 25px;
-        font-size: 14px;
-        border-radius: 2px;
-        margin-top: 94px;
-        margin-left: 1133px;
-        float: left;
-    }
+.sidahexinyoushi .lijizixun {
+    width: 121px;
+    height: 25px;
+    background: #ef9f0b;
+    text-align: center;
+    line-height: 25px;
+    font-size: 14px;
+    border-radius: 2px;
+    margin-top: 94px;
+    margin-left: 1133px;
+    float: left;
+}
 
-        .sidahexinyoushi .lijizixun a {
-            color: #ffffff;
-            width: 120px;
-        }
+    .sidahexinyoushi .lijizixun a {
+        color: #ffffff;
+        width: 120px;
+    }
 
 a {
     text-decoration: none;
@@ -1285,7 +1284,7 @@ a {
     height: 61px;
     color: #FFFFFF;
     /*text-align: center;*/
-    background-color: #da251c;
+    background-color: #E15517;
     border-radius: 0 0 6px 6px;
 }
 
@@ -1301,6 +1300,7 @@ a {
 
     .telephone_2 .img {
         float: left;
+        margin-top: -7px;
     }
 
     .telephone_2 .tel {
@@ -1343,64 +1343,71 @@ a {
     width: 1444px;
     margin: 0px auto;
 }
+
 .yongxinzuofuwu {
-    width:1440px;margin:0 auto;    
+    width: 1440px;
+    margin: 0 auto;
 }
+
 .yongxinzuofuwu_img {
-    width:1440px;
+    width: 1440px;
 }
+
 .customer_support {
-    width:1444px;margin:0px auto;
+    width: 1444px;
+    margin: 0px auto;
 }
+
 .customize_flow_header {
-    width:1444px;margin:20px auto 0;
+    width: 1444px;
+    margin: 20px auto 0;
 }
 
 
-.advance_box
-{
-    min-width:700px;
-    text-align:left;
-    margin:0 auto;
-    width:1440px;
+.advance_box {
+    min-width: 700px;
+    text-align: left;
+    margin: 0 auto;
+    width: 1440px;
 }
 
-.advance_box .advance_item
-{
-    margin-top:20px;
-    padding:20px 0;
-    margin-left:auto;
-    margin-right:auto;
-    width:1000px;
-}
-.advance_item .left
-{
-    float:left;
+    .advance_box .advance_item {
+        margin-top: 20px;
+        padding: 20px 0;
+        margin-left: auto;
+        margin-right: auto;
+        width: 1000px;
+    }
 
+.advance_item .left {
+    float: left;
 }
-.advance_item ._advance_center
-{
-    float:left;
 
+.advance_item ._advance_center {
+    float: left;
 }
-.advance_item .right
-{
-    float:left;
+
+.advance_item .right {
+    float: left;
 }
+
 ul.advance_item_content_box {
-    list-style-type:none;
-    padding-left:70px;
-    overflow:hidden;
+    list-style-type: none;
+    padding-left: 70px;
+    overflow: hidden;
 }
-ul.advance_item_content_box li {
-    text-align:left;
-    list-style-type:none;
-    margin-top:10px;
-    font-size:15px;
-}
+
+    ul.advance_item_content_box li {
+        text-align: left;
+        list-style-type: none;
+        margin-top: 10px;
+        font-size: 15px;
+    }
 
 .bg_advance_gray {
-    background-color:#DEDEDC;
+    background-color: #DEDEDC;
 }
 
-.advance_item  advance_item4 bg_advance_gray ul{padding-left:0px}
+.advance_item advance_item4 bg_advance_gray ul {
+    padding-left: 0px;
+}

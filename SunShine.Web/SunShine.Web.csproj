@@ -393,6 +393,7 @@
     <Content Include="Images\home\mobile_yongxinzuofuwu.jpg" />
     <Content Include="Images\home\sinaLogo.jpg" />
     <Content Include="Images\home\sinaLogo_1.jpg" />
+    <Content Include="Images\home\telephonestyle.jpg" />
     <Content Include="Images\home\weixinLogo.jpg" />
     <Content Include="Images\home\weixinLogo_1.jpg" />
     <Content Include="Images\home\xuxian_3.jpg" />
@@ -825,7 +826,9 @@
     <Content Include="ueditor\ueditor.config.js" />
     <Content Include="ueditor\ueditor.parse.js" />
     <Content Include="ueditor\ueditor.parse.min.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>

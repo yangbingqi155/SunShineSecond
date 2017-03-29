@@ -16,19 +16,15 @@
 <script type="text/javascript">
     $(function () {
         $(".title_PopularProduct").mouseover(function () {
-            $(this).find("a").css("color", "#FFFFFF");
-            $(this).css("background", "#da251c");
-            $(".title_NewestProduct").css("background", "#DEDEDC");
-            $(".title_NewestProduct").find("a").css("color", "#333");
+            $(this).css("background", "#E15517");
+            $(".title_NewestProduct").css("background", "#383431");
             $(".PopularProduct").show();
             $(".NewestProduct").hide();
         })
 
         $(".title_NewestProduct").mouseover(function () {
-            $(this).find("a").css("color", "#FFFFFF");
-            $(this).css("background", "#da251c");
-            $(".title_PopularProduct").css("background", "#DEDEDC");
-            $(".title_PopularProduct").find("a").css("color", "#333");
+            $(this).css("background", "#E15517");
+            $(".title_PopularProduct").css("background", "#383431");
             $(".PopularProduct").hide();
             $(".NewestProduct").show();
         })
@@ -47,8 +43,8 @@
     <div class="cp_right">
         <div class="title">
             <ul id="tabs">
-                <li class="title_PopularProduct" style="background:#da251c"><a href="" class="tab">热销产品</a></li>
-                <li class="title_NewestProduct" style="background:#DEDEDC"><a href="" class="tab">最新产品</a></li>
+                <li class="title_PopularProduct" style="background:#E15517"><a href="" class="tab">热销产品</a></li>
+                <li class="title_NewestProduct" style="background:#383431"><a href="" class="tab">最新产品</a></li>
             </ul>
         </div>
         <div class="tab_box">
@@ -59,7 +55,7 @@
                     {
                         <div class="more1">
                             <a href="@Url.Action("List", "Product")">
-                                <span style="font-size:17px;font-weight:500;font-family:'Microsoft YaHei'">More +</span>&nbsp; &nbsp;<img src="~/images/home/more1.jpg">
+                                <span style="font-size:17px;font-weight:500;font-family:'Microsoft YaHei'">MORE +</span>&nbsp; &nbsp;@*<img src="~/images/home/more1.jpg">*@
                             </a>
                         </div>
                     }
@@ -73,7 +69,7 @@
                     {
                         <div class="more1">
                             <a href="@Url.Action("List", "Product")">
-                                <span style="font-size:17px;font-weight:500;font-family:'Microsoft YaHei'">More +</span>&nbsp;&nbsp;<img src="~/images/home/more1.jpg">
+                                <span style="font-size:17px;font-weight:500;font-family:'Microsoft YaHei'">More +</span>&nbsp;&nbsp;@*<img src="~/images/home/more1.jpg">*@
                             </a>
                         </div>
                     }
