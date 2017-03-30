@@ -274,6 +274,21 @@ namespace SunShine.Web.Controllers
 
         }
 
+        public ActionResult BigQuestions() {
+            return View();
+        }
+        public ActionResult SetPosition()
+        {
+            return View();
+        }
+        public ActionResult DesignCompare()
+        {
+            return View();
+        }
+        public ActionResult Advantages()
+        {
+            return View();
+        }
     }
 
 }

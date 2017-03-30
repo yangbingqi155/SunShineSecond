@@ -69,7 +69,7 @@
                     {
                         <div class="more1">
                             <a href="@Url.Action("List", "Product")">
-                                <span style="font-size:17px;font-weight:500;font-family:'Microsoft YaHei'">More +</span>&nbsp;&nbsp;@*<img src="~/images/home/more1.jpg">*@
+                                <span style="font-size:17px;font-weight:500;font-family:'Microsoft YaHei'">MORE +</span>&nbsp;&nbsp;@*<img src="~/images/home/more1.jpg">*@
                             </a>
                         </div>
                     }
@@ -95,7 +95,10 @@ else
 }
 
 @{
-    Html.RenderAction("CaseListItemsScroll", "Parts");
+    Html.RenderAction("BigQuestions", "Parts");
+    Html.RenderAction("SetPosition", "Parts");
+    Html.RenderAction("DesignCompare", "Parts");
+    Html.RenderAction("Advantages", "Parts");
 }
 
 @{

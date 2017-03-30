@@ -38,7 +38,7 @@
                         <ul id="menu" style="display: block;">
                             <div style="height:5px;background:#fff"></div>
                             @for (int i = 0; i < usageCategories.Count; i++) {
-                                <li class="level1-li sub"><a href="@Url.Action("List","Product",new { categoryCode=usageCategories[i].categorycode})" class="level1-a">@usageCategories[i].categoryname</a></li>
+                                <li class="level1-li sub"><a href="@Url.Action("List","Product",new { categoryCode=usageCategories[i].categorycode})" class="level1-a">|&nbsp;&nbsp;@usageCategories[i].categoryname</a></li>
                             }
                             <div style="height:10px;background:#fff"></div>
                         </ul>
@@ -55,7 +55,7 @@
                         <ul id="menu" style="display: block;">
                             <div style="height:5px;background:#fff"></div>
                             @for (int i = 0; i < industryCategories.Count; i++) {
-                                <li class="level1-li sub"><a  href="@Url.Action("List","Product",new { categoryCode=industryCategories[i].categorycode})"  class="level1-a">@industryCategories[i].categoryname</a></li>
+                                <li class="level1-li sub"><a  href="@Url.Action("List","Product",new { categoryCode=industryCategories[i].categorycode})"  class="level1-a">|&nbsp;&nbsp;@industryCategories[i].categoryname</a></li>
                             }
                             <div style="height:10px;background:#fff"></div>
                         </ul>
@@ -71,7 +71,7 @@
                         <ul id="menu" style="display: block;">
                             <div style="height:5px;background:#fff"></div>
                            @for (int i = 0; i < productCategories.Count; i++) {
-                            <li class="level1-li sub"><a  href="@Url.Action("List","Product",new { categoryCode=productCategories[i].categorycode})" class="level1-a">@productCategories[i].categoryname</a></li>
+                            <li class="level1-li sub"><a  href="@Url.Action("List","Product",new { categoryCode=productCategories[i].categorycode})" class="level1-a">|&nbsp;&nbsp;@productCategories[i].categoryname</a></li>
                            }
                             <div style="height:10px;background:#fff"></div>
 

@@ -370,11 +370,14 @@
     <Content Include="Images\case\anwer.jpg" />
     <Content Include="Images\case\phone_icon.jpg" />
     <Content Include="Images\case\question.jpg" />
+    <Content Include="Images\home\advantages.jpg" />
     <Content Include="Images\home\advertise-1.jpg" />
     <Content Include="Images\home\advertise-2.jpg" />
     <Content Include="Images\home\baijiantou_1.jpg" />
     <Content Include="Images\home\banner-1.jpg" />
+    <Content Include="Images\home\big_questions.jpg" />
     <Content Include="Images\home\bottom_logo.jpg" />
+    <Content Include="Images\home\design_compare.jpg" />
     <Content Include="Images\home\fgz_04.jpg" />
     <Content Include="Images\home\fgz_05.jpg" />
     <Content Include="Images\home\fgz_06.jpg" />
@@ -391,6 +394,7 @@
     <Content Include="Images\home\mobile_kehuzhichi_1.jpg" />
     <Content Include="Images\home\mobile_pinpaiyoushi_1.jpg" />
     <Content Include="Images\home\mobile_yongxinzuofuwu.jpg" />
+    <Content Include="Images\home\set_position.jpg" />
     <Content Include="Images\home\sinaLogo.jpg" />
     <Content Include="Images\home\sinaLogo_1.jpg" />
     <Content Include="Images\home\telephonestyle.jpg" />
@@ -411,6 +415,7 @@
     <Content Include="Images\layout\site_bottom2.jpg" />
     <Content Include="Images\layout\site_bottom3.jpg" />
     <Content Include="Images\layout\site_bottom4.jpg" />
+    <Content Include="Images\layout\title_under_line.jpg" />
     <Content Include="Images\Manage\headerbg4.png" />
     <Content Include="Images\Manage\login_bg.jpg" />
     <Content Include="lib\log4net\log4net.dll" />
@@ -916,6 +921,10 @@
     <Content Include="Views\Parts\Mobile_BottomProductCategory.cshtml" />
     <Content Include="Views\Parts\Mobile_BottomWebsiteInfo.cshtml" />
     <Content Include="Views\Parts\Mobile_NavSuccessCases.cshtml" />
+    <Content Include="Views\Parts\BigQuestions.cshtml" />
+    <Content Include="Views\Parts\SetPosition.cshtml" />
+    <Content Include="Views\Parts\DesignCompare.cshtml" />
+    <Content Include="Views\Parts\Advantages.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

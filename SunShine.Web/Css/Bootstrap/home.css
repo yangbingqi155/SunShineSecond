@@ -1285,7 +1285,6 @@ a {
     color: #FFFFFF;
     /*text-align: center;*/
     background-color: #E15517;
-    border-radius: 0 0 6px 6px;
 }
 
 .telephone_2 {
@@ -1410,4 +1409,27 @@ ul.advance_item_content_box {
 
 .advance_item advance_item4 bg_advance_gray ul {
     padding-left: 0px;
+}
+
+.big_questions_box {
+    width:100%;
+    text-align:center;
+    padding:20px 0;
+    background-color:#F3F3F3;
+}
+.set_position_box {
+    width:100%;
+    text-align:center;
+    padding:20px 0;
+}
+.design_compare {
+    width:100%;
+    text-align:center;
+    padding:20px 0;
+    background-color:#F3F3F3;
+}
+.advantages_box {
+    width:100%;
+    text-align:center;
+    padding:20px 0;
 }
