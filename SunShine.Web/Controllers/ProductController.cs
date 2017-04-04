@@ -78,7 +78,7 @@ namespace SunShine.Web.Controllers
 
             ViewData["pageCount"] = pageCount;
             ViewData["pageIndex"] = pageIndex;
-            ViewData["contactus"] = contactusStr;
+            ViewData["contactus"] = string.IsNullOrEmpty(contactusStr) ? "" : contactusStr;
             ViewData["keyword"] = keyword;
             ViewData["category"] = category;
 
