@@ -3,17 +3,12 @@
     Layout = null;
 }
 
-<div class="customize_flow_header">
-    <div class="picture_center">
-        @if (BrowerDetectorHelper.IsMobile())
-        {
-            <img class="customize_flow_header_img" src="/Images/home/mobile_dingzhiliucheng_1_1.jpg" />
-            <img class="customize_flow_header_img_2" src="/Images/home/mobile_dingzhiliucheng_1_2.jpg" />
+<div class="img_middle_width">
+        @if (BrowerDetectorHelper.IsMobile()) {
+            <img class="img" src="/Images/home/service_flow.jpg" />
         }
-        else
-        {
-            <img class="customize_flow_header_img" src="/Images/home/dingzhiliucheng_1.jpg" />
+        else {
+            <img class="img" src="/Images/home/service_flow.jpg" />
         }
 
-    </div>
 </div>

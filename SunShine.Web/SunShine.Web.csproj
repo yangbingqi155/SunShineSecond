@@ -376,7 +376,14 @@
     <Content Include="Images\home\baijiantou_1.jpg" />
     <Content Include="Images\home\banner-1.jpg" />
     <Content Include="Images\home\big_questions.jpg" />
+    <Content Include="Images\home\book_title.jpg" />
     <Content Include="Images\home\bottom_logo.jpg" />
+    <Content Include="Images\home\coreadvance.jpg" />
+    <Content Include="Images\home\core_advance_title_1_2.jpg" />
+    <Content Include="Images\home\core_advance_title_3_4.jpg" />
+    <Content Include="Images\home\core_advance_title_img_1.jpg" />
+    <Content Include="Images\home\core_advance_title_img_2.jpg" />
+    <Content Include="Images\home\designtitle.jpg" />
     <Content Include="Images\home\design_compare.jpg" />
     <Content Include="Images\home\fgz_04.jpg" />
     <Content Include="Images\home\fgz_05.jpg" />
@@ -394,7 +401,9 @@
     <Content Include="Images\home\mobile_kehuzhichi_1.jpg" />
     <Content Include="Images\home\mobile_pinpaiyoushi_1.jpg" />
     <Content Include="Images\home\mobile_yongxinzuofuwu.jpg" />
+    <Content Include="Images\home\service_flow.jpg" />
     <Content Include="Images\home\set_position.jpg" />
+    <Content Include="Images\home\show_case_title.jpg" />
     <Content Include="Images\home\sinaLogo.jpg" />
     <Content Include="Images\home\sinaLogo_1.jpg" />
     <Content Include="Images\home\telephonestyle.jpg" />
@@ -925,6 +934,8 @@
     <Content Include="Views\Parts\SetPosition.cshtml" />
     <Content Include="Views\Parts\DesignCompare.cshtml" />
     <Content Include="Views\Parts\Advantages.cshtml" />
+    <Content Include="Views\Shared\_BookTitle.cshtml" />
+    <Content Include="Views\Parts\DesignService.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

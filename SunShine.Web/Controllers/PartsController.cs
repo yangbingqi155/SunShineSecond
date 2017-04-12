@@ -289,6 +289,9 @@ namespace SunShine.Web.Controllers
         {
             return View();
         }
+        public ActionResult DesignService() {
+            return View();
+        }
     }
 
 }

@@ -102,12 +102,12 @@ else
 }
 
 @{
+    Html.RenderAction("DesignService", "Parts");
     Html.RenderAction("CoreAdvance", "Parts");
     if (!BrowerDetectorHelper.IsMobile())
     {
         Html.RenderPartial("_HistoryBannerPartial", null);
     }
-    Html.RenderPartial("_CustomerSupportTitlePartial", null);
     if (!BrowerDetectorHelper.IsMobile())
     {
         Html.RenderAction("Partner", "Parts");
@@ -116,18 +116,13 @@ else
     {
         Html.RenderAction("Mobile_Partner", "Parts");
     }
-    if (!BrowerDetectorHelper.IsMobile())
-    {
-        Html.RenderAction("InstroductionCompany", "Parts");
-    }
 
     Html.RenderPartial("_CustomizeFlowPartial", null);
     if (BrowerDetectorHelper.IsMobile())
     {
         Html.RenderAction("Mobile_Bottom_Honor", "Parts");
     }
-
-
+    Html.RenderPartial("_BookTitle", null);
 }
 
 @if (!BrowerDetectorHelper.IsMobile())
