@@ -8,9 +8,19 @@
 @if (Model != null) {
     <div class="site_bottom_right">
         <div class="site_info_item">@Model.copyright</div>
+        <div class="site_info_item">@Model.support</div>
         <div class="site_info_item">地址：@Model.address</div>
         <div class="site_info_item">免费热线：@Model.hotphoneallcountry &nbsp;&nbsp; @Model.hotphone &nbsp;&nbsp;027-85358278</div>
         <div class="site_info_item">客服QQ：@Model.qq &nbsp;&nbsp;&nbsp;@Model.qq2</div>
+    </div>
+    <div class="site_bottom_hot_phone">
+        <div class="phone_icon">
+            <img src="~/Images/home/hot_phone_icon.jpg" />
+        </div>
+        <div class="phone_content">
+            <div class="phone_title">全国服务热线</div>
+            <div class="phone_no">@Model.hotphoneallcountry</div>
+        </div>
     </div>
     <div style="clear:both;"></div>
 }

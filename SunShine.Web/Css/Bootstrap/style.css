@@ -537,7 +537,7 @@ hr {
             .cp_list1 ul li .cp_bottom {
                 width:100%;
                 opacity: 0.35;
-                filter: alpha(opacity=50);
+                filter: alpha(opacity=35);
                 height: 50px;
                 border: #c9c9c9 solid 1px;
                 position: absolute;
@@ -1427,6 +1427,7 @@ hr {
 
 
             .news_t ul li a {
+                color:#E15517;
             }
             /*.news_t ul li.xuanz { background:url(../images/fgz_53.png) no-repeat bottom center;}*/
             .news_t ul li.xuanz a {
@@ -1571,6 +1572,7 @@ hr {
 }
 
     .news_t2 a {
+        color:#E15517;
     }
 
 .news_tt .more {

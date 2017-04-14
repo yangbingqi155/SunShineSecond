@@ -290,7 +290,9 @@ namespace SunShine.Web.Controllers
             return View();
         }
         public ActionResult DesignService() {
-            return View();
+            List<ArticleViewModel> designers = ArticleService.GetArticlesByCategoryCode("designteam").OrderBy(en=>en.sortno).ToList();
+            designers = designers.Count > 5 ? designers.Take(5).ToList() : designers;
+            return View(designers);
         }
     }
 

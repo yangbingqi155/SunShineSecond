@@ -32,6 +32,7 @@ namespace SunShine.BLL
             oldWebsiteInfo.idsite = websiteInfo.idsite;
             oldWebsiteInfo.sitename = websiteInfo.sitename;
             oldWebsiteInfo.copyright = websiteInfo.copyright;
+            oldWebsiteInfo.support = websiteInfo.support;
             oldWebsiteInfo.address = websiteInfo.address;
             oldWebsiteInfo.hotphoneallcountry = websiteInfo.hotphoneallcountry;
             oldWebsiteInfo.hotphone = websiteInfo.hotphone;

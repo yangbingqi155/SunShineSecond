@@ -38,6 +38,13 @@
                     @Html.ValidationMessageFor(model => model.copyright)
                 </div>
                 <div class="form-group">
+                    @Html.LabelFor(model => model.support, new { @class = "col-sm-2 control-label" })
+                    <div class="col-sm-7">
+                        @Html.TextBoxFor(model => model.support, new { @class = "form-control" })
+                    </div>
+                    @Html.ValidationMessageFor(model => model.support)
+                </div>
+                <div class="form-group">
                     @Html.LabelFor(model => model.address, new { @class = "col-sm-2 control-label" })
                     <div class="col-sm-7">
                         @Html.TextBoxFor(model => model.address, new { @class = "form-control" })

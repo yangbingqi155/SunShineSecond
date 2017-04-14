@@ -24,6 +24,10 @@ namespace SunShine.Model
         [StringLength(500)]
         public new string copyright { get; set; }
 
+        [Display(Name = "技术支持")]
+        [StringLength(500)]
+        public new string support { get; set; }
+
         [Display(Name = "地址")]
         [StringLength(500)]
         public new string address { get; set; }
@@ -58,6 +62,7 @@ namespace SunShine.Model
             this.idsite = websiteInfo.idsite;
             this.sitename = websiteInfo.sitename;
             this.copyright = websiteInfo.copyright;
+            this.support = websiteInfo.support;
             this.address = websiteInfo.address;
             this.hotphoneallcountry = websiteInfo.hotphoneallcountry;
             this.hotphone = websiteInfo.hotphone;
@@ -72,6 +77,7 @@ namespace SunShine.Model
             websiteInfo.idsite = this.idsite;
             websiteInfo.sitename = this.sitename;
             websiteInfo.copyright = this.copyright;
+            websiteInfo.support = this.support;
             websiteInfo.address = this.address;
             websiteInfo.hotphoneallcountry = this.hotphoneallcountry;
             websiteInfo.hotphone = this.hotphone;

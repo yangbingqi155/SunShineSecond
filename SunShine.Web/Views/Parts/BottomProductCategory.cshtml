@@ -16,7 +16,7 @@
 
         <div class="category_box">
             <div class="category_header">
-                产品直通车
+                <img src="~/Images/home/car_icon.jpg" />产品直通车
             </div>
             @if (usageCategories != null && usageCategories.Count > 0) {
                 <div class="category_item">
@@ -30,6 +30,31 @@
                             }
                             else {
                                 <span><a href="@Url.Action("List","Product",new { categoryCode=usageCategories[i].categorycode})" >@usageCategories[i].categoryname</a>&nbsp;|</span>
+                            }
+                        }
+                    </div>
+                </div>
+            }
+            @if (productCategories != null && productCategories.Count > 0)
+            {
+                <div class="category_item" style="margin-bottom:20px;">
+                    <div class="category_left">
+                        <div class="category_title">按产品分类</div>
+                    </div>
+                    <div class="category_right category_right_two">
+                        @for (int i = 0; i < productCategories.Count; i++)
+                        {
+                            if (i == usageCategories.Count - 1)
+                            {
+                                <span><a href="@Url.Action("List","Product",new { categoryCode=productCategories[i].categorycode})">@productCategories[i].categoryname</a>&nbsp;</span>
+                            }
+                            else
+                            {
+                                <span><a href="@Url.Action("List","Product",new { categoryCode=productCategories[i].categorycode})">@productCategories[i].categoryname</a>&nbsp;|</span>
+                            }
+                            if (i == 4)
+                            {
+                                <br />
                             }
                         }
                     </div>
@@ -55,26 +80,7 @@
                     </div>
                 </div>
             }
-           @if (productCategories != null && productCategories.Count > 0) {
-            <div class="category_item" style="margin-bottom:20px;">
-                <div class="category_left">
-                    <div class="category_title">按产品分类</div>
-                </div>
-                <div class="category_right category_right_two">
-                   @for (int i = 0; i < productCategories.Count; i++) {
-                       if (i == usageCategories.Count - 1) {
-                        <span><a href="@Url.Action("List","Product",new { categoryCode=productCategories[i].categorycode})">@productCategories[i].categoryname</a>&nbsp;</span>
-                       }
-                       else {
-                        <span><a href="@Url.Action("List","Product",new { categoryCode=productCategories[i].categorycode})">@productCategories[i].categoryname</a>&nbsp;|</span>
-                       }
-                       if (i == 4) {
-                        <br />
-                       }
-                   }
-                </div>
-            </div>
-           }
+           
             
         </div>
         <div style="clear:both;"></div>

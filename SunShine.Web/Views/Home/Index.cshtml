@@ -102,6 +102,7 @@ else
 }
 
 @{
+    Html.RenderAction("CaseListItemsScroll", "Parts");
     Html.RenderAction("DesignService", "Parts");
     Html.RenderAction("CoreAdvance", "Parts");
     if (!BrowerDetectorHelper.IsMobile())
@@ -116,12 +117,12 @@ else
     {
         Html.RenderAction("Mobile_Partner", "Parts");
     }
-
     Html.RenderPartial("_CustomizeFlowPartial", null);
     if (BrowerDetectorHelper.IsMobile())
     {
         Html.RenderAction("Mobile_Bottom_Honor", "Parts");
     }
+
     Html.RenderPartial("_BookTitle", null);
 }
 

@@ -378,6 +378,7 @@
     <Content Include="Images\home\big_questions.jpg" />
     <Content Include="Images\home\book_title.jpg" />
     <Content Include="Images\home\bottom_logo.jpg" />
+    <Content Include="Images\home\car_icon.jpg" />
     <Content Include="Images\home\coreadvance.jpg" />
     <Content Include="Images\home\core_advance_title_1_2.jpg" />
     <Content Include="Images\home\core_advance_title_3_4.jpg" />
@@ -391,6 +392,7 @@
     <Content Include="Images\home\home_1.jpg" />
     <Content Include="Images\home\home_banner-1.jpg" />
     <Content Include="Images\home\honor.jpg" />
+    <Content Include="Images\home\hot_phone_icon.jpg" />
     <Content Include="Images\home\hot_tel_icon.jpg" />
     <Content Include="Images\home\make_step.jpg" />
     <Content Include="Images\home\mobile_custom_flow.jpg" />

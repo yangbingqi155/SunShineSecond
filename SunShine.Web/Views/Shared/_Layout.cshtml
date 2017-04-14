@@ -108,19 +108,19 @@
         @RenderBody()
         @{ Html.RenderAction("BottomProductCategory", "Parts");}
 
-        
+        @{
+            Html.RenderAction("FriendURL", "Parts");
+        }
         <div class="honor_box">
             <div class="honor_top">
                 <img src="~/Images/home/honor.jpg" />
             </div>
-            @{
-                Html.RenderAction("FriendURL", "Parts");
-            }
+            
         </div>
         <div class="site_bottom_bg">
             <div class="site_bottom">
                 <div class="site_bottom_left">
-                    <img src="~/Images/home/bottom_logo.jpg" style="width:277px" />
+                    <img src="~/Images/home/bottom_logo.jpg" style="width:190px" />
                 </div>
                 @{
                     Html.RenderAction("BottomWebsiteInfo", "Parts");

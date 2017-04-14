@@ -1,12 +1,27 @@
 ﻿@using SunShine.Model;
 @using SunShine.Web.Utils;
+@model List<ArticleViewModel>
 @{
     Layout = null;
 }
-<div class="design_service_box">
-    <div class="service_title">
-        <img class="img" src="~/Images/home/designtitle.jpg" />
+@if (Model != null && Model.Count > 0)
+{
+    <div class="design_service_box">
+        <div class="service_title">
+            <img class="img" src="~/Images/home/designtitle.jpg" />
+        </div>
+        <div class="design_service">
+            @foreach (var item in Model)
+            {
+                <div class="service_item">
+                    <img src="@Url.Content(item.img)" />
+                    <div class="service_item_bottom">@item.title</div>
+                </div>
+            }
+        </div>
+        <div style="clear:both;"></div>
     </div>
-</div>
+}
+
 
 

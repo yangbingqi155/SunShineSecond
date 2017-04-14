@@ -20,6 +20,9 @@ namespace SunShine.EF
         public string copyright { get; set; }
 
         [StringLength(500)]
+        public string support { get; set; }
+
+        [StringLength(500)]
         public string address { get; set; }
 
         [StringLength(50)]
