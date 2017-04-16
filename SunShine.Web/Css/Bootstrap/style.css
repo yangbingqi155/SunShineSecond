@@ -536,14 +536,14 @@ hr {
 
             .cp_list1 ul li .cp_bottom {
                 width:100%;
-                opacity: 0.35;
-                filter: alpha(opacity=35);
+                opacity: 0.5;
+                filter: alpha(opacity=50);
                 height: 50px;
                 border: #c9c9c9 solid 1px;
                 position: absolute;
                 bottom: 0;
                 left: 0;
-                background-color:#c9c9c9;
+                background-color:#000000;
                 z-index:1000;
             }
 

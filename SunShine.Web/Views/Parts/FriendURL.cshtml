@@ -7,7 +7,7 @@
 }
 @if (Model != null && Model.Count > 0) {
     <div class="friend_link_box">
-        <div class="friend_link_title">友情链接</div>
+        <div class="friend_link_title"><img src="~/Images/home/icon_friend_link.jpg" />友情链接</div>
         @foreach (var item in Model) {
             <div class="friend_link"><a href="@item.url" target="_blank">@item.title</a></div>
         }
