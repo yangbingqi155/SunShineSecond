@@ -23,12 +23,12 @@
     </div>
     <div class="map_item_header"><a href="@Url.Action("List","Product")">创意阳光广告产品</a></div>
     <div class="map_item_content">
-        <div class="second_header">按用途分类</div>
+        @*<div class="second_header">按用途分类</div>
         <div class="map_items">
             @foreach (var item in usageCategories) {
                 <a href="@Url.Action("List","Product",new { idcategory=item.idcategory})">@item.categoryname</a>
             }
-        </div>
+        </div>*@
         <div class="second_header">按行业分类</div>
         <div class="map_items">
             @foreach (var item in industryCategories) {
@@ -49,22 +49,22 @@
         }
     </div>
 
-    <div class="map_item_header"><a href="@Url.Action("Index","Case",new { categoryCode="sunshinebrand"})">品牌创意阳光</a></div>
+    <div class="map_item_header"><a href="@Url.Action("Index","Case",new { categoryCode="news"})">新闻资讯</a></div>
     <div class="map_items">
         @foreach (var item in sunshinebrand) {
             <a href="@Url.Action("Index","Case",new { categoryCode=item.ParentCategory.categorycode,currentCategoryCode= item.categorycode})">@item.categoryname</a>
         }
     </div>
-    <div class="map_item_header"><a href="@Url.Action("Index","Case",new { categoryCode="contactsunshine"})">关于创意阳光</a></div>
+    <div class="map_item_header"><a href="@Url.Action("Index","Case",new { categoryCode="contactsunshine"})">联系创意阳光</a></div>
     <div class="map_items">
         @foreach (var item in contactsunshine) {
             <a href="@Url.Action("Index","Case",new { categoryCode=item.ParentCategory.categorycode,currentCategoryCode= item.categorycode})">@item.categoryname</a>
         }
     </div>
-    <div class="map_item_header"><a href="@Url.Action("Index","Case",new { categoryCode="show"})">创意阳光展示</a></div>
+    @*<div class="map_item_header"><a href="@Url.Action("Index","Case",new { categoryCode="show"})">创意阳光展示</a></div>
     <div class="map_items">
         @foreach (var item in show) {
             <a href="@Url.Action("Index","Case",new { categoryCode=item.ParentCategory.categorycode,currentCategoryCode= item.categorycode})">@item.categoryname</a>
         }
-    </div>
+    </div>*@
 </div>

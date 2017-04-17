@@ -1145,6 +1145,7 @@ ul.thirdLevel {
     background-color:#E15517;
     height: 181px;
     border-bottom:10px solid #363533;
+    position:relative;
 }
 
 .gundongxiaoguo {
@@ -1590,4 +1591,49 @@ ul.advance_item_content_box {
 
 .book_title {
     margin-top: 30px;
+}
+
+.jcarousel_more {
+    width:150px;
+    float:left;
+    height:100%;
+    margin:0;
+    background-color:#E67817;
+    margin-left:100px;
+}
+.jcarousel_more .more_item {
+    text-align:center;
+    color:#FFFFFF;
+}
+.jcarousel_more .more_ch_title {
+        font-size: 34px;
+    margin-top: 40px;
+}
+.jcarousel_more .more_en_title {
+    font-size: 24px;
+    text-align: center;
+    color: #FFFFFF;
+    margin-top: 10px;
+}
+    .jcarousel_more .more_button {
+    margin-top: 25px;
+    }
+.jcarousel_more .more_button a{
+    background-color:#FFFFFF;
+    text-align:center;
+    font-size:18px;
+    padding:5px 25px;
+}
+.partner_carousel {
+    width:1444px;
+    margin:0 auto;
+    text-align:center;
+    background-color:#E15517;
+}
+.more_bottom {
+    margin-top:30px;
+    position:absolute;
+    bottom:0;
+    left:50%;
+    z-index:1000;
 }

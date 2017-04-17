@@ -46,7 +46,7 @@ namespace SunShine.Web.Controllers {
             List<SiteCategoryViewModel> successcase = SiteCategoryService.GetChildCategoriesByCode("successcase");
 
             //品牌创意阳光
-            List<SiteCategoryViewModel> sunshinebrand = SiteCategoryService.GetChildCategoriesByCode("sunshinebrand");
+            List<SiteCategoryViewModel> sunshinebrand = SiteCategoryService.GetChildCategoriesByCode("news");
 
             //关于创意阳光
             List<SiteCategoryViewModel> contactsunshine = SiteCategoryService.GetChildCategoriesByCode("contactsunshine");

@@ -8,7 +8,7 @@
     <div class="partner">
         <div class="content1">
             <div class="case_t"></div>
-            <div class="content1_left" id="left"><img src="~/Images/home/fgz_19.jpg" /></div>
+            @*<div class="content1_left" id="left"><img src="~/Images/home/fgz_19.jpg" /></div>*@
             <div class="kehu">
                 <ul id="center">
                     @foreach (var item in Model) {
@@ -21,13 +21,13 @@
                                 <a href="@Url.Action("Index","Case",new { categoryCode="successcase",currentCategoryCode="lastestcase",idarticle=item.idarticle})"><h2>@item.title</h2></a>
                                 <img src="~/Images/home/xian_1.jpg" />
                                 <p>@(string.IsNullOrEmpty(item.content)?"": item.content.RemoveHTMLAndGetByNum(48))</p>
-                                <div class="gengduo"><a href="@Url.Action("Index","Case",new { categoryCode="successcase",currentCategoryCode="lastestcase"})">更多</a></div>
+                                <div class="gengduo"><a href="@Url.Action("Index","Case",new { categoryCode="successcase",currentCategoryCode="lastestcase"})">更多详情</a></div>
                             </div>
                         </li>
                     }
                 </ul>
             </div>
-            <div class="content1_right" id="right"><img src="~/Images/home/fgz_20.jpg" /></div>
+            @*<div class="content1_right" id="right"><img src="~/Images/home/fgz_20.jpg" /></div>*@
         </div>
     </div>
 
@@ -50,13 +50,13 @@
         aebiz.initialize(); //初始化
     }
     $(function () {
-        $(".content1_right img").hover(function () {
+        $(".content1 .content1_right img").hover(function () {
             $(this).attr("src", "../../Images/home/fgz_19_right.jpg");
         }, function () {
             $(this).attr("src", "../../Images/home/fgz_20.jpg");
         })
 
-        $(".content1_left img").hover(function () {
+        $(".content1 .content1_left img").hover(function () {
             $(this).attr("src", "../../Images/home/fgz_19.jpg");
         }, function () {
             $(this).attr("src", "../../Images/home/fgz_20_left.jpg");

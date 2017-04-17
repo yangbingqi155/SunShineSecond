@@ -19,7 +19,7 @@
     <script type="text/javascript" src="@Url.Content("~/Scripts/Bootstrap/home.js")"></script>
     <script type="text/javascript" src="@Url.Content("~/Scripts/posfixed.js")"></script>
     <script type="text/javascript">
-        $(document).ready(function () { $(".gundongxiaoguo").imgscroll({ speed: 40, amount: 0, width: 2, dir: "left" }); });
+        //$(document).ready(function () { $(".gundongxiaoguo").imgscroll({ speed: 40, amount: 0, width: 2, dir: "left" }); });
         $(document).ready(function () { $(".case_honor_bottom").imgscroll({ speed: 40, amount: 0, width: 2, dir: "up" }); });
         $(document).ready(function () { $(".wenti_box").imgscroll({ speed: 40, amount: 0, width: 2, dir: "up" }); });
 
@@ -52,7 +52,7 @@
         <div class="header hidden-xs">
             <div class="top">
                 <div class="welcome">您好，欢迎来到创意阳光广告有限公司官方网站</div>
-                <span> <a href="javascript:AddFavorite('创意阳光',location.href)">收藏本站</a>&nbsp;&nbsp;|<a href="@Url.Action("SiteMap","Home")">网站地图</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="@Url.Action("Index", "Case", new { categoryCode = "sunshinebrand", currentCategoryCode = "commonquestion" })">常见问题</a>&nbsp; &nbsp;|&nbsp;&nbsp;<a href="@Url.Action("Index", "Case", new { categoryCode = "contactsunshine", currentCategoryCode = "contactus" })">联系我们</a>&nbsp; &nbsp;</span>
+                <span> <a href="javascript:AddFavorite('创意阳光',location.href)">收藏本站</a>&nbsp;&nbsp;|<a href="@Url.Action("SiteMap","Home")">网站地图</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="@Url.Action("Index", "Case", new { categoryCode = "news", currentCategoryCode = "commonquestion" })">常见问题</a>&nbsp; &nbsp;|&nbsp;&nbsp;<a href="@Url.Action("Index", "Case", new { categoryCode = "contactsunshine", currentCategoryCode = "contactus" })">联系我们</a>&nbsp; &nbsp;</span>
             </div>
             <div style="clear:both"></div>
         </div>
@@ -76,13 +76,13 @@
             <div class="tablist">
                 <ul>
                     <li><a href="@Url.Action("Index", "Home")">创意阳光首页</a></li>
-                    <li><a href="@Url.Action("List", "Product", new { categoryCode = "bgwall" })">营销型画册设计</a></li>
-                    <li><a href="@Url.Action("List", "Product", new { categoryCode = "door" })">宣传画册设计</a></li>
-                    <li><a href="@Url.Action("List", "Product", new { categoryCode = "topfloor" })">产品画册设计</a></li>
+                    <li><a href="@Url.Action("List", "Product", new { categoryCode = "marketing_design" })">营销型画册设计</a></li>
+                    <li><a href="@Url.Action("List", "Product", new { categoryCode = "brochure_design" })">宣传画册设计</a></li>
+                    <li><a href="@Url.Action("List", "Product", new { categoryCode = "product_desgin" })">产品画册设计</a></li>
                     <li><a href="@Url.Action("List", "Product", new { categoryCode = "company_employ_desgin" })">员工手册设计</a></li>
                     <li><a href="@Url.Action("Index", "Case", new { categoryCode = "successcase" })">成功案例</a></li>
-                    <li><a href="@Url.Action("Index", "Case", new { categoryCode = "sunshinebrand" })">品牌创意阳光</a></li>
-                    <li><a href="@Url.Action("Index", "Case", new { categoryCode = "contactsunshine" })">关于创意阳光</a></li>
+                    <li><a href="@Url.Action("Index", "Case", new { categoryCode = "news" })">新闻资讯</a></li>
+                    <li><a href="@Url.Action("Index", "Case", new { categoryCode = "contactsunshine" })">联系创意阳光</a></li>
                 </ul>
             </div>
         </div>

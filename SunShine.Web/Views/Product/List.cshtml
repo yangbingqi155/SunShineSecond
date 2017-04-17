@@ -34,7 +34,7 @@
         <div class="case_nav">
             <div class="case_nav_icon"></div>
             <div class="case_nav_title">
-                您现在的位置:<span>
+                当前位置:<span>
                     <a href="@Url.Action("Index","Home")">首页</a> >&nbsp;
                     @if (string.IsNullOrEmpty(Request["keyword"]))
                     {
@@ -84,46 +84,45 @@
 
     </div>
 </div>
-@if (BrowerDetectorHelper.IsMobile())
-{
-    <div class="mobile_content_box">
-        <img class="make_step_img" src="~/Images/home/make_step.jpg" />
-    </div>
-}
-
 @{
     Html.RenderAction("CaseListItemsScroll", "Parts");
-    if (!BrowerDetectorHelper.IsMobile())
-    {
-        Html.RenderAction("HotSale", "Parts");
-        Html.RenderPartial("_PartnerHeader");
-        Html.RenderAction("Partner", "Parts");
-    }
-    if (BrowerDetectorHelper.IsMobile()) {
-        Html.RenderAction("CoreAdvance", "Parts");
-    }
-    if (BrowerDetectorHelper.IsMobile())
-    {
-        Html.RenderPartial("_CustomerSupportTitlePartial", null);
-        Html.RenderAction("Mobile_Partner", "Parts");
-    }
+    Html.RenderAction("DesignService", "Parts");
+    Html.RenderAction("CoreAdvance", "Parts");
     if (!BrowerDetectorHelper.IsMobile())
     {
         Html.RenderPartial("_HistoryBannerPartial", null);
     }
-
-
+    if (!BrowerDetectorHelper.IsMobile())
+    {
+        Html.RenderAction("Partner", "Parts");
+    }
+    else
+    {
+        Html.RenderAction("Mobile_Partner", "Parts");
+    }
+    Html.RenderPartial("_CustomizeFlowPartial", null);
     if (BrowerDetectorHelper.IsMobile())
     {
         Html.RenderAction("Mobile_Bottom_Honor", "Parts");
     }
-    if (!BrowerDetectorHelper.IsMobile())
-    {
-        Html.RenderAction("InstroductionCompany", "Parts");
-    }
 
-    Html.RenderPartial("_CustomizeFlowPartial", null);
-
+    Html.RenderPartial("_BookTitle", null);
 }
+
+@if (!BrowerDetectorHelper.IsMobile())
+{
+    <div class="news">
+        <div class="news_center">
+            @{
+                Html.RenderAction("NavNews", "Parts");
+            }
+            <div class="yiny"><img src="~/Images/home/fgz_59.jpg"></div>
+            @{
+                Html.RenderAction("NavQuestions", "Parts");
+            }
+            <div style="clear:both;"></div>
+        </div>
+    </div>
+                }
 
 

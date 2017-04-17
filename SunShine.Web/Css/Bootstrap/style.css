@@ -683,8 +683,8 @@ hr {
     line-height: 28px;
     border: #c9c9c9 1px solid;
     margin: 10px auto;
-    background: #da251c;
-    border-radius: 20px;
+    background: #E15517;
+
 }
 
     .gengduo a {
@@ -699,6 +699,7 @@ hr {
     height: 340px;
     margin: 10px auto;
     text-align: center;
+    position:relative;
 }
 
     .hezuo h2 {
@@ -996,13 +997,17 @@ hr {
 }
 
 .content1_left {
-    float: left;
-    width: 25px;
-    height: 58px;
+    width: 50px;
     overflow: hidden;
-    margin-top: 160px;
+    position:absolute;
+    top:60px;
+    left:60px;
+    cursor:pointer;
+    z-index:10000;
 }
-
+.content1_left img {
+       width: 50px;
+    }
 .kehu {
     width: 1030px;
     margin: 0 auto;
@@ -1019,19 +1024,25 @@ hr {
         .kehu ul li {
             width: 230px;
             height: 335px;
-            border: #dcdcdc 2px solid;
+            border: #B6B6B6 2px solid;
             float: left;
             margin: 0 10px 0 14px;
-            overflow: hidden;
+            
         }
 
 .content1_right {
-    float: left;
-    width: 25px;
-    height: 58px;
+    width: 50px;
     overflow: hidden;
-    margin-top: 160px;
+    position:absolute;
+    top:60px;
+    right:60px;
+    cursor:pointer;
+    z-index:10000;
 }
+    .content1_right img {
+       width: 50px;
+    
+    }
 
 .advantage {
     width: 100%;
@@ -1704,7 +1715,7 @@ hr {
     padding: 2px 0;
     font-size: 18px;
     color: #FFFFFF;
-    background-color: #da251c;
+    background-color: #E15517;
     margin-top: 34px;
 }
 
