@@ -887,7 +887,7 @@ ul.thirdLevel {
         height: 70px;
         float: left;
         font-weight: bold;
-        margin-right:20px;
+        margin-right: 20px;
     }
 
 .friend_link_title img {
@@ -1142,10 +1142,10 @@ ul.thirdLevel {
     }
 
 .gundongbejing {
-    background-color:#E15517;
+    background-color: #E15517;
     height: 181px;
-    border-bottom:10px solid #363533;
-    position:relative;
+    border-bottom: 10px solid #363533;
+    position: relative;
 }
 
 .gundongxiaoguo {
@@ -1177,29 +1177,32 @@ ul.thirdLevel {
         }
 
 .logo {
-    width: 690px;
-    height: 116px;
     float: left;
 }
+.logo a img {
+    width: 550px;
+}
+
 
 .telephonenumber {
-    width: 310px;
-    height: 116px;
-    float: left;
-    background: url(../../Images/home/fgz_06.jpg) no-repeat;
+        float: left;
+    margin-left: 15px;
 }
 
-    .telephonenumber .guhua {
-        margin-top: -5px;
+    .telephonenumber .telephonenumber_item {
+        font-size: 26px;
+        color: #E15517;
+        font-weight: bold;
     }
 
-    .telephonenumber .guhua_shouji {
-        font-size: 20px;
-        color: #e51d1f;
-        font-weight: bold;
-        margin-top: 50px;
-        margin-left: 90px;
-        letter-spacing: 1px;
+.telephonenumber_icon {
+    float: left;
+    margin-left: 70px;
+    padding-top: 15px;
+}
+
+    .telephonenumber_icon img {
+        width: 140px;
     }
 
 
@@ -1422,12 +1425,15 @@ ul.advance_item_content_box {
 }
 
 .big_questions_box {
-    width: 100%;
+    margin:0 auto;
+    width: 1444px;
     text-align: center;
     padding: 20px 0;
     background-color: #F3F3F3;
 }
-
+    .big_questions_box img {
+        width:1000px;
+    }
 .set_position_box {
     width: 100%;
     text-align: center;
@@ -1436,7 +1442,8 @@ ul.advance_item_content_box {
 }
 
 .design_compare {
-    width: 100%;
+    width: 1444px;
+    margin:0 auto;
     text-align: center;
     padding: 30px 0;
     background-color: #F3F3F3;
@@ -1444,13 +1451,16 @@ ul.advance_item_content_box {
 }
 
 .advantages_box {
-    width: 100%;
+    width: 1444px;
+    margin:0 auto;
     text-align: center;
     padding: 20px 0;
     margin-top: 20px;
 }
 
 .core_advance_box {
+    width: 1444px;
+    margin:0 auto;
     background-color: #f3f3f3;
     margin-top: 30px;
 }
@@ -1465,7 +1475,7 @@ ul.advance_item_content_box {
 .core_advance_box_content .core_advance_box_title {
     text-align: center;
     margin: 0 auto;
-    width: 100%;
+    width: 65%;
 }
 
 .core_advance_box_title img {
@@ -1476,21 +1486,37 @@ ul.advance_item_content_box {
     text-align: center;
     margin: 0 auto;
 }
-
-.core_advance_box_part .part_left {
+.core_advance_box_part1 {
+    margin-top:35px;
+}
+.core_advance_box_part1 .part_left {
     float: left;
-    width: 50%;
+    width: 380px;
 }
 
+.core_advance_box_part1 .part_right {
+    float: left;
+    width: 550px;
+    margin-top:-20px;
+    margin-left:40px;
+}
+.core_advance_box_part2 {
+    margin-top:35px;
+}
+.core_advance_box_part2 .part_left {
+    float: left;
+    width: 520px;
+    margin-left:-120px;
+}
+
+.core_advance_box_part2 .part_right {
+    float: left;
+    width:360px;
+    margin-left:20px;
+}
 .part_left img {
     width: 100%;
 }
-
-.core_advance_box_part .part_right {
-    float: left;
-    width: 50%;
-}
-
 .part_right img {
     width: 100%;
 }
@@ -1528,7 +1554,7 @@ ul.advance_item_content_box {
     }
 
 .service_title .img {
-    width: 800px;
+    width: 600px;
 }
 
 .design_service .service_item {
@@ -1594,46 +1620,53 @@ ul.advance_item_content_box {
 }
 
 .jcarousel_more {
-    width:150px;
-    float:left;
-    height:100%;
-    margin:0;
-    background-color:#E67817;
-    margin-left:100px;
+    width: 150px;
+    float: left;
+    height: 100%;
+    margin: 0;
+    background-color: #E67817;
+    margin-left: 100px;
 }
-.jcarousel_more .more_item {
-    text-align:center;
-    color:#FFFFFF;
-}
-.jcarousel_more .more_ch_title {
-        font-size: 34px;
-    margin-top: 40px;
-}
-.jcarousel_more .more_en_title {
-    font-size: 24px;
-    text-align: center;
-    color: #FFFFFF;
-    margin-top: 10px;
-}
-    .jcarousel_more .more_button {
-    margin-top: 25px;
+
+    .jcarousel_more .more_item {
+        text-align: center;
+        color: #FFFFFF;
     }
-.jcarousel_more .more_button a{
-    background-color:#FFFFFF;
-    text-align:center;
-    font-size:18px;
-    padding:5px 25px;
-}
+
+    .jcarousel_more .more_ch_title {
+        font-size: 34px;
+        margin-top: 40px;
+    }
+
+    .jcarousel_more .more_en_title {
+        font-size: 24px;
+        text-align: center;
+        color: #FFFFFF;
+        margin-top: 10px;
+    }
+
+    .jcarousel_more .more_button {
+        margin-top: 25px;
+    }
+
+        .jcarousel_more .more_button a {
+            background-color: #FFFFFF;
+            text-align: center;
+            font-size: 18px;
+            padding: 5px 25px;
+        }
+
 .partner_carousel {
-    width:1444px;
-    margin:0 auto;
-    text-align:center;
-    background-color:#E15517;
+    width: 1444px;
+    margin: 0 auto;
+    text-align: center;
+    background-color: #E15517;
 }
+
 .more_bottom {
-    margin-top:30px;
-    position:absolute;
-    bottom:0;
-    left:50%;
-    z-index:1000;
+    margin-top: 30px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    z-index: 1000;
 }

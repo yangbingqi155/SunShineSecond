@@ -98,7 +98,7 @@ hr {
 .center {
     width: 1000px;
     margin: 0 auto;
-    height: 116px;
+    padding:20px 0;
 }
 
 .logo {
@@ -543,7 +543,7 @@ hr {
                 position: absolute;
                 bottom: 0;
                 left: 0;
-                background-color:#000000;
+                background-color:#c9c9c9;
                 z-index:1000;
             }
 
@@ -560,7 +560,6 @@ hr {
         color: #FFFFFF;
         text-align: center;
         display: block;
-        font-weight: bold;
     }
 
 .zhanshi {
@@ -990,7 +989,7 @@ hr {
 }
 
 .content1 {
-    width: 1090px;
+    width: 1030px;
     height: 378px;
     margin: 0 auto;
     overflow: hidden;
