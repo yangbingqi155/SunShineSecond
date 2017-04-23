@@ -14,9 +14,9 @@
             @foreach (var item in Model)
             {
                 <div class="service_item">
-                    <img src="@Url.Content(item.img)" />
-                    <div class="service_item_bottom">@item.title</div>
-                </div>
+                    <a href="@Url.Action("Index","Case",new {idarticle=item.idarticle })"><img src="@Url.Content(item.img)" /></a>
+                    <a href=""><div class="service_item_bottom">@item.title</div></a>
+</div>
             }
         </div>
         <div style="clear:both;"></div>

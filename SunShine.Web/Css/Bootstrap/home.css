@@ -1351,9 +1351,9 @@ a {
 }
 
 .scroll_case_list_box {
-    width: 1444px;
+        width: 1444px;
     margin: 0px auto;
-    margin-top: 30px;
+    margin-top: 10px;
 }
 
 .yongxinzuofuwu {
@@ -1449,7 +1449,9 @@ ul.advance_item_content_box {
     background-color: #F3F3F3;
     margin-top: 20px;
 }
-
+    .design_compare img {
+        width:800px;
+    }
 .advantages_box {
     width: 1444px;
     margin:0 auto;
@@ -1620,7 +1622,7 @@ ul.advance_item_content_box {
 }
 
 .jcarousel_more {
-    width: 150px;
+        width: 150px;
     float: left;
     height: 100%;
     margin: 0;
@@ -1635,7 +1637,7 @@ ul.advance_item_content_box {
 
     .jcarousel_more .more_ch_title {
         font-size: 34px;
-        margin-top: 40px;
+        margin-top: 30px;
     }
 
     .jcarousel_more .more_en_title {
@@ -1669,4 +1671,7 @@ ul.advance_item_content_box {
     bottom: 0;
     left: 50%;
     z-index: 1000;
+}
+.cp_list1 .cp_img a img {
+    /*width:357px;*/
 }
