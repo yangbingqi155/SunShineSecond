@@ -245,17 +245,6 @@ namespace SunShine.Web.Controllers
         }
 
         public ActionResult CoreAdvance() {
-            List<ArticleViewModel> ablity = ArticleService.GetArticlesByCategoryCode("ablity");
-            List<ArticleViewModel> quality = ArticleService.GetArticlesByCategoryCode("quality");
-            List<ArticleViewModel> goodprice = ArticleService.GetArticlesByCategoryCode("goodprice");
-            List<ArticleViewModel> saleservice = ArticleService.GetArticlesByCategoryCode("saleservice");
-
-            ViewData["ablity"] = ablity;
-            ViewData["quality"] = quality;
-            ViewData["goodprice"] = goodprice;
-            ViewData["saleservice"] = saleservice;
-
-
             return View();
         }
 

@@ -511,6 +511,34 @@ namespace TNet.Controllers {
             return Content("<script>alert('保存成功!');window.location.href=\"" + Url.Action("SiteCategoryEdit", "Manage", new { idcategory = model.idcategory }) + "\";</script>");
         }
 
+        /// <summary>
+        /// 删除网站类别
+        /// </summary>
+        /// <param name="idarticles"></param>
+        /// <returns></returns>
+        [ManageLoginValidation]
+        [HttpPost]
+        public ActionResult SiteCategoryDelete(string[] idcategories) {
+            ILog log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
+            ResultModel<SiteCategoryViewModel> resultEntity = new ResultModel<SiteCategoryViewModel>();
+            resultEntity.Code = ResponseCodeType.Success;
+            resultEntity.Message = "网站栏目删除成功";
+
+            if (idcategories == null || idcategories.Count() == 0) {
+                resultEntity.Code = ResponseCodeType.Fail;
+                resultEntity.Message = "网站栏目删除失败，参数错误。";
+                return Content(resultEntity.SerializeToJson());
+            }
+
+            if (!SiteCategoryService.Delete(idcategories.ToList())) {
+                resultEntity.Code = ResponseCodeType.Fail;
+                resultEntity.Message = "网站栏目删除失败。";
+                return Content(resultEntity.SerializeToJson());
+            }
+
+            return Content(resultEntity.SerializeToJson());
+        }
+
 
 
         /// <summary>

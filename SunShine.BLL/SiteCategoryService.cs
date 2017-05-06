@@ -154,5 +154,18 @@ namespace SunShine.BLL
             db.SaveChanges();
             return category;
         }
+
+        public static bool Delete(List<string> idcategories) {
+            int count = 0;
+            TN db = new TN();
+            for (int i = 0; i < idcategories.Count; i++) {
+                SiteCategory category = db.SiteCategories.Remove(db.SiteCategories.Find(idcategories[i]));
+                if (category != null) {
+                    count++;
+                }
+            }
+            db.SaveChanges();
+            return count > 0 ? true : false;
+        }
     }
 }

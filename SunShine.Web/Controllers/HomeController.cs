@@ -50,15 +50,11 @@ namespace SunShine.Web.Controllers {
 
             //关于创意阳光
             List<SiteCategoryViewModel> contactsunshine = SiteCategoryService.GetChildCategoriesByCode("contactsunshine");
-
-            //创意阳光展示
-            List<SiteCategoryViewModel> show = SiteCategoryService.GetChildCategoriesByCode("show");
-
+            
             ViewData["categories"] = categories;
             ViewData["successcase"] = successcase;
             ViewData["sunshinebrand"] = sunshinebrand;
             ViewData["contactsunshine"] = contactsunshine;
-            ViewData["show"] = show;
             return View();
         }
 
