@@ -61,9 +61,9 @@
             </div>
         </div>
         <div style="clear:both;"></div>
-        <div class="tab_box">
+        @*<div class="tab_box">
             <ul id="tab_conbox">
-                <li>
+                <li>*@
                     @*<div class="more1"><a href="@Url.Action("List","Product")"><img src="~/images/home/more1.jpg"></a></div>*@
                     @{
                         if (Model.Count == 1 && pageIndex == 0)
@@ -72,15 +72,15 @@
                         }
                         else
                         {
-                            Html.RenderPartial("_ProductItemPartial", Model);
+                            Html.RenderPartial("_ProductItemPartial1", Model);
                         }
                     }
                     <div class="sunshine_pager">
                         @Html.Raw(Url.PagerHTML(pageCount, pageIndex, "List", "Product", ViewContext.RouteData.Values))
                     </div>
-                </li>
+                @*</li>
             </ul>
-        </div>
+        </div>*@
 
     </div>
 </div>

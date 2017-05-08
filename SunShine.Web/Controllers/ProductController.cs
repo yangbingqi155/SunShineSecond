@@ -17,7 +17,7 @@ namespace SunShine.Web.Controllers
         {
             string contactusStr = string.Empty;
             int pageCount = 0;
-            int pageSize = 6;
+            int pageSize = 8;
             bool result = true;
             List<ProductViewModel> productViewModels = new List<ProductViewModel>();
             ProductCategory category = null;

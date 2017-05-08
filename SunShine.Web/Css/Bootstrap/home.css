@@ -1508,13 +1508,12 @@ ul.advance_item_content_box {
 .core_advance_box_part2 .part_left {
     float: left;
     width: 520px;
-    margin-left:-120px;
 }
 
 .core_advance_box_part2 .part_right {
     float: left;
     width:360px;
-    margin-left:20px;
+    margin-left:96px;
 }
 .part_left img {
     width: 100%;
@@ -1624,10 +1623,11 @@ ul.advance_item_content_box {
 .jcarousel_more {
         width: 150px;
     float: left;
-    height: 100%;
+    height: 176px;
     margin: 0;
     background-color: #E67817;
     margin-left: 100px;
+    padding-top:20px;
 }
 
     .jcarousel_more .more_item {
@@ -1637,7 +1637,7 @@ ul.advance_item_content_box {
 
     .jcarousel_more .more_ch_title {
         font-size: 34px;
-        margin-top: 30px;
+        margin-top: 0;
     }
 
     .jcarousel_more .more_en_title {
@@ -1648,7 +1648,7 @@ ul.advance_item_content_box {
     }
 
     .jcarousel_more .more_button {
-        margin-top: 25px;
+        margin-top: 20px;
     }
 
         .jcarousel_more .more_button a {

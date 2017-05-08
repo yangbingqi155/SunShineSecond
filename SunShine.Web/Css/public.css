@@ -239,7 +239,7 @@
 }
 
 .case_nav {
-    height: 50px;
+    height: 46px;
     border: 1px solid #c3c3c3;
     background-color:#E15517;
 }
@@ -254,7 +254,7 @@
     }
 
     .case_nav .case_nav_title {
-        line-height: 50px;
+        line-height: 46px;
         font-size: 15px;
         float: left;
         margin-left: 6px;
