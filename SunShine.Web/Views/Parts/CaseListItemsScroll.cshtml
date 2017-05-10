@@ -16,30 +16,32 @@
         @*<div class="partner_carousel">*@
             
             <div class="jcarousel-wrapper">
-                <div class="jcarousel_more">
-                    <div class="more_item more_ch_title">合作企业</div>
-                    <div class="more_item more_en_title">PARTNER</div>
-                    <div class="more_item more_button">
-                        <a href="@Url.Action("Index","Case",new{categoryCode="successcase",currentCategoryCode="partner" })">更多+</a>
+                <div style="margin:0 auto;width:980px;">
+                    <div class="jcarousel_more">
+                        <div class="more_item more_ch_title">合作企业</div>
+                        <div class="more_item more_en_title">PARTNER</div>
+                        <div class="more_item more_button">
+                            <a href="@Url.Action("Index","Case",new{categoryCode="successcase",currentCategoryCode="partner" })">更多+</a>
+                        </div>
                     </div>
-                </div>
-                <div class="jcarousel">
-                    <ul>
-                        @foreach (var item in Model)
+                    <div class="jcarousel">
+                        <ul>
+                            @foreach (var item in Model)
                         {
                             if (!string.IsNullOrEmpty(item.img))
                             {
-                                <li><a href="@Url.Action("Index","Case",new{categoryCode="successcase",currentCategoryCode="partner" })"><img src="@Url.Content(item.img)" style="width:210px;height:126px;" /></a></li>
+                                    <li><a href="@Url.Action("Index","Case",new{categoryCode="successcase",currentCategoryCode="partner" })"><img src="@Url.Content(item.img)" style="width:170px;height:102px;" /></a></li>
 
                             }
                         }
-                    </ul>
+                        </ul>
+                        <div style="clear:both;"></div>
+                    </div>
+                    <a href="#" class="jcarousel-control-prev">&lsaquo;</a>
+                    <a href="#" class="jcarousel-control-next">&rsaquo;</a>
+                    @*<p class="jcarousel-pagination"></p>*@
                     <div style="clear:both;"></div>
                 </div>
-                <a href="#" class="jcarousel-control-prev">&lsaquo;</a>
-                <a href="#" class="jcarousel-control-next">&rsaquo;</a>
-                @*<p class="jcarousel-pagination"></p>*@
-                <div style="clear:both;"></div>
             </div>
         @*</div>*@
         

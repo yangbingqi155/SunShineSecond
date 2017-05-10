@@ -14,9 +14,9 @@
 .jcarousel {
     position: relative;
     overflow: hidden;
-    width: 1000px;
+    width: 800px;
     float: left;
-    margin-left: 60px;
+    margin-left: 30px;
     margin-top: 25px;
     /* margin-bottom: 15px; */
 }
@@ -72,11 +72,11 @@
 }
 
 .jcarousel-control-prev {
-    left: 15px;
+    left: 135px;
 }
 
 .jcarousel-control-next {
-    right: 15px;
+    right: 135px;
 }
 
 /** Carousel Pagination **/
