@@ -935,7 +935,7 @@ ul.thirdLevel {
     min-width: 750px;
     margin: 0 auto;
     padding: 20px 0;
-    background-color: #DA251C;
+    background-color: #DF4C18;
     text-align: center;
 }
 
@@ -1861,4 +1861,150 @@ a {
     min-width: 750px;
     margin-top: 30px;
     margin-bottom: 25px;
+}
+
+.telephonenumber {
+        float: left;
+    margin-left: 15px;
+}
+.telephonenumber .telephonenumber_item {
+        font-size: 26px;
+        color: #E15517;
+        font-weight: bold;
+    }
+
+.telephonenumber_icon {
+    float: left;
+    margin-left: 70px;
+    padding-top: 15px;
+}
+
+    .telephonenumber_icon img {
+        width: 140px;
+    }
+    .big_questions_box {
+    margin:0 auto;
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+    background-color: #F3F3F3;
+}
+    .big_questions_box img {
+        width:100%;
+    }
+    .jcarousel_more {
+        width: 150px;
+    float: left;
+    height: 150px;
+    margin: 0;
+    background-color: #E67817;
+    margin-left: 0px;
+    padding-top:20px;
+}
+
+    .jcarousel_more .more_item {
+        text-align: center;
+        color: #FFFFFF;
+    }
+
+    .jcarousel_more .more_ch_title {
+        font-size: 26px;
+        margin-top: 0;
+    }
+
+    .jcarousel_more .more_en_title {
+        font-size: 18px;
+        text-align: center;
+        color: #FFFFFF;
+        margin-top: 10px;
+    }
+
+    .jcarousel_more .more_button {
+        margin-top: 20px;
+    }
+
+        .jcarousel_more .more_button a {
+            background-color: #FFFFFF;
+            text-align: center;
+            font-size: 16px;
+            padding: 5px 20px;
+        }
+
+.partner_carousel {
+    width: 1444px;
+    margin: 0 auto;
+    text-align: center;
+    background-color: #E15517;
+}
+.scroll_case_list_box .jcarousel-wrapper {
+    width:100%;
+}
+
+.design_service_box {
+    width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 20px;
+    padding: 20px 0;
+}
+
+    .design_service_box .service_title {
+        width: 100%;
+    }
+    
+.design_service .service_item {
+    float: left;
+    position: relative;
+    margin-left: 10px;
+    margin-top: 20px;
+}
+
+.service_item img {
+    width: 190px;
+}
+
+.design_service .service_item:first-child {
+    margin-left: 0;
+}
+
+.service_item .service_item_bottom {
+    width: 100%;
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+    padding: 8px 0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: #000000;
+    z-index: 1000;
+    color: #FFFFFF;
+    font-size: 16px;
+}
+
+.core_advance_box {
+    width: 1444px;
+    margin:0 auto;
+    background-color: #f3f3f3;
+    margin-top: 30px;
+    text-align:center;
+}
+    .core_advance_box div img {
+        width:100%;
+    }
+    
+.img_middle_width {
+    width: 1000px;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+    .img_middle_width .img {
+        width: 100%;
+    }
+    .book_title {
+    margin-top: 30px;
+}
+    .img_more_width .img {
+    width: 100%;
 }

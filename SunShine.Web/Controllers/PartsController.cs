@@ -283,6 +283,12 @@ namespace SunShine.Web.Controllers
             designers = designers.Count > 5 ? designers.Take(5).ToList() : designers;
             return View(designers);
         }
+
+
+        public ActionResult Mobile_CoreAdvance()
+        {
+            return View();
+        }
     }
 
 }

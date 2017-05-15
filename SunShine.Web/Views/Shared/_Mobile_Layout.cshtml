@@ -60,41 +60,33 @@
 <body>
     <div class="center">
         <div class="logo">
-            <a href="@Url.Action("Index", "Home")">  <img src="~/Images/home/mobile_fgz_05.jpg" />    </a>
+            <a href="@Url.Action("Index", "Home")">  <img src="~/Images/home/fgz_05.jpg" />    </a>
+        </div>
+        <div class="telephonenumber_icon">
+            <img src="~/Images/home/fgz_06.jpg" />
         </div>
         <div class="telephonenumber">
-            <div class="telleft">
-                <a href="tel:4008778652">
-                    <img src="@Url.Content("~/Images/home/hot_tel_icon.jpg")" />
-                </a>
-            </div>
-            <div class="telright">
-                <div class="rtop"><a href="tel:4008778652">免费咨询热线</a></div>
-                <div class="rbottom"><a href="tel:4008778652">4008-778-652</a></div>
-            </div>
-            @*<a href="tel:4008778652">
-                    <img src="/Images/home/fgz_06.jpg" />
-                </a>*@
+            <div class="telephonenumber_item">4008-778-652</div>
+            <div class="telephonenumber_item">156 7156 6365</div>
         </div>
+        <div style="clear:both"></div>
     </div>
     <div style="clear:both"></div>
-
-
 
     <div class="tablist1" id="pro_list1">
         <div class="tablist">
             <ul>
                 <li><a href="@Url.Action("Index", "Home")">创意阳光首页</a></li>
-                <li><a href="@Url.Action("List", "Product", new { categoryCode = "bgwall" })">背景墙发光字</a></li>
-                <li><a href="@Url.Action("List", "Product", new { categoryCode = "door" })">门头发光字</a></li>
-                <li><a href="@Url.Action("List", "Product", new { categoryCode = "topfloor" })">楼顶发光字</a></li>
+                <li><a href="@Url.Action("List", "Product", new { categoryCode = "company_public_design" })">宣传画册设计</a></li>
+                <li><a href="@Url.Action("List", "Product", new { categoryCode = "enterprice_face_desgin" })">形象画册设计</a></li>
+                <li><a href="@Url.Action("List", "Product", new { categoryCode = "enterprice_design" })">产品画册设计</a></li>
 
             </ul>
             <ul>
-                <li><a href="@Url.RouteUrl("product_list")">产品中心</a></li>
+                <li><a href="@Url.Action("List", "Product", new { categoryCode = "company_employ_design" })">员工手册设计</a></li>
+                <li><a href="@Url.Action("List", "Product",null)">产品中心</a></li>
                 <li><a href="@Url.Action("Index", "Case", new { categoryCode = "successcase" })">成功案例</a></li>
-                <li><a href="@Url.Action("Index", "Case", new { categoryCode = "sunshinebrand" })">品牌创意阳光</a></li>
-                <li><a href="@Url.Action("Index", "Case", new { categoryCode = "contactsunshine" })">关于创意阳光</a></li>
+                <li><a href="@Url.Action("Index", "Case", new { categoryCode = "contactsunshine" })">联系创意阳光</a></li>
             </ul>
         </div>
     </div>

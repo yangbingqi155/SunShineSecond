@@ -153,7 +153,7 @@ hr {
             width: 24.60%;
             margin-left: 4px;
             margin-top: 4px;
-            background: #da251c;
+            background: #DF4C18;
         }
 
     .tablist .no {
@@ -161,7 +161,7 @@ hr {
     }
 
     .tablist ul li a {
-        color: #fff;
+        color: #FFFFFF;
     }
 
     .tablist ul li:hover {
@@ -497,7 +497,7 @@ hr {
 }
 
 .cp_right .title ul li.title_NewestProduct a {
-    color: #333;
+    color: #FFFFFF;
 }
 
 .thistab a.tab {
@@ -1091,7 +1091,7 @@ hr {
     line-height: 52px;
     font-size: 30px;
     color: #FFFFFF;
-    background-color: #da251c;
+    background-color: #E15517;
     margin-top: 34px;
 }
 
