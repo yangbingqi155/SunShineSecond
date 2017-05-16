@@ -104,16 +104,36 @@ hr {
 
 .logo {
     float: left;
+    
 }
-
-@media (min-width:750px) and (max-width:832px) {
-    .logo img {
-        width: 440px;
-    }
-}
-
 .logo img {
     min-width: 440px;
+}
+@media (min-width:750px) and (max-width:832px) {
+    .logo {
+        width:62.5%;
+    }
+    .logo img {
+        width: 100%;
+    }
+    .site_logo_right {
+        width:37.4%;
+    }
+    .telephonenumber .telephonenumber_item {
+        font-size:22px;
+    }
+    .telephonenumber_icon {
+        padding-top:10px;
+        width:42%;
+    }
+    .telephonenumber_icon img {
+        width:100%;
+    }
+    .telephonenumber {
+        width:57%;
+        margin-left:1%;
+    }
+    
 }
 
 .phone {
