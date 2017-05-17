@@ -8,6 +8,7 @@
     .img_middle_width .img {
         width: 100%;
     }
+
 #menu {
     padding: 0;
     margin: 0;
@@ -874,31 +875,36 @@ ul.thirdLevel {
         font-size: 34px;
         line-height: 110px;
     }
-    @media (min-width:750px) and (max-width:800px) {
-        .category_items_box .category_item_name {
-            font-size: 24px;
-        }
+
+@media (min-width:750px) and (max-width:800px) {
+    .category_items_box .category_item_name {
+        font-size: 24px;
     }
-    @media (min-width:800px) and (max-width:850px) {
-        .category_items_box .category_item_name {
-            font-size: 26px;
-        }
+}
+
+@media (min-width:800px) and (max-width:850px) {
+    .category_items_box .category_item_name {
+        font-size: 26px;
     }
-    @media (min-width:850px) and (max-width:900px) {
-        .category_items_box .category_item_name {
-            font-size: 28px;
-        }
+}
+
+@media (min-width:850px) and (max-width:900px) {
+    .category_items_box .category_item_name {
+        font-size: 28px;
     }
-    @media (min-width:900px) and (max-width:950px) {
-        .category_items_box .category_item_name {
-            font-size: 30px;
-        }
+}
+
+@media (min-width:900px) and (max-width:950px) {
+    .category_items_box .category_item_name {
+        font-size: 30px;
     }
-    @media (min-width:950px) and (max-width:1000px) {
-        .category_items_box .category_item_name {
-            font-size: 32px;
-        }
+}
+
+@media (min-width:950px) and (max-width:1000px) {
+    .category_items_box .category_item_name {
+        font-size: 32px;
     }
+}
 
 .back_to_top {
     width: 100%;
@@ -1897,30 +1903,6 @@ a {
     margin-bottom: 25px;
 }
 
-.site_logo_right {
-    float: right;
-}
-
-.telephonenumber {
-    float: left;
-    margin-left: 15px;
-}
-
-    .telephonenumber .telephonenumber_item {
-        font-size: 26px;
-        color: #E15517;
-        font-weight: bold;
-    }
-
-.telephonenumber_icon {
-    float: left;
-    padding-top: 15px;
-}
-
-    .telephonenumber_icon img {
-        width: 140px;
-    }
-
 @media (min-width:750px) and (max-width:832px) {
     .site_logo_right {
         width: 37.4%;
@@ -1948,7 +1930,7 @@ a {
 
 .big_questions_box {
     width: 1000px;
-    min-width:750px;
+    min-width: 750px;
     margin: 0 auto;
     text-align: center;
     padding: 20px 0;
@@ -2012,11 +1994,40 @@ a {
 
 .scroll_case_list_box .jcarousel-wrapper {
     width: 100%;
+    padding:20px 0;
+}
+
+.scroll_case_content {
+    margin: 0 auto;
+    width: 86%;
+    max-width:1000px;
+}
+.scroll_case_content .jcarousel{
+    margin: 0 auto;
+    width: 100%;
+}
+    .scroll_case_content .jcarousel-control-prev {
+        left:-3%;
+    }
+    .scroll_case_content .jcarousel-control-next {
+    right:-3%;
+    }
+
+.jcarousel ul li img {
+    width:96%;
+}
+@media screen and (min-width:1000px) {
+    .scroll_case_content .jcarousel-control-prev {
+        left:0;
+    }
+    .scroll_case_content .jcarousel-control-next {
+    right:0;
+    }
 }
 
 .design_service_box {
     width: 1000px;
-    min-width:750px;
+    min-width: 750px;
     margin: 0 auto;
     text-align: center;
     margin: 0 auto;
@@ -2024,13 +2035,19 @@ a {
     padding: 20px 0;
 }
 
-    .design_service_box .service_title {
-        width: 100%;
-    }
+.design_service {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
 
-        .design_service_box .service_title img {
-            width: 800px;
-        }
+.design_service_box .service_title {
+    width: 100%;
+}
+
+    .design_service_box .service_title img {
+        width: 800px;
+    }
 
 .design_service .service_item {
     float: left;
@@ -2071,6 +2088,7 @@ a {
         position: relative;
         margin-left: 1%;
         margin-top: 20px;
+        width: 19.15%;
     }
 
     .service_item img {
@@ -2086,9 +2104,9 @@ a {
 
 .show_case_box {
     width: 1444px;
-    min-width:750px;
-    margin:0 auto;
-    text-align:center;
+    min-width: 750px;
+    margin: 0 auto;
+    text-align: center;
 }
 
 @media (min-width:750px) and (max-width:1444px) {
@@ -2099,7 +2117,7 @@ a {
 
 .service_flow_box {
     width: 1000px;
-    min-width:750px;
+    min-width: 750px;
 }
 
 @media (min-width:750px) and (max-width:1444px) {
@@ -2134,15 +2152,15 @@ a {
 }
 
 .book_title {
-    width:1444px;
-    min-width:750px;
-    margin:0 auto;
-    text-align:center;
+    width: 1444px;
+    min-width: 750px;
+    margin: 0 auto;
+    text-align: center;
 }
 
 @media (min-width:750px) and (max-width:1444px) {
     .book_title {
-        width:100%;
+        width: 100%;
     }
 }
 

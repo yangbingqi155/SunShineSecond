@@ -289,6 +289,11 @@ namespace SunShine.Web.Controllers
         {
             return View();
         }
+
+        public ActionResult Mobile_CaseListItemsScroll() {
+            string categoryCode = "partner";
+            return View(ArticleService.GetArticlesByCategoryCode(categoryCode));
+        }
     }
 
 }

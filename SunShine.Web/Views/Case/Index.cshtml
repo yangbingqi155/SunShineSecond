@@ -120,12 +120,17 @@
     </div>
     <div style="clear:both;"></div>
 </div>
-@{
-    Html.RenderAction("CaseListItemsScroll", "Parts");
+@{if (!BrowerDetectorHelper.IsMobile())
+    {
+        Html.RenderAction("CaseListItemsScroll", "Parts");
+    }
+    else {
+        Html.RenderAction("Mobile_CaseListItemsScroll", "Parts");
+    }
     Html.RenderAction("DesignService", "Parts");
-    Html.RenderAction("CoreAdvance", "Parts");
     if (!BrowerDetectorHelper.IsMobile())
     {
+        Html.RenderAction("CoreAdvance", "Parts");
         Html.RenderPartial("_HistoryBannerPartial", null);
     }
     if (!BrowerDetectorHelper.IsMobile())
@@ -137,12 +142,10 @@
         Html.RenderAction("Mobile_Partner", "Parts");
     }
     Html.RenderPartial("_CustomizeFlowPartial", null);
-    if (BrowerDetectorHelper.IsMobile())
+    if (!BrowerDetectorHelper.IsMobile())
     {
-        Html.RenderAction("Mobile_Bottom_Honor", "Parts");
+        Html.RenderPartial("_BookTitle", null);
     }
-
-    Html.RenderPartial("_BookTitle", null);
 }
 
 @if (!BrowerDetectorHelper.IsMobile())

@@ -1,0 +1,42 @@
+﻿@using SunShine.Model;
+@using SunShine.Web.Utils;
+@model List<ArticleViewModel>
+@{
+    Layout = null;
+}
+
+@if (Model != null && Model.Count > 0)
+{
+    <link rel="stylesheet" type="text/css" href="~/jsor-jcarousel/extra/common.css">
+    <link rel="stylesheet" type="text/css" href="~/jsor-jcarousel/extra/jcarousel.responsive.css">
+    <script src="~/jsor-jcarousel/dist/jquery.jcarousel.min.js"></script>
+    <script type="text/javascript" src="~/jsor-jcarousel/extra/jcarousel.responsive.js"></script>
+    <div class="scroll_case_list_box">
+        @*<div class="partner_carousel">*@
+        <div class="jcarousel-wrapper">
+            <div class="scroll_case_content">
+                <div class="jcarousel">
+                    <ul>
+                        @foreach (var item in Model)
+                        {
+                            if (!string.IsNullOrEmpty(item.img))
+                            {
+                                <li><a href="@Url.Action("Index","Case",new{categoryCode="successcase",currentCategoryCode="partner" })"><img src="@Url.Content(item.img)" /></a></li>
+                            }
+                        }
+                    </ul>
+                    <div style="clear:both;"></div>
+                </div>
+                <a href="#" class="jcarousel-control-prev">&lsaquo;</a>
+                <a href="#" class="jcarousel-control-next">&rsaquo;</a>
+                @*<p class="jcarousel-pagination"></p>*@
+                <div style="clear:both;"></div>
+            </div>
+        </div>
+        @*</div>*@
+
+    </div>
+    <div style="clear:both;"></div>
+}
+
+

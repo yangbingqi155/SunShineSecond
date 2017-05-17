@@ -98,7 +98,14 @@
 }
 
 @{
-    Html.RenderAction("CaseListItemsScroll", "Parts");
+    if (!BrowerDetectorHelper.IsMobile())
+    {
+        Html.RenderAction("CaseListItemsScroll", "Parts");
+    }
+    else
+    {
+        Html.RenderAction("Mobile_CaseListItemsScroll", "Parts");
+    }
     Html.RenderAction("DesignService", "Parts");
     if (!BrowerDetectorHelper.IsMobile())
     {

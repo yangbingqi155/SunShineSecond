@@ -1038,6 +1038,7 @@
     <Content Include="Views\Shared\_BookTitle.cshtml" />
     <Content Include="Views\Parts\DesignService.cshtml" />
     <Content Include="Views\Parts\Mobile_CoreAdvance.cshtml" />
+    <Content Include="Views\Parts\Mobile_CaseListItemsScroll.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

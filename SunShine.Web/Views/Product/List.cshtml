@@ -64,32 +64,39 @@
         @*<div class="tab_box">
             <ul id="tab_conbox">
                 <li>*@
-                    @*<div class="more1"><a href="@Url.Action("List","Product")"><img src="~/images/home/more1.jpg"></a></div>*@
-                    @{
-                        if (Model.Count == 1 && pageIndex == 0)
-                        {
-                            Html.RenderPartial("_ProductItemDetailPartial", Model.First());
-                        }
-                        else
-                        {
-                            Html.RenderPartial("_ProductItemPartial1", Model);
-                        }
-                    }
-                    <div class="sunshine_pager">
-                        @Html.Raw(Url.PagerHTML(pageCount, pageIndex, "List", "Product", ViewContext.RouteData.Values))
-                    </div>
-                @*</li>
-            </ul>
-        </div>*@
+        @*<div class="more1"><a href="@Url.Action("List","Product")"><img src="~/images/home/more1.jpg"></a></div>*@
+        @{
+            if (Model.Count == 1 && pageIndex == 0)
+            {
+                Html.RenderPartial("_ProductItemDetailPartial", Model.First());
+            }
+            else
+            {
+                Html.RenderPartial("_ProductItemPartial1", Model);
+            }
+        }
+        <div class="sunshine_pager">
+            @Html.Raw(Url.PagerHTML(pageCount, pageIndex, "List", "Product", ViewContext.RouteData.Values))
+        </div>
+        @*</li>
+                </ul>
+            </div>*@
 
     </div>
 </div>
 @{
-    Html.RenderAction("CaseListItemsScroll", "Parts");
-    Html.RenderAction("DesignService", "Parts");
-    Html.RenderAction("CoreAdvance", "Parts");
     if (!BrowerDetectorHelper.IsMobile())
     {
+        Html.RenderAction("CaseListItemsScroll", "Parts");
+    }
+    else
+    {
+        Html.RenderAction("Mobile_CaseListItemsScroll", "Parts");
+    }
+    Html.RenderAction("DesignService", "Parts");
+    if (!BrowerDetectorHelper.IsMobile())
+    {
+        Html.RenderAction("CoreAdvance", "Parts");
         Html.RenderPartial("_HistoryBannerPartial", null);
     }
     if (!BrowerDetectorHelper.IsMobile())
@@ -101,12 +108,10 @@
         Html.RenderAction("Mobile_Partner", "Parts");
     }
     Html.RenderPartial("_CustomizeFlowPartial", null);
-    if (BrowerDetectorHelper.IsMobile())
+    if (!BrowerDetectorHelper.IsMobile())
     {
-        Html.RenderAction("Mobile_Bottom_Honor", "Parts");
+        Html.RenderPartial("_BookTitle", null);
     }
-
-    Html.RenderPartial("_BookTitle", null);
 }
 
 @if (!BrowerDetectorHelper.IsMobile())

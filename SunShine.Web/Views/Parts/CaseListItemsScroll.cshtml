@@ -12,9 +12,7 @@
     <script src="~/jsor-jcarousel/dist/jquery.jcarousel.min.js"></script>
     <script type="text/javascript" src="~/jsor-jcarousel/extra/jcarousel.responsive.js"></script>
     <div class="scroll_case_list_box">
-        
         @*<div class="partner_carousel">*@
-            
             <div class="jcarousel-wrapper">
                 <div style="margin:0 auto;width:980px;">
                     <div class="jcarousel_more">
@@ -31,7 +29,6 @@
                             if (!string.IsNullOrEmpty(item.img))
                             {
                                     <li><a href="@Url.Action("Index","Case",new{categoryCode="successcase",currentCategoryCode="partner" })"><img src="@Url.Content(item.img)" style="width:170px;height:102px;" /></a></li>
-
                             }
                         }
                         </ul>
