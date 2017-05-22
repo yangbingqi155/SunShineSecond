@@ -127,7 +127,10 @@
     //    Html.RenderAction("Mobile_Bottom_Honor", "Parts");
     //}
 
-    Html.RenderPartial("_BookTitle", null);
+    if (!BrowerDetectorHelper.IsMobile())
+    {
+        Html.RenderPartial("_BookTitle", null);
+    }
 }
 
 @if (!BrowerDetectorHelper.IsMobile())

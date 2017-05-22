@@ -120,7 +120,8 @@
     </div>
     <div style="clear:both;"></div>
 </div>
-@{if (!BrowerDetectorHelper.IsMobile())
+@{
+    if (!BrowerDetectorHelper.IsMobile())
     {
         Html.RenderAction("CaseListItemsScroll", "Parts");
     }
