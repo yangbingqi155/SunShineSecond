@@ -1601,14 +1601,6 @@ ul.advance_item_content_box {
     float: left;
 }
 
-
-
-.telephonenumber {
-    height: 101px;
-    float: right;
-    padding-right: 10px;
-}
-
     .telephonenumber .telleft {
         float: left;
     }
@@ -1903,29 +1895,6 @@ a {
     margin-bottom: 25px;
 }
 
-@media (min-width:750px) and (max-width:832px) {
-    .site_logo_right {
-        width: 37.4%;
-    }
-
-    .telephonenumber .telephonenumber_item {
-        font-size: 20px;
-    }
-
-    .telephonenumber_icon {
-        padding-top: 10px;
-        width: 42%;
-    }
-
-        .telephonenumber_icon img {
-            width: 100%;
-        }
-
-    .telephonenumber {
-        width: 57%;
-        margin-left: 1%;
-    }
-}
 
 
 .big_questions_box {

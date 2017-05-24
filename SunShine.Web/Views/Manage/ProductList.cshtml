@@ -46,7 +46,7 @@
                     @Html.DropDownList("idproductcategory", new SelectList(ProductCategoryService.SelectItems(GroupMethodType.Product), "DisplayValue", "DisplayText"), new { @class = "form-control", Value = idproductcategory })
                 </div>
                 <div class="col-xs-2">
-                    <input type="submit" value="搜索" class="btn btn-primary" placeholder=".col-xs-1" />&nbsp;<a class="btn btn-primary" href="@Url.Action("ProductEdit","Manage")">新增</a>&nbsp;<a class="btn btn-danger" href="javascript:void(0);" id="btn_del_selected">删除</a>
+                    <input type="submit" value="搜索" class="btn btn-primary" placeholder=".col-xs-1" />&nbsp;<a class="btn btn-primary" href="@Url.Action("ProductEdit","Manage",new {returnurl= Request.RawUrl})">新增</a>&nbsp;<a class="btn btn-danger" href="javascript:void(0);" id="btn_del_selected">删除</a>
                 </div>
             </div>
         </form>

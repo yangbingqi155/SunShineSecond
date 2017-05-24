@@ -1,6 +1,14 @@
-﻿@{
+﻿@using SunShine.Web.Utils;
+@{
     Layout = null;
 }
 <div class="img_more_width show_case_box">
+@if (BrowerDetectorHelper.IsMobile())
+{
+    <img class="img" src="/Images/home/mobile_show_case_title.jpg">
+}
+else
+{
     <img class="img" src="/Images/home/show_case_title.jpg">
+}
 </div>

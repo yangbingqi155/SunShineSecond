@@ -97,8 +97,8 @@
     if (!BrowerDetectorHelper.IsMobile())
     {
         Html.RenderAction("CoreAdvance", "Parts");
-        Html.RenderPartial("_HistoryBannerPartial", null);
     }
+    Html.RenderPartial("_HistoryBannerPartial", null);
     if (!BrowerDetectorHelper.IsMobile())
     {
         Html.RenderAction("Partner", "Parts");

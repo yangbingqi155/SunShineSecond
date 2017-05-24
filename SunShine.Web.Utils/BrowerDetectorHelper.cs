@@ -23,7 +23,7 @@ namespace SunShine.Web.Utils {
             if ((b.IsMatch(u) || v.IsMatch(u.Substring(0, 4)))) {
                 result = true;
             }
-            return result;
+            return !result;
         }
     }
 }

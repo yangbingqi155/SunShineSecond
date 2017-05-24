@@ -99,7 +99,6 @@ hr {
     width: 100%;
     margin: 0 auto;
     min-width: 750px;
-    overflow: hidden;
 }
 
 .logo {
@@ -107,7 +106,7 @@ hr {
 }
 
     .logo img {
-        min-width: 440px;
+        min-width: 340px;
     }
 
 .telephonenumber {
@@ -127,28 +126,48 @@ hr {
 }
 
     .telephonenumber_icon img {
-        width: 140px;
+        width: 200px;
     }
     .site_logo_right {
     float: right;
 }
-@media (min-width:750px) and (max-width:1000px) {
     .logo {
-        width: 62.5%;
+        max-width: 710px;
+        width: 40%;
     }
-
-        .logo img {
+    .logo img {
             width: 100%;
         }
-
     .site_logo_right {
-        width: 37.4%;
+        width: 45%;
     }
-
+    .telephonenumber {
+    height: 101px;
+    float: left;
+    padding-right: 10px;
+}
+    
+@media (min-width:750px) and (max-width:800px) {
     .telephonenumber .telephonenumber_item {
-        font-size: 22px;
+        font-size: 24px;
     }
-
+}
+@media (min-width:800px) and (max-width:900px) {
+    .telephonenumber .telephonenumber_item {
+        font-size: 26px;
+    }
+}
+@media (min-width:900px) and (max-width:1000px) {
+    .telephonenumber .telephonenumber_item {
+        font-size: 28px;
+    }
+}
+@media screen and (min-width:1000px) {
+    .telephonenumber .telephonenumber_item {
+        font-size: 30px;
+    }
+}
+@media (min-width:750px) and (max-width:1000px) {
     .telephonenumber_icon {
         padding-top: 10px;
         width: 42%;
@@ -1055,7 +1074,7 @@ hr {
         }
 
 .partner {
-    margin: 0 auto;
+    margin: 30px auto;
     overflow: hidden;
 }
 
@@ -1093,6 +1112,7 @@ hr {
 .partner_item_title {
     font-size: 26px;
     font-weight: bold;
+    padding-bottom:10px;
 }
 
 .partner_item_introduction {
