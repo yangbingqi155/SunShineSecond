@@ -410,6 +410,7 @@
     <Content Include="Images\home\mobile_show_case_title.jpg" />
     <Content Include="Images\home\mobile_yongxinzuofuwu.jpg" />
     <Content Include="Images\home\next_item_icon.jpg" />
+    <Content Include="Images\home\scroll_case_list_title_img.jpg" />
     <Content Include="Images\home\pre_item_icon.jpg" />
     <Content Include="Images\home\service_flow.jpg" />
     <Content Include="Images\home\set_position.jpg" />
