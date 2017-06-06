@@ -6,45 +6,54 @@
 }
 
 @if (Model != null && Model.Count > 0)
-{  
+{
     <link rel="stylesheet" type="text/css" href="~/jsor-jcarousel/extra/common.css">
     <link rel="stylesheet" type="text/css" href="~/jsor-jcarousel/extra/jcarousel.responsive.css">
     <script src="~/jsor-jcarousel/dist/jquery.jcarousel.min.js"></script>
     <script type="text/javascript" src="~/jsor-jcarousel/extra/jcarousel.responsive.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('.jcarousel').jcarousel().jcarouselAutoscroll({
+                interval: 2000,
+                target: '+=1',
+                autostart: true
+            });
+        });
+    </script>
     <div class="scroll_case_list_title_img">
         <img src="~/Images/home/scroll_case_list_title_img.jpg" />
     </div>
     <div class="scroll_case_list_box">
         @*<div class="partner_carousel">*@
-            <div class="jcarousel-wrapper">
-                <div style="margin:0 auto;width:980px;">
-                    <div class="jcarousel_more">
-                        <div class="more_item more_ch_title">合作企业</div>
-                        <div class="more_item more_en_title">PARTNER</div>
-                        <div class="more_item more_button">
-                            <a href="@Url.Action("Index","Case",new{categoryCode="successcase",currentCategoryCode="partner" })">更多+</a>
-                        </div>
+        <div class="jcarousel-wrapper">
+            <div style="margin:0 auto;width:980px;">
+                <div class="jcarousel_more">
+                    <div class="more_item more_ch_title">合作企业</div>
+                    <div class="more_item more_en_title">PARTNER</div>
+                    <div class="more_item more_button">
+                        <a href="@Url.Action("Index","Case",new{categoryCode="successcase",currentCategoryCode="partner" })">更多+</a>
                     </div>
-                    <div class="jcarousel">
-                        <ul>
-                            @foreach (var item in Model)
+                </div>
+                <div class="jcarousel">
+                    <ul>
+                        @foreach (var item in Model)
                         {
                             if (!string.IsNullOrEmpty(item.img))
                             {
-                                    <li><a href="@Url.Action("Index","Case",new{categoryCode="successcase",currentCategoryCode="partner" })"><img src="@Url.Content(item.img)" style="width:170px;height:102px;" /></a></li>
+                                <li><a href="@Url.Action("Index","Case",new{categoryCode="successcase",currentCategoryCode="partner" })"><img src="@Url.Content(item.img)" style="width:170px;height:102px;" /></a></li>
                             }
                         }
-                        </ul>
-                        <div style="clear:both;"></div>
-                    </div>
-                    <a href="#" class="jcarousel-control-prev">&lsaquo;</a>
-                    <a href="#" class="jcarousel-control-next">&rsaquo;</a>
-                    @*<p class="jcarousel-pagination"></p>*@
+                    </ul>
                     <div style="clear:both;"></div>
                 </div>
+                <a href="#" class="jcarousel-control-prev">&lsaquo;</a>
+                <a href="#" class="jcarousel-control-next">&rsaquo;</a>
+                @*<p class="jcarousel-pagination"></p>*@
+                <div style="clear:both;"></div>
             </div>
+        </div>
         @*</div>*@
-        
+
     </div>
     <div style="clear:both;"></div>
 }
