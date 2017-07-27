@@ -25,14 +25,14 @@
         $(document).ready(function () { $(".wenti_box").imgscroll({ speed: 40, amount: 0, width: 2, dir: "up" }); });
         $(document).ready(function () { $(".honor_content").imgscroll({ speed: 40, amount: 0, width: 2, dir: "left" }); });
 
-        $(document).ready(function () {
-            $(".mobile_bottom_menu").posfixed({
-                distance: 0,
-                pos: "bottom",
-                type: "while",
-                hide: false
-            });
-        });
+        //$(document).ready(function () {
+        //    $(".mobile_bottom_menu").posfixed({
+        //        distance: 0,
+        //        pos: "bottom",
+        //        type: "while",
+        //        hide: false
+        //    });
+        //});
         //function getQueryByName(name) {
         //    var result = location.search.match(
         //    new RegExp("[\?\&]" + name + "=([^\&]+)", "i"));
@@ -131,7 +131,7 @@
         </div>
         <div class="menu_item">
             <a href="@Url.Action("List", "Product")"><img src="~/Images/layout/site_bottom3.jpg" /><br /></a>
-            <a href="@Url.Action("List", "Product")">商品分类</a>
+            <a href="baidumap://map/direction?destination=武汉市江汉区前进一路御美广场&mode=driving&region=武汉">地图导航</a>
         </div>
         <div class="menu_item">
             <a href="@Url.Action("Index", "Case", new { categoryCode = "contactsunshine",currentCategoryCode="contactus" })"><img src="~/Images/layout/site_bottom4.jpg" /><br /></a>
