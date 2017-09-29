@@ -198,6 +198,7 @@
     <Compile Include="Authorize\ManageLoginValidationAttribute.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CaseController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PartsController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -1042,6 +1043,7 @@
     <Content Include="Views\Parts\DesignService.cshtml" />
     <Content Include="Views\Parts\Mobile_CoreAdvance.cshtml" />
     <Content Include="Views\Parts\Mobile_CaseListItemsScroll.cshtml" />
+    <Content Include="Views\Error\Error404.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
