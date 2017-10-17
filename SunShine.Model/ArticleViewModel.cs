@@ -65,6 +65,7 @@ namespace SunShine.Model {
             this.content = article.content;
             this.idcategory = article.idcategory;
             this.follow = article.follow;
+            this.sortno = article.sortno==null?0: article.sortno.Value;
             this.cretime = article.cretime;
             this.introduction = article.introduction;
             this.seotitle = article.seotitle;
@@ -79,6 +80,7 @@ namespace SunShine.Model {
             article.content = this.content;
             article.idcategory = this.idcategory;
             article.follow = this.follow;
+            article.sortno = this.sortno;
             article.cretime = this.cretime;
             article.introduction = this.introduction;
             article.seotitle = this.seotitle;
