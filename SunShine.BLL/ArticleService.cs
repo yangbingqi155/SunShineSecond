@@ -12,7 +12,7 @@ namespace SunShine.BLL
     {
         public static List<Article> GetALL() {
             TN db = new TN();
-            return db.Articles.OrderBy(en => en.sortno).ToList();
+            return db.Articles.OrderByDescending(en => en.sortno).ToList();
         }
 
         private static List<ArticleViewModel> ConvertToViewModel(List<Article> articles) {
@@ -25,7 +25,7 @@ namespace SunShine.BLL
                 SiteCategory category = categories.Find(en => model.idcategory == en.idcategory);
                 viewModel.Category = category;
                 return viewModel;
-            }).OrderBy(en => en.sortno).ToList();
+            }).OrderByDescending(en => en.sortno).ToList();
             return entities;
         }
 
@@ -40,7 +40,7 @@ namespace SunShine.BLL
             list = db.Articles.Where(en =>
               (string.IsNullOrEmpty(idcategory) || en.idcategory == idcategory) &&
               (string.IsNullOrEmpty(title) || en.title.Contains(title))
-            ).OrderBy(en => en.sortno).ToList();
+            ).OrderByDescending(en => en.sortno).ToList();
             return list;
         }
 
@@ -48,7 +48,7 @@ namespace SunShine.BLL
             List<ArticleViewModel> viewModels = new List<ArticleViewModel>();
             SiteCategory parentCategory =SiteCategoryService.GetByCode(categoryCode);
             TN db = new TN();
-            List<Article> articles = db.Articles.Where(en => en.idcategory == parentCategory.idcategory).OrderBy(en => en.sortno).ToList();
+            List<Article> articles = db.Articles.Where(en => en.idcategory == parentCategory.idcategory).OrderByDescending(en => en.sortno).ToList();
             viewModels = ConvertToViewModel(articles);
             return viewModels;
         }
